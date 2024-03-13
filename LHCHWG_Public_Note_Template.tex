@@ -1,0 +1,159 @@
+% ==============================================
+% Template for LHCHWG Public Notes Front Page
+% 	- Please modify the corresponding information	
+%
+% 2021.01.15: adapted to name change LHCH$\sigma$WG -> LHCHWG (by R. Harlander)
+% 2015.04.29: 1st version, R.T.
+% ==============================================
+\documentclass[11pt]{report}
+\setlength{\textwidth}{18cm}
+\setlength{\textheight}{25cm}
+\setlength{\hoffset}{-2.5cm}
+\setlength{\voffset}{-3cm}
+% Hyperlink
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{cleveref}
+%\usepackage[hidelinks]{hyperref}
+% Remove boarder color
+%\hypersetup{pdfborder = {0 0 0}}
+%\hypersetup{colorlinks=false,pdfborder={0 0 0},}
+%\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
+%\usepackage{xcolor}
+%\hypersetup{colorlinks,linkcolor={red!50!black},citecolor={blue!50!black},urlcolor={blue!80!black}}
+%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% 
+\begin{document}
+\hypersetup{pageanchor=false}
+
+% --- Front Page
+\thispagestyle{empty}
+%% \begin{titlepage}
+
+	% Report No. and Date
+	\begin{flushright}
+	  {\large
+            \textbf{\href{https://https://cds.cern.ch/record/XXXXX}{LHCHWG-2024-XXXX}}} \\[0.5cm]	
+		{\large 	\textrm{March 13, 2024}} \\[2.0cm]
+	\end{flushright}
+
+	\begin{center}
+
+	% LHCH$\sigma$WG
+	\textsc{\Large 	\href{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG}{LHC Higgs Working Group}\footnote{\href{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG}{\sl https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG}}} \\[0.5cm]
+	\textsc{\Large 	Public Note} \\[1.5cm]
+	
+	% Title
+	\HRule \\[0.9cm]
+	\textbf{\Large Update Predictions for Production Cross Sections of the Higgs Boson at the LHC} \\[1.0cm]
+	\HRule \\[1.5cm]
+
+	% Author
+	\textrm{
+    {\large {\bf WG1 conveners:} Alexander Karlberg$^{1}$,
+     Julie Malcles$^{2}$,
+     Bernhard Mistlberger$^{3}$,
+     Roberto~Di~Nardo$^{4}$ 
+%     {\bf $\boldsymbol{ggF}$ conveners:}  Syed Haider Abidi$^{5}$, Robin Hayes$^{6}$, Alexander Huss$^1$, Stephen Jones$^{7}$,\\ 
+%     {\bf VBF conveners:} Gaetano Barone$^{8}$, Jiayi Chen$^{9}$, Stephane~Cooperstein$^{10}$, Silvia Ferrario Ravasio$^{1}$, Mathieu Pellen$^{11}$ \\
+%     {\bf $\boldsymbol{VH}$ conveners:} Hannah Arnold$^{6}$, Alessandro Calandri$^{12}$, Suman Chatterjee$^{13}$, Giancarlo~Ferrera$^{14}$, Ciaran Williams$^{15}$\\ 
+%     {\bf $\boldsymbol{t\bar{t}H/tH}$ conveners:} Malgorzata Worek$^{16}$, Marco Zaro$^{14}$\\ 
+%     {\bf $\boldsymbol{b\bar{b}H/bH}$ conveners:} Chayanit Asawatangtrakuldee$^{17}$, Tim Barklow$^{3}$, Michael Spira$^{18}$, Marius~Wiesemann$^{19}$
+    }} \\[0.3cm]	
+    \textit{$^{1}$CERN, Theoretical Physics Department, CH-1211 Geneva 23, Switzerland } \\
+    \textit{$^{2}$IRFU, CEA, Universit\'e Paris-Saclay, Gif-sur-Yvette, F-91191, France} \\
+    \textit{$^{3}$SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94039, USA } \\
+    \textit{$^{4}$Universit\'{a} degli Studi and INFN Roma Tre, Via della Vasca Navale 84, I-00146, Rome, Italy}\\
+%    \textit{$^{5}$Brookhaven National Laboratory, PO Box 5000, Upton, NY 11973, USA}\\   
+%    \textit{$^{6}$Nikhef, Science Park 105, 1098 XG Amsterdam, The Netherlands }\\
+%    \textit{$^{7}$Institute for Particle Physics Phenomenology, Durham University, Durham DH1 3LE, UK}\\
+%    \textit{$^{8}$Brown University, Providence, RI 02912, USA} \\
+%    \textit{$^{9}$Department of Physics, Simon Fraser University, Burnaby, BC V5H0G9, Canada}\\
+%    \textit{$^{10}$University of California San Diego, 500 Gilman Dr, La Jolla, CA 92093, USA}\\
+%    \textit{$^{11}$Physikalisches Institut, Albert-Ludwigs-Universit\"at Freiburg, D-79104 Freiburg, Germany} \\
+%    \textit{$^{12}$ETH Zurich—Institute for Particle Physics and Astrophysics (IPA), Zurich, Switzerland}\\
+%    \textit{$^{13}$Institute of High Energy Physics (HEPHY), Austrian Academy of Sciences (\"{O}AW), Nikolsdorfer Gasse 18, 1050 Vienna, Austria}\\
+%    \textit{$^{14}$Universit\'{a} degli Studi di Milano $\&$ INFN, Sezione di Milano, Via Celoria 16, 20133 Milano, Italy}\\
+%    \textit{$^{15}$Department of Physics, University at Buffalo, The State University of New York, Buffalo, 14260, USA}\\
+%    \textit{$^{16}$Institute for Theoretical Particle Physics and Cosmology, RWTH Aachen University, \\D-52056 Aachen, Germany}\\
+%    \textit{$^{17}$Department of Physics, Faculty of Science, Chulalongkorn University, 10330 Bangkok, Thailand}\\
+%    \textit{$^{18}$Paul Scherrer Institut, CH–5232 Villigen PSI, Switzerland}\\
+%    \textit{$^{19}$Max-Planck-Institut f\"ur Physik, F\"ohringer Ring 6, 80805 M\"unchen, Germany}\\
+
+
+
+\textbf{}
+	\end{center}
+
+        \thispagestyle{empty}
+%% \end{titlepage}
+
+
+% ------ blank page after title
+%\thispagestyle{empty}
+%\clearpage\mbox{}\clearpage
+
+% ------ abstract
+%% \thispagestyle{empty}
+
+\mbox{}\vspace*{3em}
+%
+\begin{center}
+    \textbf{Abstract}
+ This note documents state of the art predictions for the production cross sections of the Higgs Boson at the LHC. 
+ Specifically, Standard Model predictions for the LHC with centre-of-mass. energy of 7, 8, 13, 13.6 and 14 TeV are presented.
+\end{center}
+%
+
+\newpage
+% - Reset command
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Conclusions
+\section*{Introduction}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+\setcounter{page}{1}
+Production cross sections for the Higgs boson based on the Standrad Model of particle physics were collected in the CERN Yellow Report "Deciphering the Nature of the Higgs Sector" (YR4) (CERN-2017-002)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.  
+Since this document became public many advancements in our abilities to predict production cross sections were achieved. 
+Furthermore, the LHC performed measurements at a higher centre-of-mass energy of $13.6$ TeV for which YR4 does not contain any predictions.
+Looking ahead to Run-3 and the High Luminosity phase of the LHC  (HL-LHC) and the associated wealth of data that will be collected an update of the HWG recommendation of all production cross sections to reflect the current state of the art is called for.
+The aim of this note is to document recent advancements and review the ingredients for the prediction of Standard Model predictions for the production cross sections of the Higgs boson at the LHC (similar in spirit as in YR4). 
+Updated numerical predictions for central values of the production cross sections and associated theoretical and parametric uncertainties are the main result of this article. 
+\\
+For now, instructions and input parameters for the generation of numerical values can be found here:  \url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG136TeVxsec}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ggF
+\section*{ggF}
+\input{Chapters/ggF.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VBF
+\section*{VBF}
+\input{Chapters/VBF.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VH
+\section*{VH}
+\input{Chapters/VH.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ttH
+\section*{$\boldsymbol{t\bar{t}H}$ and $\boldsymbol{tH}$}
+\input{Chapters/ttH.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  bbH
+\section*{$\boldsymbol{b\bar{b}H}$}
+\input{Chapters/bbH.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Conclusions
+\section*{Conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Acknowledgments
+\section*{Acknowledgments}
+This work was done on behalf of the LHCHWG.
+\newpage
+\bibliographystyle{jhep}
+\bibliography{refs}
+
+\end{document}
