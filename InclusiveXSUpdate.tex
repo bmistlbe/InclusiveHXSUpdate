@@ -5,7 +5,7 @@
 % 2021.01.15: adapted to name change LHCH$\sigma$WG -> LHCHWG (by R. Harlander)
 % 2015.04.29: 1st version, R.T.
 % ==============================================
-\documentclass[11pt]{report}
+\documentclass[11pt]{article}
 \setlength{\textwidth}{18cm}
 \setlength{\textheight}{25cm}
 \setlength{\hoffset}{-2.5cm}
@@ -31,7 +31,7 @@
 
 % --- Front Page
 \thispagestyle{empty}
-%% \begin{titlepage}
+ \begin{titlepage}
 
 	% Report No. and Date
 	\begin{flushright}
@@ -48,33 +48,31 @@
 	
 	% Title
 	\HRule \\[0.9cm]
-	\textbf{\Large Update Predictions for Production Cross Sections of the Higgs Boson at the LHC} \\[1.0cm]
+	\textbf{\Large Predictions for Production Cross Sections of the Higgs Boson at the LHC and HL-LHC} \\[1.0cm]
 	\HRule \\[1.5cm]
 
 	% Author
 	\textrm{
-    {\large {\bf WG1 conveners:} Alexander Karlberg$^{1}$,
-     Julie Malcles$^{2}$,
-     Bernhard Mistlberger$^{3}$,
-     Roberto~Di~Nardo$^{4}$ 
-%     {\bf $\boldsymbol{ggF}$ conveners:}  Syed Haider Abidi$^{5}$, Robin Hayes$^{6}$, Alexander Huss$^1$, Stephen Jones$^{7}$,\\ 
-%     {\bf VBF conveners:} Gaetano Barone$^{8}$, Jiayi Chen$^{9}$, Stephane~Cooperstein$^{10}$, Silvia Ferrario Ravasio$^{1}$, Mathieu Pellen$^{11}$ \\
-%     {\bf $\boldsymbol{VH}$ conveners:} Hannah Arnold$^{6}$, Alessandro Calandri$^{12}$, Suman Chatterjee$^{13}$, Giancarlo~Ferrera$^{14}$, Ciaran Williams$^{15}$\\ 
-%     {\bf $\boldsymbol{t\bar{t}H/tH}$ conveners:} Malgorzata Worek$^{16}$, Marco Zaro$^{14}$\\ 
-%     {\bf $\boldsymbol{b\bar{b}H/bH}$ conveners:} Chayanit Asawatangtrakuldee$^{17}$, Tim Barklow$^{3}$, Michael Spira$^{18}$, Marius~Wiesemann$^{19}$
+    {\large {\bf WG1 conveners:} Hannah Arnold$^{1}$, Alessandro Calandri$^{2}$, Alexander Karlberg$^{3}$, Bernhard Mistlberger$^{4}$\\
+     {\bf $\boldsymbol{ggF}$ conveners:}  \\
+     {\bf VBF conveners:} \\
+     {\bf $\boldsymbol{VH}$ conveners:} \\
+     {\bf $\boldsymbol{t\bar{t}H/tH}$ conveners:} \\
+     {\bf $\boldsymbol{b\bar{b}H/bH}$ conveners:} \\
+     {\bf In collaboration with:} 
     }} \\[0.3cm]	
-    \textit{$^{1}$CERN, Theoretical Physics Department, CH-1211 Geneva 23, Switzerland } \\
-    \textit{$^{2}$IRFU, CEA, Universit\'e Paris-Saclay, Gif-sur-Yvette, F-91191, France} \\
-    \textit{$^{3}$SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94039, USA } \\
-    \textit{$^{4}$Universit\'{a} degli Studi and INFN Roma Tre, Via della Vasca Navale 84, I-00146, Rome, Italy}\\
-%    \textit{$^{5}$Brookhaven National Laboratory, PO Box 5000, Upton, NY 11973, USA}\\   
+    \textit{$^{1}$Brookhaven National Laboratory, PO Box 5000, Upton, NY 11973, USA}\\   
+    \textit{$^{2}$ETH Zurich—Institute for Particle Physics and Astrophysics (IPA), Zurich, Switzerland}\\
+    \textit{$^{3}$CERN, Theoretical Physics Department, CH-1211 Geneva 23, Switzerland } \\
+    \textit{$^{4}$SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94039, USA } \\
+%    \textit{$^{20}$Universit\'{a} degli Studi and INFN Roma Tre, Via della Vasca Navale 84, I-00146, Rome, Italy}\\
+%    \textit{$^{21}$IRFU, CEA, Universit\'e Paris-Saclay, Gif-sur-Yvette, F-91191, France} \\
 %    \textit{$^{6}$Nikhef, Science Park 105, 1098 XG Amsterdam, The Netherlands }\\
 %    \textit{$^{7}$Institute for Particle Physics Phenomenology, Durham University, Durham DH1 3LE, UK}\\
 %    \textit{$^{8}$Brown University, Providence, RI 02912, USA} \\
 %    \textit{$^{9}$Department of Physics, Simon Fraser University, Burnaby, BC V5H0G9, Canada}\\
 %    \textit{$^{10}$University of California San Diego, 500 Gilman Dr, La Jolla, CA 92093, USA}\\
 %    \textit{$^{11}$Physikalisches Institut, Albert-Ludwigs-Universit\"at Freiburg, D-79104 Freiburg, Germany} \\
-%    \textit{$^{12}$ETH Zurich—Institute for Particle Physics and Astrophysics (IPA), Zurich, Switzerland}\\
 %    \textit{$^{13}$Institute of High Energy Physics (HEPHY), Austrian Academy of Sciences (\"{O}AW), Nikolsdorfer Gasse 18, 1050 Vienna, Austria}\\
 %    \textit{$^{14}$Universit\'{a} degli Studi di Milano $\&$ INFN, Sezione di Milano, Via Celoria 16, 20133 Milano, Italy}\\
 %    \textit{$^{15}$Department of Physics, University at Buffalo, The State University of New York, Buffalo, 14260, USA}\\
@@ -107,42 +105,51 @@
  Specifically, Standard Model predictions for the LHC with centre-of-mass. energy of 7, 8, 13, 13.6 and 14 TeV are presented.
 \end{center}
 %
-
-\newpage
+ \end{titlepage}
+ \newpage
+ \tableofcontents
 % - Reset command
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Intro
-\section*{Introduction}
+\section{Introduction}
 \input{Chapters/Introduction.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ggF
-\section*{ggF}
+\section{Common setup}
+\input{Chapters/setup.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ggF
+\section{ggF}
 \input{Chapters/ggF.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VBF
-\section*{VBF}
+\section{VBF}
 \input{Chapters/VBF.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VH
-\section*{VH}
+\section{VH}
 \input{Chapters/VH.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ttH
-\section*{$\boldsymbol{t\bar{t}H}$ and $\boldsymbol{tH}$}
+\section{$\boldsymbol{t\bar{t}H}$ and $\boldsymbol{tH}$}
 \input{Chapters/ttH.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  bbH
-\section*{$\boldsymbol{b\bar{b}H}$}
+\section{$\boldsymbol{b\bar{b}H}$}
 \input{Chapters/bbH.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Conclusions
-\section*{Conclusions}
+\section{Conclusions}
 \input{Chapters/Conclusions.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Acknowledgments
 \section*{Acknowledgments}
 This work was done on behalf of the LHCHWG.
 \newpage
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  All the tables
+\section{Reference tables}
+\input{Chapters/Appendix_tables}
 \bibliographystyle{jhep}
 \bibliography{refs}
 
