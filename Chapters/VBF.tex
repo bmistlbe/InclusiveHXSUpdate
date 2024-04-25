@@ -1,0 +1,16 @@
+The results are combined according to
+\begin{align}
+  \label{eq:vbf-xsec-combined}
+  \sigma^{\VBF} = \sigma_{\NNNLO}^{\DIS} (1+\delta_{\ELWK}) + \sigma_{\gamma}
+\end{align}
+and the theory uncertainties are computed as
+\begin{align}
+  \label{eq:vbf-TU}
+  \Delta_{\mathrm{TU}} = \max\left\{0.5\%,\delta_{\ELWK}^2\right\} + \frac{|\sigma_{\mbox{\scriptsize nf}}| + |\sigma_{\mbox{\scriptsize s/t/u}}|}{\sigma^{\VBF}}\%
+\end{align}
+for $\sqrt{s}=\{13,13.6,14\}$ TeV. For the legacy numbers correspsonding to $\sqrt{s}=\{7,8\}$ TeV the non-factorisable contribution, $\sigma_{\mbox{\scriptsize nf}}$, was not computed, and we instead set
+\begin{align}
+  \label{eq:vbf-TU}
+  \Delta_{\mathrm{TU}} = \max\left[\max\left\{0.5\%,\delta_{\ELWK}^2\right\} + \frac{|\sigma_{\mbox{\scriptsize s/t/u}}|}{\sigma^{\VBF}}\%,1.0\%\right].
+\end{align}
+In fact, in this case it always corresponds to $1\%$.
