@@ -3,5 +3,44 @@ all predictions presented in this report. In general we have aimed to use physic
 \subsection{Fermion masses}
 
 \subsection{Gauge boson masses}
+We use the following on-shell values for the $W$ and $Z$ boson masses
+and widths
+\begin{align}
+        M^\OS_W &= 80.379\GeV\,, \qquad \Gamma^\OS_W=2.085\GeV \notag \\
+        M^\OS_Z &= 91.1876\GeV\,, \qquad \Gamma^\OS_W=2.4952\GeV\,.
+\end{align}
+When needed for EW computations they are translated into their pole
+masses~\cite{BARDIN1988539} according to
+\begin{align}
+        M_V = \frac{M^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,, \qquad \Gamma_V = \frac{\Gamma^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,.
+\end{align}     
+We use the $G_\mu$-scheme~\cite{Denner:2000bj} to compute the fine
+structure constant $\alpha$ from $G_F$, $M^\OS_W$, and $M^\OS_Z$
+\begin{align}
+        \alpha = \frac{\sqrt{2}}{\pi}G_F(M^\OS_W)^2\sin^2\theta_W\,, \quad \sin^2\theta_W = 1-\frac{(M^\OS_W)^2}{(M^\OS_Z)^2}\,,\quad G_F=1.16638\cdot 10^{-5} \GeV^2\,.
+\end{align}
+This yields a value
+\begin{equation}
+        \alpha = 0.007565210\,.
+\end{equation}
+
 
 \subsection{PDF and $\alphas$}
+Following the PDF4LHC
+recommendation~\cite{PDF4LHCWorkingGroup:2022cjn} we use PDF4LHC21\_40
+PDF set for all predictions. The value of the strong coupling,
+$\alphas$, is given at the $Z$ boson mass
+\begin{equation}
+        \alphas(M_Z) = 0.1180\pm0.001\,.
+\end{equation}  
+We estimate the $\alphas$ and PDF uncertainties following the same
+recommendation. The $4$-flavour version of the PDF is used whenever a
+calculations is performed in the $4$-flavour scheme. The above
+combined PDF sets do not contain any photon content. When computing
+photon initiate processes we instead use the
+LUXqed17\_plus\_PDF4LHC15\_nnlo\_100~\cite{Manohar:2017eqh} set for
+the photon \emph{only}. This is not fully consistent as the presence
+of the photon in the PDF inevitably impacts the distributions of all
+the other partons. However, since the photon-initiated component is
+typically very small, this inconsistency is expected to be fully
+contained within other theoretical uncertainties.
