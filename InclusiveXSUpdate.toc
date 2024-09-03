@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Common setup}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Fermion masses}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Gauge boson masses}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}PDF and $\alpha _{\mathrm {s}}$}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}ggF}{2}{section.3}%
+\contentsline {section}{\numberline {4}VBF}{2}{section.4}%
+\contentsline {section}{\numberline {5}VH}{3}{section.5}%
+\contentsline {section}{\numberline {6}$\boldsymbol {t\bar {t}H}$ and $\boldsymbol {tH}$}{3}{section.6}%
+\contentsline {section}{\numberline {7}$\boldsymbol {b\bar {b}H}$}{3}{section.7}%
+\contentsline {section}{\numberline {8}Conclusions}{3}{section.8}%
+\contentsline {section}{\numberline {A}Reference tables}{4}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}ggF}{4}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}VBF}{4}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}VH}{4}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}ttH}{4}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.5}bbH}{4}{subsection.A.5}%
