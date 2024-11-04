@@ -1,0 +1,110 @@
+
+\subsection{Cross-section predictions for $t H$}
+\label{sec:results-xsects-singleth}
+In this section, we provide predictions for $tH$ production. 
+For this process, three main production mechanisms concur: 
+$t$-channel, $s$-channel and $tWH$ associated production. Their characteristics are very similar to single-top production processes. As it is the case
+for these processes, at LHC energies the $t$-channel mode is by far the dominant one. At variance with $ttH$, where the cross section
+is proportional to the square of the top-quark Yukawa, for $tH$ it breaks down into three terms: a term independent on $y_t$, a linear term and a quadratic
+term. As such, $tH$ production is sensitive to the sign of $y_t$. 
+
+State-of-the-art predictions
+for these processes include corrections up to NLO QCD~\cite{Demartin:2015uha,Demartin:2016axk} as well as NLO EW~\cite{Pagani:2020mov}. When
+the latter are considered, however, interferences between the three production channels cannot be neglected, and the corresponding breakdown 
+therefore becomes ill defined. Thus, the impact of EW corrections can be only assessed
+by considering all the channels together (possibly imposing the selection cuts which enhance a given channel). In this case, the effect on the inclusive
+cross section has been found in Ref.~\cite{Pagani:2020mov} to be about $-3.5\%$. Given the rather low rate of these processes, together with
+the issues related to their inclusion when keeping the three channels separate, EW
+corrections are not included in the reference cross sections.\\
+
+All single-top and Higgs cross-sections presented below are computed with {\sc MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca,Frederix:2018nkq}. 
+
+The central value $\mu$ of the renormalisation and factorisation scales is set in a process-dependent manner:
+\begin{itemize}
+    \item $tH$ ($t$ channel): $\mu= \frac{m_H+m_t}{4}\,$, both for the computation in the 4FS and in the 5FS;
+    \item $tH$ ($s$ channel): $\mu= \frac{m_H+m_t}{2}\,$;
+    \item $tWH$: $\mu= \frac{m_H+m_t+m_W}{2}\,$;
+\end{itemize}
+All numbers are computed in the five-flavour scheme. For the $t$-channel production mechanism, quoted scale uncertainties represent the envelope of the
+five- and four-flavour scheme computation, both at NLO. In this case, we employ $m_b=4.92 \textrm{GeV}$.\\
+For $tWH$, contributions belonging to $t\bar t H$ entering at NLO via real emissions are removed using the so-called ``Diagram removal with interference'' 
+scheme (known as DR2), as implemented in {\sc MadGraph5\_aMC@NLO}, see Refs.~\cite{Demartin:2016axk,Frixione:2019fxg}.
+
+Tabs.~\ref{tab:th-t-tot},~\ref{tab:th-t-top} and~~\ref{tab:th-t-atop}
+show predictions for $t$-channel production of $tH\,+\,\bar tH$, $tH$ and $\bar tH$ production. Tabs.~\ref{tab:th-s-tot},~\ref{tab:th-s-top} and~~\ref{tab:th-s-atop}
+show predictions for $s$-channel production of $tH\,+\,\bar tH$, $tH$ and $\bar tH$ production. Finally, Tab.~\label{tab:thw-tot}
+shows predictions for $tW^-H \,+ \,\bar t W^+H$ associated production (the cross section of the two separate processes are equal to each other in this case).
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-w__tot.tex} 
+    \end{tabular}
+    \caption{\label{tab:thw-tot} Predictions for the process $tHW^- + \bar t HW^+$ (with DR2). The rate of each of the two processes taken alone is
+half of the rate of their sum.}
+\end{table}
+
+% single top, s-channel
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu+\textrm{FS}}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-5F__tot.tex} 
+    \end{tabular}
+    \caption{\label{tab:th-t-tot} Predictions for the process $tH + \bar t H$, $t$-channel.}
+\end{table}
+%
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu+\textrm{FS}}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-5F__top.tex} 
+    \end{tabular}
+    \caption{\label{tab:th-t-top} Predictions for the process $tH$, $t$-channel.}
+\end{table}
+%
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu+\textrm{FS}}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-5F__atop.tex} 
+    \end{tabular}
+    \caption{\label{tab:th-t-atop} Predictions for the process $\bar tH$, $t$-channel.}
+\end{table}
+
+% single top, s-channel
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-sch__tot.tex} 
+    \end{tabular}
+    \caption{\label{tab:th-s-tot} Predictions for the process $tH + \bar t H$, $s$-channel.}
+\end{table}
+%
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-sch__top.tex} 
+    \end{tabular}
+    \caption{\label{tab:th-s-top} Predictions for the process $tH$, $s$-channel.}
+\end{table}
+%
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        $\sqrt{s}$ [TeV]  &  $m_H$ [GeV]  &  $\sigma$ [fb]  & $\delta_{\mu}$   &  $\delta_{\rm PDF}$   & $\delta_{\alpha_s}$\\
+        \hline
+         \input{Chapters/table_tH-sch__atop.tex} 
+    \end{tabular}
+    \caption{\label{tab:th-s-atop} Predictions for the process $\bar tH$, $s$-channel.}
+\end{table}
