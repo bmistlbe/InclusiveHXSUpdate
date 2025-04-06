@@ -1,0 +1,13 @@
+# ignore all logs
+*.log
+*.synctex.gz
+*.out
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.toc
+*.pdf
+*.bib~
+*.ps
+*.tex.backup
