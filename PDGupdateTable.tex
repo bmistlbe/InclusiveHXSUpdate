@@ -1,0 +1,77 @@
+% ==============================================
+% Template for LHCHWG Public Notes Front Page
+% 	- Please modify the corresponding information	
+%
+% 2021.01.15: adapted to name change LHCH$\sigma$WG -> LHCHWG (by R. Harlander)
+% 2015.04.29: 1st version, R.T.
+% ==============================================
+\documentclass[11pt]{article}
+\setlength{\textwidth}{18cm}
+\setlength{\textheight}{25cm}
+\setlength{\hoffset}{-2.5cm}
+\setlength{\voffset}{-3cm}
+% Hyperlink
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{multirow}
+%\usepackage[hidelinks]{hyperref}
+% Remove boarder color
+%\hypersetup{pdfborder = {0 0 0}}
+%\hypersetup{colorlinks=false,pdfborder={0 0 0},}
+%\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
+%\usepackage{xcolor}
+%\hypersetup{colorlinks,linkcolor={red!50!black},citecolor={blue!50!black},urlcolor={blue!80!black}}
+%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\MH}{M_\mathrm{H}}
+\newcommand{\VBF}{\mathrm{VBF}}
+\newcommand{\DIS}{\mathrm{DIS}}
+\newcommand{\QCD}{\mathrm{QCD}}
+\newcommand{\ELWK}{\mathrm{EW}}
+\newcommand{\NNLO}{\mathrm{NNLO}}
+\newcommand{\NNNLO}{\mathrm{N3LO}}
+\newcommand{\alphas}{\alpha_{\mathrm{s}}}
+\newcommand{\GeV}{~\mathrm{GeV}}
+\newcommand{\OS}{\mathrm{OS}}
+
+% 
+\begin{document}
+
+\begin{table}[ht!]
+\caption{Updated production cross section with PDF4LHC21. Uncertainties are added linearly, and typically comprise three components: 1. scale uncertainty; 2. combined PDF$+\alpha_s$ uncertainties; 3. other process specific theory uncertainties.}
+\label{tab:PDF125GeV}
+\begin{center}%
+\begin{small}%
+\tabcolsep5pt
+\begin{tabular}{lcccccccc}%
+\toprule
+$\sqrt{s}$ [TeV] & \multicolumn{7}{c}{Production cross section (in pb) for $m_H = 125$ GeV}
+\\
+\midrule
+& ggF & VBF & $WH$ & $ZH$ & $t\bar{t}H$ & $tH$ & $b\bar{b}H$ & total \\
+\midrule
+$1.96^*$ & - & - & - & - & - & - & - & - \\[0.2cm]
+%
+$7$ & $16.7^{+6.3\%}_{-9.4\%}$ & $1.25^{+3.4\%}_{-3.4\%}$& $0.582^{+3.1\%}_{-3.3\%}$ & $0.342^{+4.8\%}_{-4.5\%}$ & - & - & $0.171^{+17\%}_{-17\%}$ & -\\[0.2cm]
+%
+$8$ & $21.3^{+6.4\%}_{-9.4\%}$ & $1.61^{+3.3\%}_{-3.3\%}$& $0.708^{+2.9\%}_{-3.2\%}$ & $0.424^{+4.8\%}_{-4.3\%}$ & - & - & $0.221^{+16\%}_{-16\%}$ & -\\[0.2cm]
+%
+$13$ & $48.4^{+6.9\%}_{-9.5\%}$ & $3.81^{+3.4\%}_{-3.4\%}$& $1.38^{+2.4\%}_{-2.6\%}$ & $0.893^{+5.4\%}_{-4.8\%}$ & $0.531^{+5.5\%}_{-6.3\%}$ & $0.076^{+8.5\%}_{-18\%}$ & $0.528^{+15\%}_{-16\%}$ & $55.6^{+6.5\%}_{-8.8\%}$\\[0.2cm]
+%
+$13.6$ & $52.1^{+6.9\%}_{-9.5\%}$ & $4.11^{+3.3\%}_{-3.3\%}$& $1.47^{+2.4\%}_{-2.6\%}$ & $0.954^{+5.6\%}_{-5.0\%}$ & $0.592^{+4.3\%}_{-5.0\%}$ & $0.085^{+8.5\%}_{-18\%}$ & $0.569^{+12\%}_{-12\%}$ & $59.9^{+6.6\%}_{-8.8\%}$ \\[0.2cm]
+%
+$14$ & $54.5^{+7.0\%}_{-9.5\%}$ & $4.32^{+3.3\%}_{-3.3\%}$& $1.52^{+2.3\%}_{-2.5\%}$ & $0.995^{+5.6\%}_{-4.9\%}$ & $0.639^{+4.3\%}_{-5.0\%}$ & $0.092^{+8.0}_{-17\%}$ & $0.597^{+14\%}_{-15\%}$ & $62.7^{+6.6\%}_{-8.8\%}$ \\
+\bottomrule
+\end{tabular}%
+\end{small}%
+\end{center}%
+\end{table}
+
+%\bibliographystyle{jhep}
+%\bibliography{refs}
+
+\end{document}
