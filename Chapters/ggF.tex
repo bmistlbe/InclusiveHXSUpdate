@@ -1,0 +1,646 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c}
+\hline
+\textbf{Calculations} & \textbf{References} \\ 
+\hline
+Approximate N$^4$LO HTL QCD & \cite{Das:2020adl} \\
+N$^3$LO HTL QCD   & \cite{Anastasiou:2015vya,Anastasiou:2016cez,Mistlberger:2018etf} \\
+NNLO HTL QCD   & \cite{Anastasiou:2002yz,Harlander:2002wh,Ravindran:2003um} \\
+NLO HTL QCD   & \cite{Dawson:1990zj,Djouadi:1991tka} \\
+NNLO QCD & \cite{Czakon:2020vql,Czakon:2021yub,Czakon:2023kqm,Czakon:2024ywb}\\
+NLO QCD & \cite{Graudenz:1992pv,Spira:1995rr} \\
+EW \& Mixed QCD-EW Corrections & \cite{Actis:2008ts,Actis:2008ug,Aglietti:2004nj,Becchetti:2020wof} \\
+N$^3$LL Threshold Resummation & \cite{Anastasiou:2016cez,Bonvini:2014joa,Catani:2014uta} \\
+\hline
+\textbf{PDFs} & \textbf{References} \\
+\hline
+Approximate N$^3$LO PDFs & \cite{Cridge:2024icl,McGowan:2022nag,NNPDF:2024nan,Cooper-Sarkar:2024crx} \\
+QED Evolution PDFs & \cite{Manohar:2016nzj,Manohar:2017eqh,Bertone:2017bme,Harland-Lang:2019pla,Xie:2021equ,Cridge:2021pxm,Cridge:2023ryv,Barontini:2024dyb,NNPDF:2024djq} \\
+NNLO PDFs & \cite{PDF4LHCWorkingGroup:2022cjn,Hou:2019efy,Bailey:2020ooq,Alekhin:2017kpj,NNPDF:2017mvq}\\
+\hline
+\textbf{Codes} & \textbf{References} \\ 
+\hline
+N$^3$LO QCD & \cite{Dulat:2018rbf}
+%, %\texttt{n3loxs}~\cite{Baglio:2022wzu}, %\texttt{ggHiggs}~\cite{Ball:2013bra,Bonvini:2014jma,Bonvini:2016frm,Ahmed:2016otz,Bonvini:2018ixe,Bonvini:2018iwt}
+\end{tabular}
+\caption{Summary of theory references for Higgs boson production in gluon fusion at the LHC upon which this recommendation is based.
+}
+\label{tab:ggf_cite}
+\end{table}
+
+In this section, we briefly recall the definition and state of the art for each ingredient entering the cross section for Higgs boson production in gluon fusion.
+We summarise which ingredients enter the current recommendation and document the details of their combination.
+
+The partonic cross section may be decomposed up to order N$^3$LO as~\cite{Dulat:2018rbf},
+\begin{align}
+\sigma_{ij} = & 
+\mathrm{R}_\mathrm{LO} C^2 \left( 
+\sigma_{ij}^{\mathrm{LO}, \mathrm{HTL}} 
++ \sigma_{ij}^{\mathrm{NLO}, \mathrm{HTL}} 
++ \sigma_{ij}^{\mathrm{NNLO}, \mathrm{HTL}} 
++\sigma_{ij}^{\mathrm{N}^3\mathrm{LO}, \mathrm{HTL}} \right) \nonumber \\ 
+&+ \delta \sigma_{ij}^{\mathrm{LO}, (t,b,c)}
++ \delta \sigma_{ij}^{\mathrm{NLO}, (t,b,c)}
++ \delta \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)}. 
+\label{eq:ggf_master}
+\end{align}
+We discuss the definition, calculation and recommendations for each of these contributions in the following subsections.
+In Section~\ref{sec:ggf_htl}, we summarise the results known in  the Heavy Top Limit (HTL), $\sigma_{ij}^{\mathrm{N}^n\mathrm{LO},\mathrm{HTL}}$.
+In Section~\ref{sec:ggf_ew}, we discuss the electroweak and mixed QCD--EW corrections, which enter via the combined Wilson coefficient, $C$.
+In Section~\ref{sec:ggf_mq}, we discuss corrections related to the finite quark masses $\delta \sigma_{ij}^{\mathrm{N}^n\mathrm{LO},(t,b,c)}$.
+In Section~\ref{sec:ggf_an3lo_pdf}, the impact of approximate N$^3$LO PDFs is discussed.
+Section~\ref{sec:ggf_qed_pdf}, presents the impact of including QED evolution within the PDFs on the Higgs boson total cross section.
+The impact of threshold resummation effects is small beyond N$^3$LO~\cite{Anastasiou:2016cez,Bonvini:2014joa,Catani:2014uta}, and we do not include these effects in our central recommendation.
+Results are also known to N$^4$LO in the HTL using a soft-virtual approximation~\cite{Das:2020adl}, although these results do not directly enter the recommendation, we perform a comparison to this work in Section~\ref{sec:ggf_n4lo_sv}.
+In Table~\ref{tab:ggf_cite} we collect a list of references for theory work either entering directly or indirectly informing decisions and/or uncertainties entering the recommendation, we encourage the reader to cite all of these works along with the current report when using the gluon-fusion numbers presented in Appendix~\ref{app:tables}.
+
+%Cite https://arxiv.org/abs/2407.01354 ?
+
+%The recommendations presented here are produced using the \texttt{iHixs 2} code~\cite{Dulat:2018rbf} supplemented by the light-quark mediated mixed QCD-EW corrections to the gluon-induced channel~\cite{Becchetti:2020wof}, the exact NNLO top quark mass corrections~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb} and the exact NNLO top--bottom quark interference~\cite{Czakon:2023kqm,Czakon:2024ywb}.
+%The impact of aN$^3$LO PDFs~\cite{McGowan:2022nag, NNPDF:2024nan, MSHT:2024tdn} and the inclusion of QED corrections in the PDF DGLAP evolution~\cite{Cridge:2023ryv,Barontini:2024dyb} is discussed in Section~\ref{sec:ggf_an3lo_pdf} and Section~\ref{sec:ggf_qed_pdf}.
+% Better citation than Barontini:2024dyb (?)
+
+In addition to the parameters specified in Section~\ref{sec:setup}, we further choose a central scale of $\mu_R=\mu_F=m_H/2$ and use a 3-point scale variation to assess scale uncertainties.
+For our central recommendation we use the quark masses,
+\begin{align}
+&M_t^\mathrm{OS}=172.5\,\mathrm{GeV},&
+&M_b^{\overline{\mathrm{MS}}}(M_b^{\overline{\mathrm{MS}}})=4.18\,\mathrm{GeV},&
+&M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV},&
+\end{align}
+and neglect the quark widths.
+%\SJ{TODO: other parameters from ihixs missing? I think we take $\alpha_s$ from the PDF set, true? compatible with Sec 2.3?)}
+
+The uncertainty associated with each contribution is computed as described in the following sections. 
+In the current recommendation, we group the various sources of uncertainty into three categories, 
+\begin{align}
+\delta \sigma =& 
+\delta(\mathrm{theory}) + 
+\delta(\mathrm{PDF}+\alpha_s) + 
+\delta(\mathrm{PDF\text{--}TH}),
+\end{align}
+with,
+\begin{align}
+&\delta(\mathrm{theory)} = \delta(\mathrm{scale}) + \delta(\mathrm{EWK}) + \delta(t,b,c),&
+&\delta(\mathrm{PDF}+\alpha_s) = \sqrt{\delta(\mathrm{PDF})^2 + \delta(\alpha_s)^2}.&
+\end{align}
+The theory uncertainty, $\delta(\mathrm{theory})$, collects uncertainties related to missing or approximated fixed-order contributions.
+The $\delta(t,b,c)$ uncertainty collects uncertainties related to finite quark mass effects, it is given by,%
+\footnote{
+At NLO the scale variation of the top-only, $\sigma^{(t)}$, and top-bottom interference, $\sigma^{(t\times b)}$, contributions are found to be \emph{anti-correlated}, we anticipate that taking a linear combination of the uncertainties yields a conservative estimate.
+}
+\begin{align}
+& \delta(t,b,c) = \delta^\mathrm{scheme}(t) + \delta^\mathrm{MHOU}(t) + \delta^{\mathrm{scheme}}(t \times b) + \delta^\mathrm{MHOU}(t \times b) + \delta^\mathrm{MHOU}(b, c, t \times c, b \times c),
+\end{align}
+where each of the scheme and higher order uncertainties are assessed in Section~\ref{sec:ggf_mq}.
+The PDF and $\alpha_s$ uncertainty, $\delta(\mathrm{PDF}+\alpha_s)$, collects the usual PDF uncertainty, as estimated from the replicas of the PDF4LHC21\_40 PDF set and the uncertainty due to $\alpha_s$.
+Finally, the $\delta(\mathrm{PDF\text{--}TH})$ uncertainty collects the uncertainty related to the mismatch between the N$^3$LO matrix element and the NNLO PDFs.
+Alternatively, this mismatch can be avoided using the approximate N$^3$LO PDFs, we discuss results obtained with the aN$^3$LO PDFs in Section~\ref{sec:ggf_an3lo_pdf}.
+
+\subsection{N$^3$LO Heavy-Top Limit Results}
+\label{sec:ggf_htl}
+
+The terms $\sigma_{ij}^{\mathrm{N}^n\mathrm{LO},\mathrm{HTL}}$ with $n=0,\,1,\,2,\,3$ of Eq.~\eqref{eq:ggf_master} are computed using an effective theory in which the heavy top-quark is integrated out, see Refs.~\cite{Kramer:1996iq,Chetyrkin:1997un,Schroder:2005hy,Chetyrkin:2005ia}.
+These corrections are known exactly at NLO~\cite{Dawson:1990zj,Djouadi:1991tka}, NNLO~\cite{Anastasiou:2002yz,Harlander:2002wh,Ravindran:2003um} and at N$^3$LO~\cite{Anastasiou:2016cez,Anastasiou:2015vya,Mistlberger:2018etf}.
+The $\mathrm{R}_\mathrm{LO}$ ratio accounts for top-quark mass effects at LO, it is defined by,
+$\mathrm{R}_\mathrm{LO} = \sigma_{ij}^{\mathrm{LO},(t)}/\sigma_{ij}^{\mathrm{LO}, \mathrm{HTL}},$
+where $\sigma_{ij}^{\mathrm{LO},(t)}$~\cite{Georgi:1977gs,Wilczek:1977zn} is the full theory result including the contribution from top-quark loops only.
+
+The HTL results presented in this work were produced using the \texttt{iHixs2} code~\cite{Dulat:2018rbf}.
+These corrections are also available in the \texttt{n3loxs}~\cite{Baglio:2022wzu} and  \texttt{ggHiggs}~\cite{Ball:2013bra,Bonvini:2014jma,Bonvini:2016frm,Ahmed:2016otz,Bonvini:2018ixe,Bonvini:2018iwt} tools.
+The theoretical uncertainty associated with the truncation at N$^3$LO corrections is estimated via a 3-point scale variation defined by varying the common perturbative scale $\mu=\mu_R=\mu_F$ by a factor of 2 and 1/2 around the central scale $\mu=m_H/2$.
+This scale variation prescription is at variance with the default implemented in the \texttt{iHixs2} code~\cite{Dulat:2018rbf} where $\mu = 0.4\ m_H$ is used for the lower scale variation, motivated by the fact that it was observed to give a larger scale variation than the usual 3-point prescription.
+Furthermore, we note that the scale uncertainty of the pure HTL is rather insensitive to the choice of top-quark mass scheme, which enters only at NNLO via the Wilson coefficient $C$.
+However, due to the re-weighting factor $\mathrm{R}_\mathrm{LO}$, the rescaled EFT is sensitive to the top-mass scheme.
+In the on-shell scheme, which we adopt as our central recommendation, the top-quark mass in $\mathrm{R}_\mathrm{LO}$ is fixed for all values of the renormalisation scale, while in the $\overline{\mathrm{MS}}$ scheme, the value of the top-quark mass entering $\mathrm{R}_\mathrm{LO}$ is varied.
+The variation of $\mathrm{R}_\mathrm{LO}$ due to the running of the top-quark mass in the $\overline{\mathrm{MS}}$ scheme is anti-correlated with the scale variation of the pure HTL.
+As a consequence, the scale uncertainty of the rescaled HTL in the on-shell scheme and the pure HTL are approximately equal and larger than the scale uncertainty in the $\overline{\mathrm{MS}}$ scheme.
+As a further consistency check, a comparison to approximate N$^4$LO HTL results obtained via the soft-virtual approximation is presented in Section~\ref{sec:ggf_n4lo_sv}.
+
+\paragraph{Recommendation}
+The rescaled HTL results are included to order N$^3$LO.
+The corrections are evaluated with the top-quark mass renormalised in the on-shell scheme, see Section~\ref{sec:ggf_mq} for details of the inclusion of further quark mass corrections.
+The theoretical uncertainty, $\delta(\mathrm{scale})$, associated with the missing higher-order rescaled HTL corrections, is derived via a 3-point scale variation of the Born rescaled heavy-top limit prediction (i.e.\ using the first line of Eq.~\ref{eq:ggf_master}).
+
+%\paragraph{Contributors}
+%\SJ{G. Das, B. Mistlberger. (Please add/remove your name)}
+
+\subsection{EW and Mixed QCD--EW Corrections}
+\label{sec:ggf_ew}
+
+The combined Wilson coefficient, $C$, entering Eq.~\eqref{eq:ggf_master} is defined as,
+\begin{align}
+C = C_\mathrm{QCD} + \lambda_\mathrm{EWK} 
+\Bigl( 1 + \frac{\alpha_s}{\pi} C_{1w} + \ldots \Bigr).
+\end{align}
+Here, $C_\mathrm{QCD}$ is the QCD Wilson coefficient required to match the HTL effective theory to the Standard Model, it is known at NNLO~\cite{Kramer:1996iq,Chetyrkin:1997un} and N$^3$LO~\cite{Schroder:2005hy,Chetyrkin:2005ia} accuracy.
+The combined Wilson coefficient also incorporates the leading electro-weak corrections~\cite{Aglietti:2004nj,Actis:2008ug} via $\lambda_\mathrm{EWK}$, which is defined as the ratio of the NLO electroweak correction to the Born cross section.
+The term $C_{1w}$ incorporates the mixed QCD--EW corrections.
+The dominant electroweak correction proceeds via a massless quark loop coupled to the Higgs boson via massive gauge bosons, this part of the correction is known in the large $W$ and $Z$ boson mass limit~\cite{Anastasiou:2008tj}, the small $W$ and $Z$ boson mass limit~\cite{Anastasiou:2018adr}, and with exact $W$ and $Z$ boson masses for the gluon-induced channel~\cite{Bonetti:2016brm,Bonetti:2017ovy,Bonetti:2018ukf,Bonetti:2020hqh,Becchetti:2020wof,Bonetti:2022lrk}.
+The calculation performed in the limit of large gauge boson mass yields $C_\mathrm{1w} =7/6$, while the calculation utilising finite gauge boson masses gives $C_\mathrm{1w} = -1.7$ for our central scale choice.
+The use of finite gauge boson masses amounts to a $-0.53\%$ correction to the total cross section for a Higgs boson mass of $M_H=125.09$\,GeV for all collider energies between $7$\,Tev and $14$\,TeV, compatible with the $\delta(\mathrm{EWK})=1\%$ assigned in Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.
+
+\paragraph{Recommendation}
+The recommendation for the central prediction includes the EW corrections using the calculation of Refs.~\cite{Aglietti:2004nj,Actis:2008ug}.
+The mixed QCD--EW corrections for the gluon-induced channel are computed in the heavy boson approximation~\cite{Anastasiou:2008tj}. 
+The treatment of the mixed corrections is motivated by the lack of knowledge of the quark channel contributions and results for the gluon-induced channel using the set of input parameters and settings recommended in this report.
+However, the calculation of the corrections to the gluon-fusion channel with finite boson masses increases our confidence that the $\delta(\mathrm{EWK})=1\%$ error assigned to the missing/approximated QCD--EW corrections is reliable~\cite{Becchetti:2020wof}.
+
+%\paragraph{Contributors}
+%\SJ{M. Becchetti, R. Bonciani, V. Del Duca, V. Hirschi, F. Moriello. (Please add/remove your name)}
+
+\subsection{Finite Quark Mass Corrections}
+\label{sec:ggf_mq}
+
+Using the notation $\left[\ldots \right]_{\alpha_s^i}$ to indicate only terms proportional to $\alpha_s^i$, we can define the contributions
+\begin{align}
+\delta \sigma_{ij}^{\mathrm{LO}, (t,b,c)} = 
+& \sigma_{ij}^{\mathrm{LO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 R_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^2}, \\
+\delta \sigma_{ij}^{\mathrm{NLO}, (t,b,c)} = &
+\sigma_{ij}^{\mathrm{NLO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 R_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^3}, \\
+\delta \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)} = 
+& \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 R_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^4}, \label{eq:ggf_delta_tbc} &
+\end{align}
+which account for the dependence on the finite top, bottom and charm quark masses at LO, NLO and NNLO, respectively.
+The exact QCD corrections with full dependence on the quark masses are known at LO~\cite{Wilczek:1977zn} and NLO~\cite{Graudenz:1992pv,Spira:1995rr}.
+These corrections can be further decomposed into pieces involving only top, bottom or charm quarks coupling to the Higgs boson and their interferences,
+\begin{align}
+\delta\sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (t,b,c)} = \delta\sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (t)} 
++ \sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (b)} 
++ \sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (c)} 
++ \sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (t \times b)}
++ \sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (t \times c)}
++ \sigma_{ij}^{\mathrm{N}^n\mathrm{LO}, (b \times c)},
+\end{align}
+where $\delta\sigma_{ij}^{\mathrm{N}^n\mathrm{LO},(t)} $ is the difference between the top-only contribution and the rescaled HTL result, defined analogously to Eq.~\eqref{eq:ggf_delta_tbc}.
+At NNLO not all terms of the decomposition are known, the top-only contribution $\sigma_{ij}^{\mathrm{NNLO},(t)}$ was computed in Refs.~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}, the top--bottom interference was computed in Refs.~\cite{Czakon:2023kqm,Czakon:2024ywb}, the bottom-only, charm-only and charm interference contributions are known only to NLO~\cite{Graudenz:1992pv,Spira:1995rr}.
+At N$^3$LO, the top-only virtual corrections are known to third order in a $1/m_t^2$ expansion~\cite{Davies:2019wmk}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|rrrrrrr|}
+\hline
+\multicolumn{8}{|c|}{$\sqrt{s}=13.6$\,TeV} \\ \hline
+& $\sigma^{(t,b,c)}$ [pb] & $\sigma^{(t)}$ [pb] & $\sigma^{(b)}$ [pb] & $\sigma^{(c)}$ [pb] & $\sigma^{(t \times b)}$ [pb] & $\sigma^{(t \times c)}$ [pb] & $\sigma^{(b \times c)}$ [pb] \\ \hline
+$\sigma^\mathrm{LO}$  & $+15.865$ & $+17.115$ & $+0.045$ & $+0.000$ & $-1.172$ & $-0.131$ & $+0.008$ \\
+$\sigma^\mathrm{NLO}$  & $+21.347$ & $+22.035$ & $+0.063$ & $+0.001$ & $-0.673$ & $-0.101$ & $+0.012$ \\
+$\sigma^\mathrm{NNLO}$ & --- & $+10.103$ & --- & --- & $+0.04$ & --- & --- \\
+\hline
+Total & --- & $+49.253$ & --- & --- & $-1.805$ & --- & --- \\
+\hline
+\end{tabular}
+\caption{The top, bottom and charm quark contributions to the gluon-fusion total cross section including finite quark mass corrections.
+The top-quark is renormalised in the on-shell scheme, with the remaining quarks renormalised in the $\overline{\mathrm{MS}}$ scheme.
+The LO and NLO corrections are computed using \texttt{iHixs2}~\cite{Dulat:2018rbf} which implements the calculations of Refs.~\cite{Graudenz:1992pv,Spira:1995rr}.
+The available NNLO corrections are based on the calculations presented in Refs.~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2023kqm,Czakon:2024ywb}.
+}
+\label{tab:ggf_tbc}
+\end{table}
+
+In Table~\ref{tab:ggf_tbc}, we show the impact of finite top, bottom and charm masses at LO and NLO on the total cross section.
+In this table, and the following sections, the omission of the subscripts $ij$ implies a sum over the contributions of all partonic channels.
+We observe that the cross section is dominated by the top-only contribution, $\sigma_{ij}^{\mathrm{N^nLO}, (t)}$, which is discussed in  Section~\ref{sec:ggf_mt}.
+The destructive top--bottom interference is the next largest contribution, amounting to a $-5\%$ correction at NLO, it is discussed in Section~\ref{sec:ggf_mbmt}.
+The remaining finite quark contributions are all sub-percent corrections at NLO, they are discussed in Section~\ref{sec:ggf_mbmc},
+
+\subsubsection{Top Mass Corrections ($\sigma^{(t)}$)}
+\label{sec:ggf_mt}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|r|r|r|r|r|}
+\hline
+& $7\,\mathrm{TeV}$ [pb] & $8\,\mathrm{TeV}$ [pb] & $13\,\mathrm{TeV}$ [pb] & $13.6\,\mathrm{TeV}$ [pb] & $14\,\mathrm{TeV}$ [pb] \\ \hline
+$\delta \sigma^{\mathrm{NLO}, (t)}$  & $-0.0630$           & $-0.0907$           & $-0.3108$            & $-0.346$               & $-0.3707$            \\
+$\delta \sigma^{\mathrm{NNLO}, (t)}$ & $+0.0395(2)$        & $+0.0538(3)$        & $+0.1488(9)$         & $+0.1634(8)$           & $+0.173(1)$          \\ \hline
+\end{tabular}
+\caption{
+Top-quark mass corrections computed with the top-quark mass renormalised in the on-shell scheme and $M_H=125.09$\,GeV (except for the finite real--virtual corrections where $M_H=125$\,GeV), $M_t=172.5$\,GeV (except for the finite real-virtual corrections where $M_t = 173.055$\,GeV) for $\mu_R = \mu_F = M_H/2$.
+The corrections are based on the calculations of Refs.~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}.
+}
+\label{tab:ggf_mtcorr}
+\end{table}
+
+In Table~\ref{tab:ggf_mtcorr}, we report corrections due to a finite top-quark mass at NLO and NNLO computed using the setup of Section~\ref{sec:setup}.
+The corrections are obtained using the original calculations presented in Refs.~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}.
+The numbers are provided for a fixed value of the Higgs boson mass, $M_H^\mathrm{ref}=125.09$\,GeV.
+
+\paragraph{Different values of $M_H$}
+Values for the top-quark mass corrections have not been re-evaluated for all Higgs boson masses required.
+The corrections are extrapolated to different values of the Higgs boson mass by multiplying with the Higgs mass dependence of the corresponding reweighted HTL correction.
+Fixing $M_H^\mathrm{ref}=125.09$\,GeV, our extrapolation formula reads,
+\begin{align}
+&R^H_n(M_H) = & \frac{\left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL}\right]_{\alpha_s^n}(M_H)}{\left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL}\right]_{\alpha_s^n}(M_H^\text{ref})},&
+&\delta \sigma^{\mathrm{NNLO}, (t), \text{ext}}(M_H) = & R^H_4(M_H)\  \delta \sigma^{\mathrm{NNLO}, (t)}(M_H^\text{ref}).&
+\end{align}
+As a conservative error estimate, we assign a $100\%$ uncertainty to the shift induced by the $M_H$ extrapolation,
+\begin{align}
+\delta^\text{ext}(t) = & \delta \sigma^{\mathrm{NNLO}, (t), \text{ext}}(M_H) - \delta \sigma^{\mathrm{NNLO}, (t)}(M_H^\text{ref}).
+\end{align}
+Our extrapolation procedure is validated at NLO by comparing the extrapolation to the true NLO result, we observe that our extrapolated numbers and the true NLO numbers differ by at most $0.02\%$ of the total cross section, while our conservative error estimate is typically larger by a factor of 2 or more.
+At NNLO we validate the extrapolation procedure using the $1/m_t^2$ expansion, we observe that our extrapolated numbers and the true NNLO $1/m_t^2$ numbers differ by at most $0.07\%$ of the total cross section, while our conservative error estimate is approximately equal to this difference.
+Computing the extrapolation uncertainty at NNLO across all collider energies and Higgs boson masses in the recommendation, we observe that the uncertainty related to the extrapolation procedure never exceeds $ 0.03\%$ of the total cross section.
+We consider this uncertainty to be negligible compared to the other remaining uncertainties and it is neglected in our recommendation.
+
+\paragraph{Scheme Uncertainty of $m_t$} 
+Results for the top-only contribution with the top-quark mass renormalised in the $\overline{\mathrm{MS}}$ scheme and the OS scheme are presented at NNLO in Ref.~\cite{Czakon:2024ywb} for $\sqrt{s}=13$\,TeV.
+The difference between the two schemes is found to be very small at NNLO amounting to just $-0.01$ pb, approximately half of that observed at NLO.
+Expressing the NNLO scheme uncertainty as a percentage of the total cross section, we obtain,
+\begin{align}
+\delta^\mathrm{scheme}(t) = \pm 0.01\%.
+\end{align}
+We consider this scheme uncertainty to be negligible compared to the other remaining uncertainties and it is neglected in our recommendation. 
+
+%OR
+%We estimate the scheme uncertainty for all collider energies and Higgs boson masses by taking half the NLO scheme uncertainty,
+%We estimate the scheme uncertainty for all collider energies and Higgs boson masses by taking half the NLO scheme uncertainty,
+%$\delta(m_t-\mathrm{scheme})$
+%\begin{align}
+%\delta^\text{scheme}(t) = & \frac{1}{2} \left[ \delta \sigma^{\mathrm{NLO},(t)} (M_t^{\mathrm{OS}}) - \delta \sigma^{\mathrm{NLO},(t)} (M_t^{\overline{\mathrm{MS}}}) \right].
+%\end{align}
+%For the $\overline{\mathrm{MS}}$ top-quark mass we use $M_t^{\overline{\mathrm{MS}}}(M_t^{\overline{\mathrm{MS}}})= 162.7$\,GeV evolved to the scale $\mu_t=M_H/2$. \SJ{At what order? What is the final value?}
+
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{c|c|c}
+% \hline
+% \multicolumn{3}{c}{$\sigma_t^{\overline{\mathrm{MS}}}-\sigma_t^\mathrm{OS}$ [pb] } \\ \hline
+% & Czakon                  & Us                          \\ \hline
+% $\mathcal{O}(\alpha_s^2)$                  & -0.04                   & -0.0472895                  \\
+% LO                                         & -0.04                   & -0.0472895                  \\ \hline
+% $\mathcal{O}(\alpha_s^3)$                  & +0.02                   & +0.008424                   \\
+% NLO                                        & -0.02                   & -0.0388655                  \\ \hline
+% $\mathcal{O}(\alpha_s^4)$                  & +0.01                   & -                       \\
+% NNLO                                       & -0.01                   & -                      \\ \hline
+% \end{tabular}
+% \caption{\SJ{TODO: REMOVE THIS TABLE. Tried twice to reproduce Table 4 of 2407.12413, I keep getting that the NLO difference is similar LO difference (not half like Czakon claims). If Czakon is right we can take half of the NLO difference as our scheme uncertainty.
+% I compare using the same PDF, sqrts as them, we use $M_t=172.5$ they use $M_t =173.06 GeV$ but they say ``we verified this difference has a negligible impact on the results''.}}
+% \end{table}
+
+\paragraph{Missing Higher Orders}
+We can estimate the impact of missing higher orders, beyond NNLO, of $\delta \sigma^{\mathrm{NNLO}, (t)}$ using a scale variation.
+In Ref.~\cite{Czakon:2023kqm}, the impact of a 7-point scale variation on this correction was reported for $\sqrt{s}=13$\,TeV and found to amount to $^{+0.13}_{-0.03}$ pb.
+Expressing this uncertainty as a percentage of the total cross section and symmetrising, we obtain,
+\begin{align}
+\delta^{\mathrm{MHOU}}(t) = \pm 0.17 \%. \label{eq:ggf_t_mhou}
+\end{align}
+%\SJ{TODO: $(0.13+0.03)/48.34*100/2$, update with final XS numbers}  
+Considering collider energies between $7$ and $14$\,TeV the missing higher order uncertainty varies between $\pm 0.14$ and $\pm 0.18\%$~\cite{Czakon:2023kqm}. 
+We take Eq.~\eqref{eq:ggf_t_mhou} as a flat relative uncertainty across all collider energies and Higgs boson masses.
+
+\paragraph{Recommendation}
+We include the $\delta \sigma^{(t)}$ corrections, known to NNLO, in the central recommendation.
+The uncertainties related to extrapolating the known results to different values of $M_H$ are found to be negligible (for the range considered here), and the remaining scheme uncertainty stemming from the treatment of the top-quark mass is also found to be negligible.
+The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(t)$ should be considered and is included in the total finite quark mass correction uncertainty $\delta(t,b,c)$ quoted in the tables of Appendix~\ref{app:tables}.
+
+%\paragraph{Contributors}
+%\SJ{M. Czakon,  F. Eschment, R.V. Harlander, J. Klappert, M. Niggetiedt R. Poncelet, T. Schellenberger. (Please add/remove your name)}
+
+\subsubsection{Top--Bottom Interference ($\sigma^{(t \times b)}$)}
+\label{sec:ggf_mbmt}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|r|r|r|r|r|}
+\hline
+& $7\,\mathrm{TeV}$ [pb] & $8\,\mathrm{TeV}$ [pb] & $13\,\mathrm{TeV}$ [pb] & $13.6\,\mathrm{TeV}$ [pb] & $14\,\mathrm{TeV}$ [pb] \\ \hline
+$\sigma^{\mathrm{LO}, (t \times b)}$   & $-0.39$                  & $-0.50$                   & $-1.09$                    & $-1.17$                      & $-1.22$                    \\
+$\sigma^{\mathrm{NLO}, (t \times b)}$  & $-0.27$                  & $-0.32$                   & $-0.63$                    & $-0.67$                      & $-0.69$                   \\
+$\sigma^{\mathrm{NNLO}, (t \times b)}$ & $-0.02$                   & $-0.02$                    & $+0.02$                    & $+0.04$                      & $+0.03$                    \\ \hline 
+Total & $-0.68$ & $-0.84$ & $-1.70$ & $-1.80$ & $-1.88$ \\
+\hline
+\end{tabular}
+\caption{
+Top--bottom interference corrections computed with the top-quark mass renormalised in the on-shell scheme and the bottom-quark renormalised in the 5FS $\overline{\mathrm{MS}}$ scheme.
+The mass of the Higgs boson is taken to be $M_H=125.09$\,GeV (except for the finite real--virtual corrections where $M_H=125$\,GeV), $M_t=172.5$\,GeV (except for the finite real--virtual corrections where $M_t = 173.055$\,GeV) for $\mu_R = \mu_F = M_H/2$. 
+The corrections are based on the calculations of Refs.~\cite{Czakon:2023kqm,Czakon:2024ywb}.
+}
+\label{tab:ggf_mbmtcorr}
+\end{table}
+
+In Table~\ref{tab:ggf_mbmtcorr} we state top--bottom interference corrections at LO, NLO and NNLO evaluated with the setup of Section~\ref{sec:setup}.
+The corrections were obtained using the original calculations presented in Refs.~\cite{Czakon:2023kqm,Czakon:2024ywb}.
+The numbers are provided for a fixed value of the Higgs boson mass, $M_H^\text{ref}=125.09$\,GeV.
+
+\paragraph{Different values of $M_H$}
+We extrapolate the top--bottom interference contribution to different values of the Higgs boson mass again using the reweighted HTL correction, 
+\begin{align}
+\delta \sigma^{\mathrm{NNLO}, (t \times b), \text{ext}}(M_H) = & R^H_4(M_H)\  \delta \sigma^{\mathrm{NNLO}, (t \times b)}(M_H^\text{ref})
+\end{align}
+The error associated with the extrapolation to new values of $M_H$ is estimated using,
+\begin{align}
+\delta^\text{ext}(t \times b) = & \sigma^{\mathrm{NNLO}, (t \times b), \text{ext}}(M_H) - \sigma^{\mathrm{NNLO}, (t \times b)}(M_H^\mathrm{ref}). 
+\end{align}
+Our extrapolation procedure is validated at NLO by comparing the extrapolation to the true NLO result, we observe that our extrapolated numbers and the true NLO numbers differ by at most $0.06\%$ of the total cross section, while our conservative error estimate is typically larger by a factor of 3.
+Computing the extrapolation uncertainty at NNLO across all collider energies and Higgs boson masses in the recommendation, we observe that it never exceeds $0.01\%$.
+We consider this uncertainty to be negligible compared to the other remaining uncertainties and it is neglected in our recommendation.
+
+\paragraph{Scheme Uncertainty of $m_b$}
+For our central recommendation we take the 5-flavour-scheme (5FS) with the bottom quark mass renormalised in the $\overline{\mathrm{MS}}$ scheme.
+In this scheme the perturbative series is found to converge well and the NNLO corrections are small~\cite{Czakon:2023kqm,Czakon:2024ywb}. 
+We estimate the scheme uncertainty related to the bottom quark mass for the top--bottom interference by taking the difference between the 5FS result and the 4-flavour-scheme (4FS) result with the bottom quark renormalised in the $\overline{\mathrm{MS}}$ scheme,
+\begin{align}
+\delta^\text{scheme}(M_b) = & 
+\left[
+\sigma^\mathrm{LO,(t \times b)} (M_b^{\overline{\mathrm{MS}},\text{5FS}})
++\sigma^\mathrm{NLO,(t \times b)} (M_b^{\overline{\mathrm{MS}},\text{5FS}})
++\sigma^\mathrm{NNLO,(t \times b)} (M_b^{\overline{\mathrm{MS}},\text{5FS}})
+\right] \nonumber \\
+& - 
+\left[
+\sigma^\mathrm{LO,(t \times b)} (M_b^{\overline{\mathrm{MS}},\text{4FS}})
++\sigma^\mathrm{NLO,(t \times b)} (M_b^{\overline{\mathrm{MS}},\text{4FS}})
++\sigma^\mathrm{NNLO,(t \times b)} (M_b^{\overline{\mathrm{MS}},\text{4FS}})
+\right],
+\end{align}
+as a percentage of the total cross section.
+Results for the top--bottom interference in the 5FS and 4FS with the bottom quark renormalised in the $\overline{\mathrm{MS}}$ scheme at NNLO for $\sqrt{s}=  13$\,TeV are provided in Ref.~\cite{Czakon:2024ywb}, the difference between the two schemes amounts to $-0.09$ pb.
+Expressing the NNLO scheme uncertainty as a percentage of the total cross section and symmetrising, we obtain,
+\begin{align}
+\delta^\mathrm{scheme}(t\times b) = \pm 0.09\%.
+\end{align}
+%\SJ{TODO: MS5FS vs MS5FS: $(0.09)/48.34*100/2$, update with final XS numbers},
+%\SJ{TODO: MS5FS vs OS: $(0.25)/48.34*100/2$, update with final XS numbers},
+which we take as a flat relative uncertainty across all collider energies and Higgs boson masses.
+This uncertainty is small compared to other uncertainties related to missing higher orders in the HTL, top-only and top--bottom contributions and we neglect it in the recommendation.
+
+Repeating the above exercise in the 5FS but with the bottom mass renormalised in the $\overline{\mathrm{MS}}$ v.s.\ the on-shell scheme, we find a difference of $-0.25$ pb or $\pm 0.26 \%$ of the total cross section (after symmetrising).
+However, the use of the on-shell scheme for the bottom quark in this process is poorly justified and the perturbative convergence in this scheme is observed to be poor, with the NNLO corrections found to be similar in size to the NLO corrections and with a larger scale uncertainty.
+
+%The 4-flavour-scheme result with the bottom quark renormalised in the $\overline{\mathrm{MS}}$ scheme is contained within the envelope of this uncertainty.
+
+\paragraph{Missing Higher Orders}
+We can estimate the impact of missing higher orders, beyond NNLO, of $\delta \sigma^{\mathrm{NNLO}, (t \times b)}$ using a scale variation.
+In Ref.~\cite{Czakon:2024ywb}, the impact of a 7-point scale variation on this correction was reported for $\sqrt{s}=13$\,TeV and found to amount to $^{+0.13}_{-0.03}$ pb.
+Expressing this uncertainty as a percentage of the total cross section and symmetrising, we obtain an uncertainty,
+\begin{align}
+\delta^{\mathrm{MHOU}}(t \times b) = \pm 0.17 \%
+\end{align}
+%\SJ{TODO: $(0.13+0.03)/48.34*100/2$, update with final XS numbers}, 
+which we take as a flat relative uncertainty across all collider energies and Higgs boson masses.
+
+\paragraph{Recommendation}
+We include the $\delta \sigma^{(t\times b)}$ corrections, known to NNLO, in the central recommendation, utilising the 5FS with the bottom-quark mass renormalised in the $\overline{\mathrm{MS}}$ scheme.
+The uncertainties related to extrapolating the known results to different values of $M_H$ are found to be negligible (for the range considered here).
+The scheme uncertainty is assessed by comparing to results with the bottom-quark renormalised in 5FS and 4FS using the $\overline{\mathrm{MS}}$ renormalisation scheme at NNLO, the corresponding uncertainty, $\delta^\mathrm{scheme}(t \times b)$ is found to be small and is neglected.  
+The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(t \times b)$, is estimated via a scale variation, it is included in the total finite quark mass correction uncertainty $\delta(t,b,c)$.
+
+%\paragraph{Contributors}
+%\SJ{M. Czakon,  F. Eschment, R.V. Harlander, J. Klappert, M. Niggetiedt R. Poncelet, T. Schellenberger. (Please add/remove your name)}
+
+\subsubsection{Bottom \& Charm Contributions ($\sigma^{(b)},\sigma^{(c)},\sigma^{(t \times c)},\sigma^{(b \times c)}$)}
+\label{sec:ggf_mbmc}
+
+In Table~\ref{tab:ggf_tbc} we present the various interferences at LO and NLO.
+The bottom-only, charm-only and charm interference contributions are known to NLO~\cite{Graudenz:1992pv,Spira:1995rr}.
+We note that the contributions $\sigma^{(b)}, \sigma^{(c)}$ and $\sigma^{(b \times c)}$ are small, accounting for $+0.21\%$, $0.002\%$ and $0.04\%$ of the NLO cross section, respectively.
+The interference $\sigma^{(t \times c)}$ is slightly larger, accounting for $-0.45\%$ of the total cross section at NLO.
+We include all contributions to NLO using the $\overline{\mathrm{MS}}$ scheme for the light quarks.
+
+\paragraph{Missing Higher Orders}
+We can estimate the impact of missing higher orders, beyond NLO, using a scale variation.
+Computing the 3-point scale variation of the bottom quark only contribution $\sigma^{(b)}$ at $\sqrt{s}= 13$\,TeV for the reference Higgs boson mass, we find  $\sigma^{(b)} = 0.1^{+0.03}_{-0.02}$ pb, which amounts to an uncertainty of $\delta^{\mathrm{MHOU}}(b)=\pm 0.06\%$ on the total cross section.
+Considering, at NLO, the combination $\sigma^{(c)}+\sigma^{(t \times c)} + \sigma^{(b \times c)}= -0.19^{+0.03}_{-0.02}$ pb, this also amounts to an uncertainty at the level of $\delta^{\mathrm{MHOU}}(c,t \times c, b \times c)=\pm 0.06\%$ on the total cross section.
+Considering collider energies of between $7$ and $14$\,TeV and the range of Higgs boson masses presented in this report, these uncertainties remain around the per-mille level.
+We consider each of these uncertainties to be negligible compared to other remaining uncertainties and they are neglected in our recommendation.
+ 
+\paragraph{Recommendation}
+We include the $\sigma^{(b)},\sigma^{(c)},\sigma^{(t \times c)}$ and $\sigma^{(b \times c)}$ contributions at NLO in the central recommendation.
+The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(b,c,t\times c,b \times c)$ is assessed via scale variation at NLO and found to be negligible compared to other sources of uncertainty, it is neglected in our recommendation.
+
+%\paragraph{Contributors}
+
+\subsection{PDF Theory Uncertainty and Impact of aN$^3$LO PDFs}
+\label{sec:ggf_an3lo_pdf}
+
+At present, the PDF4LHC Working Group provide a combination NNLO set, PDF4LHC21~\cite{PDF4LHCWorkingGroup:2022cjn}, designed for Run III of the LHC.
+The PDF4LHC21 set is based on a Monte Carlo combination of three global PDF sets  CT18~\cite{Hou:2019efy}, MSHT20~\cite{Bailey:2020ooq}, and NNPDF3.1~\cite{NNPDF:2017mvq}, all of which are available at NNLO accuracy.
+For precision comparisons between data and theory or for systematic exploration of differences between PDF fits, the PDF4LHC working group recommends the use of as many modern individual PDF sets as possible, for example those presented in Refs.~\cite{Hou:2019efy,Alekhin:2024bhs,Bailey:2020ooq,NNPDF:2021njg}.
+
+In the heavy-top limit, matrix elements for Higgs boson production are available at N$^3$LO.
+To account for this mismatch, we can take the difference between the NNLO rescaled HTL prediction when computed with a NNLO PDF and a NLO PDF and use this as an estimate of the uncertainty,
+\begin{align}
+\delta(\mathrm{PDF\text{--}TH}) = \pm \left| \sigma^{(2),\mathrm{HTL},\mathrm{NNLO}} - \sigma^{(2),\mathrm{HTL},\mathrm{NLO}} \right|.
+\label{eq:ggf_pdf_th}
+\end{align}
+We note that this definition of $\delta(\mathrm{PDF\text{--}TH})$ is twice that reported in the previous recommendation, this change is motivated by the study of the impact of approximate N$^3$LO PDFs discussed below.
+For the computation of $\delta(\mathrm{PDF\text{--}TH})$ we rely on the PDF4LHC15~\cite{Butterworth:2015oua} combination PDF, which is available at both NLO and NNLO.
+
+Beyond  NNLO, at present, two approximate N$^3$LO PDF sets are available, produced by the MSHT~\cite{McGowan:2022nag} and NNPDF~\cite{NNPDF:2024nan} collaborations.
+A combined aN$^3$LO PDF set, MSHT20xNNPDF40\_aN3LO, 
+has also been produced by the two fitting collaborations and was presented in Ref.~\cite{Cridge:2024icl}.
+The approximate N$^3$LO PDF sets contain exact N$^3$LO information for the massless DIS coefficient functions~\cite{Vermaseren:2005qc}, while the massive neutral-current DIS coefficients are approximated.
+The fits approximate the four-loop splitting functions using the Mellin moments known at the time they were performed supplemented by large/small-$x$ limits~\cite{Davies:2016jie,Moch:2017uml,Moch:2018wjh,Moch:2021qrk,Falcioni:2023luc,Gehrmann:2023cqm,Gehrmann:2023iah,Falcioni:2023tzp,Moch:2023tdj,Falcioni:2024xyt,Falcioni:2023vqq,Falcioni:2024xav,Falcioni:2024qpd,Kniehl:2025ttz}. 
+Each fit includes the massive operator matrix elements (a.k.a transition matrix elements) known at the time it was performed~\cite{Bierenbaum:2009mv,Kawamura:2012cr,Ablinger:2014uka,Ablinger:2014lka,Ablinger:2014vwa,Ablinger:2014nga,Ablinger:2014tla,Blumlein:2021enk,Ablinger:2022wbb,Ablinger:2023ahe,Ablinger:2024xtt}, with the remaining matrix elements approximated.
+The N$^3$LO hadronic coefficient functions are largely unknown and are approximated in the fits using either K-factors with nuisance parameters (for MSHT) or NNLO scale variations (for NNPDF).
+In Ref.~\cite{Cooper-Sarkar:2024crx}, a benchmarking exercise was undertaken to understand the impact of the different splitting function approximations used in the global fits.
+Recently, additional Mellin moments of the splitting functions have been computed and used to produce a new estimate of the four-loop splitting functions~\cite{Falcioni:2024qpd}.
+Furthermore, the computation of all operator matrix elements has been completed~\cite{Ablinger:2024xtt}.
+Including this new information in the aN$^3$LO PDF fits reduces the NNPDF prediction for the gluon-fusion Higgs total cross section by around 0.5\% and increases the MSHT prediction by around 0.5\% relative to the fits used in the combination set MSHT20xNNPDF40 which enters this recommendation, bringing the two fits closer together by a shift that falls within their respective PDF uncertainties~\cite{Thorne:2024npj,Hekhorn:2025xke}.
+
+
+\begin{table}[]
+\begin{tabular}{|rrrrrrr}
+\hline
+\multicolumn{7}{|c|}{(aN3LO PDF $\otimes$ N3LO HTL) vs (NNLO PDF $\otimes$ N3LO HTL)}                                                                                                       \\ \hline
+& \multicolumn{3}{|c|}{aN3LO vs NNLO} &
+\multicolumn{3}{c|}{aN3LO vs PDF4LHC21 NNLO} \\
+\multicolumn{1}{|l|}{$\sqrt{s}$ [TeV]} & MSHT20xNNPDF40 & MSHT20 & \multicolumn{1}{l|}{NNPDF40} & MSHT20xNNPDF40 & MSHT20 & \multicolumn{1}{l|}{NNPDF40} \\ \hline
+\multicolumn{1}{|r|}{7}    & $-4.2\%$   & $-6.0\%$ & \multicolumn{1}{r|}{$-2.0\%$}              & $-5.2\%$     & $-6.8\%$ & \multicolumn{1}{r|}{$-3.2\%$}  \\
+\multicolumn{1}{|r|}{13.6} & $-3.8\%$   & $-5.2\%$ & \multicolumn{1}{r|}{$-2.1\%$}              & $-4.2\%$     & $-5.9\%$ & \multicolumn{1}{r|}{$-2.2\%$}  \\
+\multicolumn{1}{|r|}{100}  & $-0.7\%$   & $+0.6\%$ & \multicolumn{1}{r|}{$-1.6\%$}              & $-1.0\%$     & $-0.7\%$ & \multicolumn{1}{r|}{$-1.0\%$} \\
+\hline
+\multicolumn{7}{|c|}{(aN3LO PDF $\otimes$ N3LO HTL) vs (NNLO PDF $\otimes$ NNLO HTL)}                                                                                                       \\ \hline
+& \multicolumn{3}{|c|}{aN3LO vs NNLO} &
+\multicolumn{3}{c|}{aN3LO vs PDF4LHC21 NNLO} \\
+\multicolumn{1}{|l|}{$\sqrt{s}$ [TeV]} & MSHT20xNNPDF40 & MSHT20 & \multicolumn{1}{l|}{NNPDF40} & MSHT20xNNPDF40 & MSHT20 & \multicolumn{1}{l|}{NNPDF40} \\ \hline
+\multicolumn{1}{|r|}{7} & $-0.8\%$      & $-2.6\%$ & \multicolumn{1}{r|}{$+1.5\%$}              & $-1.8\%$     & $-3.5\%$ & \multicolumn{1}{r|}{$+0.3\%$}  \\
+\multicolumn{1}{|r|}{13.6} & $-0.5\%$   & $-1.9\%$ & \multicolumn{1}{r|}{$+1.3\%$}              & $-0.9\%$     & $-2.6\%$ & \multicolumn{1}{r|}{$+1.2\%$}  \\
+\multicolumn{1}{|r|}{100} & $+3.1\%$    & $+4.4\%$ & \multicolumn{1}{r|}{$+2.1\%$}              & $+2.8\%$     & $+3.1\%$ & \multicolumn{1}{r|}{$+2.8\%$} \\ \hline
+\end{tabular}
+\caption{Impact of the aN$^3$LO PDF sets vs NNLO PDF sets on the total cross section when using the N$^3$LO HTL matrix element for (top) all predictions or (bottom) the N$^3$LO HTL matrix element for N$^3$LO predictions and the NNLO HTL matrix element for NNLO predictions . 
+In the left columns the combination and individual aN$^3$LO PDF sets are compared to their corresponding NNLO variants.
+In the right columns the aN$^3$LO PDF sets are compared to the PDF4LHC21 NNLO baseline prediction.}
+\label{tab:ggf_an3lopdf_n3lo}
+\end{table}
+
+We observe that the difference between predictions produced using the N$^3$LO HTL matrix element with NNLO PDFs or aN$^3$LO PDFs is significant.
+Comparing the combined set MSHT20xNNPDF40\_aN3LO to MSHT20xNNPDF40\_NNLO it amounts to a $-4.2\%$ suppression at $\sqrt{s}=7$\,TeV, a $-3.8\%$ suppression at $\sqrt{s}=13.6$\,TeV and a $-0.7\%$ suppression at $\sqrt{s}=100$\,TeV.
+Comparing the combination aN$^3$LO PDF to our baseline PDF4LHC21 NNLO set we observe a $-5.2\%$ suppression at $\sqrt{s}=7$\,TeV, a $-4.2\%$ suppression at $\sqrt{s}=13.6$\,TeV and a $-1.0\%$ suppression at $\sqrt{s}=100$\,TeV.
+The PDF uncertainty for the MSHT20xNNPDF40\_aN3LO combination set is $\pm 2.17\%$ at $\sqrt{s}=7$ TeV, $\pm 2.07\%$ at $\sqrt{s}=13.6$ TeV and $\pm 2.21\%$ at $\sqrt{s}=100$ TeV.
+In Table~\ref{tab:ggf_an3lopdf_n3lo}, we provide a comparison of the individual PDF sets entering the aN$^3$LO combination, we observe that the MSHT20 set predicts a significantly larger impact of the aN$^3$LO PDFs than the NNPDF40 set.
+
+Alternatively, we can compare results produced using the N$^3$LO HTL matrix element with aN$^3$LO PDFs to results produced using the NNLO HTL matrix element with NNLO PDFs.
+For the combined set, the use of the N$^3$LO HTL matrix element with the aN$^3$LO PDFs gives a $-0.8\%$ suppression at $\sqrt{s}=7$\,TeV, a $-0.5\%$ suppression at $\sqrt{s}=13.6$\,TeV and a $+3.1\%$ enhancement at $\sqrt{s}=100$\,TeV.
+In Table~\ref{tab:ggf_an3lopdf_n3lo}, we provide a comparison to the individual PDF sets, we observe that for collider energies relevant for the LHC the NNPDF40 aN$^3$LO PDFs predict an enhancement of the total cross section, while the MSHT20 aN$^3$LO PDFs predict a suppression.
+
+In summary, using $\sqrt{s}=13.6$\,TeV, we obtain the smallest prediction for the total cross section using MSHT20 aN$^3$LO PDFs with the N$^3$LO HTL matrix element and the largest prediction using PDF4LHC21 NNLO PDFs with the N$^3$LO HTL matrix element, the MSHT20 aN$^3$LO result is $-5.9\%$ smaller than the largest prediction.
+
+In Appendix~\ref{app:tables}, we provide tables which can be used to convert the recommendations produced with the NNLO PDF4LHC21 set to the aN$^3$LO MSHT20xNNPDF40\_aN3LO combination set.
+The tables present the conversion summand,
+% \begin{align}
+% \Delta^\text{aN3LO} = &\sigma( \text{MSHT20xNNPDF40\_aN3LO}) - \sigma(\text{PDF4LHC21})
+% \label{eq:ggf_pdf_conversion}
+% \end{align}
+\begin{align}
+\Delta^\text{aN3LO} &=
+\sigma( \text{MSHT20xNNPDF40\_aN3LO\_qed}) 
+-\bigl[
+\sigma(\text{PDF4LHC21}) + \Delta^\text{NNLO}_\text{QED}
+\bigr],
+\label{eq:ggf_pdf_conversion}
+\end{align}
+which corrects the PDF set used to compute the rescaled N$^3$LO HTL result (see first line of Eq.~\ref{eq:ggf_master}), as well as a $\delta(\mathrm{PDF}+\alpha_s)$ uncertainty obtained using the aN$^3$LO set.
+The use of the QED set for MSHT20xNNPDF40\_aN3LO and the addition of $\Delta^\text{NNLO}_\text{QED}$ for the PDF4LHC21 set accounts also for impact of QED evolution, as defined in Section~\ref{sec:ggf_qed_pdf}.
+
+When utilising the MSHT20xNNPDF40\_aN3LO set the $\delta(\mathrm{PDF}+\alpha_s)$ uncertainty should be taken from the aN$^3$LO PDF set tables and the $\delta(\mathrm{PDF\text{--}TH})$ should not be included, as this term is only necessary when there exists a mismatch between the matrix element and PDF set order.
+
+\paragraph{Recommendation}
+The central recommendation is produced using the N$^3$LO HTL matrix elements with the PDF4LHC21 NNLO PDF set, in line with the general LHCHWG WG1 common setup outlined in Section~\ref{sec:setup}.
+The PDF+$\alpha_s$ uncertainty is estimated according to the usual Hessian prescription via the LHAPDF~\cite{Buckley:2014ana} interface.
+An additional uncertainty related to the mismatch between the perturbative order of the matrix element and the PDF, $\delta(\mathrm{PDF\text{--}TH})$, computed using Eq.~\eqref{eq:ggf_pdf_th}, is also reported.
+Additionally, we provide tables which allow the central prediction to be converted to a prediction computed using the combination aN$^3$LO PDF set presented in Ref.~\cite{Cridge:2024icl}, the conversion and error prescription is outlined in Eq.~\eqref{eq:ggf_pdf_conversion} and surrounding text.
+
+%\paragraph{Contributors}
+%\SJ{PDF4LHC21, CT, MSHT, NNPDF, ABM, MSHT20xNNPDF40 (Please add your collaboration name or individual author names as you prefer)}
+
+\subsection{Impact of QED DGLAP Evolution in PDFs}
+\label{sec:ggf_qed_pdf}
+
+\begin{table}[h!]
+{\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|cccc|ccc|}
+
+\hline
+
+& \multicolumn{4}{|c|}{$\Delta^\text{NNLO}_\text{QED}$} &
+\multicolumn{3}{c|}{$\Delta^\text{aN3LO}_\text{QED}$} \\
+$\sqrt{s}$ [TeV] & PDF4LHC21 & CT18      & MSHT20   & NNPDF31  & MSHT20xNNPDF40 & MSHT20     & NNPDF40    \\ \hline
+7                & -0.66\%   & -0.06\%   & -0.69\%  & -1.20\%  & -1.55\%        & -1.09\%    & -1.74\%    \\
+%8                & -0.65\%   & -0.06\%   & -0.66\%  & -1.22\%  & -1.53\%        & -1.07\%    & -1.73\%    \\
+%13               & -0.63\%   & -0.05\%   & -0.58\%  & -1.24\%  & -1.46\%        & -1.00\%    & -1.66\%    \\
+13.6             & -0.63\%   & -0.05\%   & -0.58\%  & -1.23\%  & -1.45\%        & -1.00\%    & -1.65\%    \\
+%14               & -0.63\%   & -0.05\%   & -0.57\%  & -1.23\%  & -1.45\%        & -1.00\%    & -1.65\%    \\
+100              & -0.50\%   & -0.02\%   & -0.40\%  & -1.07\%  & -1.10\%          & -0.92\%  & -1.19\% \\ \hline
+\end{tabular}
+}
+\caption{
+Impact of including QED DGLAP evolution in the individual and combination NNLO and aN$^3$LO PDFs sets on the N$^3$LO gluon fusion total cross section.
+}
+\label{tab:ggf_pdf_qed}
+\end{table}
+
+The PDF sets can be extended to include also a photon parton distribution function and to account for QED and mixed QED--QCD DGLAP evolution.
+The CT, MSHT and NNPDF collaborations have each produced QED extended sets at NNLO utilising the LuxQED method~\cite{Manohar:2016nzj,Manohar:2017eqh} to constrain the photon PDF~\cite{
+Harland-Lang:2019pla,Xie:2021equ,Cridge:2021pxm,Cridge:2023ryv,
+Bertone:2017bme,Barontini:2024dyb,NNPDF:2024djq}.
+The MSHT and NNPDF collaborations have also produced QED extended sets at aN$^3$LO~\cite{Cridge:2023ryv,Barontini:2024dyb}.
+The inclusion of a photon PDF primarily affects predictions for Higgs production in gluon fusion by altering the momentum distribution of the gluon PDF.
+A fully consistent treatment of QED effects requires also the inclusion of photon induced Higgs boson production, which is neglected here.
+
+%In order to include QED effects for NNLO PDFs we utilise the MSHT20xNNPDF40\_NNLO\_qed set and at aN$^3$LO we use the corresponding MSHT20xNNPDF40\_aN3LO\_qed set~\cite{Cridge:2024icl}.
+
+In the recommendation presented in Appendix~\ref{app:tables}, we incorporate the effect of QED evolution for both the NNLO and aN$^3$LO PDF sets.
+For the PDF4LHC21 NNLO set, we follow Ref.~\cite{Cooper-Sarkar:2025sqw} and define
+\begin{align}
+\Delta^\text{NNLO}_\text{QED} &=
+    \frac{1}{3}\,\bigl(
+    \langle \Delta^\text{NNLO}_\text{QED}(\text{CT18}) \rangle + 
+    \Delta^\text{NNLO}_\text{QED}(\text{MSHT20}) + 
+    \Delta^\text{NNLO}_\text{QED}(\text{NNPDF3.1})
+    \bigr),
+\label{eq:ggf_qed}
+\end{align}
+with,
+\begin{align}
+    \langle \Delta^\text{NNLO}_\text{QED}(\text{CT18}) \rangle &=
+    \frac{1}{3}\,\bigl(
+    \sigma(\text{CT18lux}) +
+    \sigma(\text{CT18qed\_proton}) +
+    \sigma(\text{CT18qed})
+    \bigr)
+    - \sigma(\text{CT18NNLO})
+    , \nonumber \\
+    \Delta^\text{NNLO}_\text{QED}(\text{MSHT20}) &=
+    \sigma(\text{MSHT20qed\_nnlo}) - \sigma(\text{MSHT20nnlo\_as118})
+    , \nonumber \\
+    \Delta^\text{NNLO}_\text{QED}(\text{NNPDF3.1}) &=
+    \sigma(\text{NNPDF31\_nnlo\_as\_0118\_luxqed}) - \sigma(\text{NNPDF31\_nnlo\_as\_0118}).
+\end{align}
+This shift is calculated using the rescaled N$^3$LO HTL result, i.e.\ the first line of Eq.~\ref{eq:ggf_master}, expressed as a percentage then applied to the total cross section prediction.
+Although the LuxQED method gives a constrained photon PDF, the impact of the inclusion of this photon PDF on the gluon distribution differs quite significantly for each of the global sets, see Table~\ref{tab:ggf_pdf_qed}.
+The impact of the inclusion of QED effects on the PDF uncertainty of the PDF4LHC21 set has not yet been studied, in the recommendation, we report the PDF uncertainty obtained neglecting the QED effects.
+For the MSHT20xNNPDF40 aN$^3$LO PDF set we define,
+\begin{align}
+\Delta^{\text{aN3LO}}_\text{QED} = \sigma(\text{MSHT20xNNPDF40\_aN3LO\_qed}) - \sigma(\text{MSHT20xNNPDF40\_aN3LO}).
+\end{align}
+%Again, the shift is calculated using the rescaled N$^3$LO HTL result and expressed as a percentage then applied to the total cross section prediction.
+
+Using the N$^3$LO HTL matrix element with NNLO PDFs, including QED evolution decreases the total cross section when using any of the CT18, MSHT20, NNPDF31 or combination PDF sets.
+The CT18 global set prediction is almost unaffected by the inclusion of QED evolution, while the NNPDF31 prediction decreases by more than $1\%$. 
+For the PDF4LHC21 set, the QED effects reduce the cross section by $0.66\%$ at $\sqrt{s} = 7$\,TeV, $0.63\%$ at $\sqrt{s} = 13.6$\,TeV and $0.50\%$ at $\sqrt{s} = 100$\,TeV.
+
+%For the MSHT20xNNPDF40 NNLO combination set at $\sqrt{s} = 7$\,TeV the total cross section is reduced by $-1.3\%$, $-1.1\%$ at $\sqrt{s} = 13.6$\,TeV, while at $\sqrt{s} = 100$\,TeV it is reduced by $-0.3\%$, at larger collider energies the QED effects enhance the total cross section.
+%The PDF uncertainty for the MSHT20xNNPDF40\_NNLO\_qed set ranges from $\pm 1.27\%$ at $\sqrt{s}=7$\,TeV, $\pm 0.92\%$ at $\sqrt{s}=13.6$\,TeV to $\pm 1.82\%$ at $\sqrt{s}=100$\,TeV.
+
+%Considering the individual MSHT20 NNLO set, the QED effects are $-0.7\%$ at $\sqrt{s} = 7$\,TeV, $-0.6\%$ at $\sqrt{s} = 13.6$\,TeV and $-0.4\%$ at $\sqrt{s} = 100$\,TeV.
+%Despite using the same LuxQED method to constrain the photon PDF, the NNPDF40 set is significantly more impacted by including QED evolution, amounting to $-2\%$ at $\sqrt{s} = 7$\,TeV, $-1.6\%$ $\sqrt{s} = 13.6$\,TeV and $-0.2\%$ at $\sqrt{s} = 100$\,TeV.
+
+Alternatively, using the N$^3$LO HTL matrix element with  aN$^3$LO PDFs, the QED involution has a larger impact.
+For the MSHT20xNNPDF40 aN$^3$LO combination set we observe a $-1.55\%$ suppression at $\sqrt{s} = 7$\,TeV,  $-1.45\%$ at $\sqrt{s} = 13.6$\,TeV and a $-1.10\%$ suppression at $\sqrt{s} = 100$\,TeV.
+Examining the individual PDF sets, we see that the MSHT20 aN$^3$LO set predicts a suppression of about $1\%$ for all collider energies, while the NNPDF40 aN$^3$LO set predicts a larger $-1.7\%$ suppression for collider energies relevant for the LHC.
+%The PDF uncertainty for the MSHT20xNNPDF40\_aN3LO\_qed combination set is $\pm 1.81\%$ at $\sqrt{s}=7$ TeV, $\pm 1.74\%$ at $\sqrt{s}=13.6$ TeV and $\pm 1.97\%$ at $\sqrt{s}=100$ TeV.
+
+In summary, for the PDF4LHC21 and MSHT20xNNPDF40 combination sets, the impact of including QED evolution on the total cross section is between that of the individual CT18, MSHT20, NNPDF31 and NNPDF40 sets, which give a suppression ranging from $-0.05\%$ to $-1.65\%$ at $\sqrt{s}= 13.6$\,TeV.
+Although all global fits utilise the LuxQED method to incorporate a photon PDF, the impact of QED evolution on the total Higgs cross section varies for the different PDF sets as well as the PDF order, it has the potential to either increase or decrease the cross section depending on the collider energy and PDF set used.
+For the total cross section, including the QED evolution gives effects similar in size to the current PDF uncertainties, as the experimental and theoretical precision improves it will become increasingly important to account for QED evolution effects.
+%A discussion of the impact of QED effects on Higgs boson production was recently presented in Ref.~\cite{Cooper-Sarkar:2025sqw}.
+
+\paragraph{Recommendation}
+The central recommendation is produced using the PDF4LHC21 PDF set in line with the common setup outlined in Section~\ref{sec:setup}.
+The QED evolution effects are included according to Eq.~\eqref{eq:ggf_qed} following Ref.~\cite{Cooper-Sarkar:2025sqw}.
+The QED evolution effects are included in the prediction using aN$^3$LO PDFs through the use of the MSHT20xNNPDF40\_aN3LO\_qed PDF set.
+Global PDF fits indicate that incorporating QED evolution effects suppresses the total cross section for collider energies relevant for the LHC at the level of $-0.05\%$ to $-1.7\%$.
+
+%\paragraph{Contributors}
+%\SJ{LuxQED, MSHT, NNPDF, CT (Please add your collaboration name or individual author names as you prefer)}
+
+\subsection{Comparison to Approximate N$^4$LO Results}
+\label{sec:ggf_n4lo_sv}
+
+\begin{table}[h!]
+\begin{tabular}{|lrrrrrr}
+\hline
+\multicolumn{7}{|c|}{13.6\,TeV} \\ \hline
+\multicolumn{1}{|l|}{PDF}                                                 & N$^3$LO HTL & $\Delta(\mathrm{N}^3\mathrm{LO})$ & \multicolumn{1}{l|}{$\delta(\mathrm{scale})$} & N$^4$LO$_\mathrm{sv}$ HTL & $\Delta(\mathrm{N}^4\mathrm{LO}_\mathrm{sv})$ & \multicolumn{1}{l|}{$\delta(\mathrm{scale})$} \\ \hline
+\multicolumn{1}{|l|}{\texttt{ABMPtt\_5\_nnlo}}           & 53.3 pb                 & $+3.3\%$                          & \multicolumn{1}{l|}{$^{+0.2\%}_{-3.6\%}$}     & 53.2 pb                 & $-0.1\%$                          & \multicolumn{1}{l|}{$^{+0.5\%}_{-2.1\%}$}     \\
+\multicolumn{1}{|l|}{\texttt{CT18NNLO}}                  & 51.3 pb                 & $+3.5\%$                          & \multicolumn{1}{l|}{$^{+0.3\%}_{-3.9\%}$}     & 51.3 pb                 & $-0.1\%$                          & \multicolumn{1}{l|}{$^{+0.5\%}_{-2.3\%}$}     \\
+\multicolumn{1}{|l|}{\texttt{PDF4LHC21\_40}}             & 51.6 pb                 & $+3.5\%$                          & \multicolumn{1}{l|}{$^{+0.3\%}_{-3.9\%}$}     & 51.5 pb                 & $-0.1\%$                          & \multicolumn{1}{l|}{$^{+0.5\%}_{-2.3\%}$}     \\
+\multicolumn{1}{|l|}{\texttt{MSHT20an3lo\_as118}}        & 48.7 pb                 & $+3.5\%$                          & \multicolumn{1}{l|}{$^{+0.3\%}_{-3.9\%}$}     & 48.7 pb                 & $-0.1\%$                          & \multicolumn{1}{l|}{$^{+0.5\%}_{-2.3\%}$}     \\
+\multicolumn{1}{|l|}{\texttt{NNPDF40\_an3lo\_as\_01180}} & 50.6 pb                 & $+3.5\%$                          & \multicolumn{1}{l|}{$^{+0.3\%}_{-3.9\%}$}     & 50.5 pb                 & $-0.1\%$                          & \multicolumn{1}{l|}{$^{+0.5\%}_{-2.3\%}$}     \\ \hline
+\end{tabular}
+\caption{
+Heavy-top limit results at N$^3$LO and N$^4$LO$_\mathrm{sv}$.
+The mass of the Higgs boson is taken to be $M_H=125$\,GeV and the top-quark is renormalised in the on-shell scheme.
+The scale uncertainty is computed via a 7-point scale variation of $\mu_R =\mu_F$ about the central scale of $M_H/2$ with fixed $\alpha_s(M_Z)=0.118$.
+Results obtained using the calculation of Ref.~\cite{Das:2020adl}.
+}
+\label{tab:ggf_n4lo_sv}
+\end{table}
+
+As described in Section~\ref{sec:ggf_htl}, results for Higgs production in gluon-fusion are available at order N$^3$LO in the heavy top-quark limit.
+Beyond this order, it is possible to produce an approximation of the N$^4$LO result using the soft-virtual approximation, which captures the leading terms in the expansion near to the Higgs boson production threshold.
+In Ref.~\cite{Das:2020adl}, this approximation was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=M_H/2$ and to reduce the remaining scale uncertainty from about 5\% to less than 3\%.
+In Table~\ref{tab:ggf_n4lo_sv}, we present results obtained using the calculation of Ref.~\cite{Das:2020adl} for $\sqrt{s}=13.6$\,TeV with the recommended parameters of the Higgs working group.
+The magnitude of the correction and reduction in the scale dependence is found to be largely independent of the PDF set choice and order of the PDF.
+
+\paragraph{Recommendation}
+Knowledge of the N$^4$LO$_\mathrm{sv}$ corrections serves as an important cross-check of the perturbative stability of the N$^3$LO result and of the reliability of the uncertainty estimated via a scale variation.
+Pending a complete N$^4$LO HTL calculation performed without the soft-virtual approximation, our recommended numbers are produced based on the N$^3$LO result.
+
+%\paragraph{Contributors}
+%G. Das, S. Moch, A. Vogt.
+
+%\subsection{Comparison to Yellow Report 4 Recommendations}
+%\label{sec:ggf_yr4}
+

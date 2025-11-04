@@ -2,6 +2,14 @@ Here we describe all input parameters and settings that are common to
 all predictions presented in this report. In general we have aimed to use physical parameters from the Review of Particle Physics (PDG)~\cite{ParticleDataGroup:2020ssz}.
 \subsection{Fermion masses}
 
+% SJ COMMENT: Gluon fusion input:
+\begin{align}
+&M_t^\mathrm{OS}=172.5\,\mathrm{GeV},&
+&M_b^{\overline{\mathrm{MS}}}(M_b^{\overline{\mathrm{MS}}})=4.18\,\mathrm{GeV},&
+&M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV},&
+\end{align}
+We neglect quark widths.
+
 \subsection{Gauge boson masses}
 We use the following on-shell values for the $W$ and $Z$ boson masses
 and widths
@@ -44,3 +52,48 @@ of the photon in the PDF inevitably impacts the distributions of all
 the other partons. However, since the photon-initiated component is
 typically very small, this inconsistency is expected to be fully
 contained within other theoretical uncertainties.
+
+\subsection{Heavy quark corrections to the parton densities}
+
+% SJ COMMENT: Gluon fusion input:
+
+The heavy quark contributions to the parton distribution functions (PDFs) are known to have different 
+scaling violations if compared to the massless case \cite{Blumlein:2016xcy}. In the PDF-fits this has 
+to be considered by accounting for the heavy flavor Wilson coefficients to deep-inelastic scattering and 
+other hard scattering processes in addition to the light flavor contributions. Furthermore, the heavy 
+flavor corrections determine the parton densities in the variable flavor number schemes (VFNS) in 
+single heavy 
+quark \cite{Buza:1996wv} and two heavy quark cases \cite{Ablinger:2017err}, based on the respective
+massive operator matrix elements (OMEs). 
+Until very recently these corrections were only available to two-loop order 
+\cite{Laenen:1992zk,Laenen:1992xs,Buza:1995ie,Buza:1996wv,Bierenbaum:2007qe,Bierenbaum:2008yu,
+Bierenbaum:2009zt,Bierenbaum:2022biv}. For the structure function $F_2(x,Q^2)$ the asymptotic 
+description is possible
+at the $O(1\%)$ level if $Q^2/m^2_Q \gtrsim 10$, cf. \cite{Buza:1995ie}, being a usual cut in 
+PDF-fits 
+to avoid higher twist contributions.
+
+A first step to reach the three-loop level consisted in the calculation of a series of three-loop 
+Mellin 
+moments in Ref.~\cite{Bierenbaum:2009mv}. In the years 2009--2025 all three-loop contributions
+to the massive OMEs in the unpolarized and polarized single- and two mass cases have been
+calculated. This includes the asymptotic heavy flavor Wilson coefficients for deep inelastic 
+scattering. The different contributions were obtained in Refs.~\cite{Ablinger:2010ty,
+Ablinger:2014vwa,Ablinger:2014nga,Ablinger:2014lka,Behring:2014eya,
+Ablinger:2017err,Ablinger:2018brx,Ablinger:2017xml,
+Ablinger:2022wbb,Ablinger:2023ahe,Ablinger:2024xtt,VFNS2,AQG2M}. To perform these 
+calculations a lot of new mathematical methods had to be developed, for a survey 
+see Ref.~\cite{Blumlein:2023aso}.
+
+One should note that in the singlet case the heavy quark corrections to the structure functions
+are large and exhibit quite different scaling violations if compared to the massless case.
+Based on these results it is for the first time possible to perform consistent NNLO QCD 
+non-singlet \cite{Blumlein:2021lmf}
+and singlet analyses with correlated treatment of $\alpha_s, m_c, m_b$ and the 
+parton densities now.
+
+Related to it the VFNS scheme is now lifted from two- 
+\cite{Ablinger:2017err} to three-loop order, which allows for a refined description 
+of the process of a heavy quark becoming light at large virtualities.
+
+\paragraph{Contributors:} J.~Bl\"{u}mlein
