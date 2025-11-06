@@ -510,9 +510,7 @@ Additionally, we provide tables which allow the central prediction to be convert
 \begin{table}[h!]
 {\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|l|cccc|ccc|}
-
 \hline
-
 & \multicolumn{4}{|c|}{$\Delta^\text{NNLO}_\text{QED}$} &
 \multicolumn{3}{c|}{$\Delta^\text{aN3LO}_\text{QED}$} \\
 $\sqrt{s}$ [TeV] & PDF4LHC21 & CT18      & MSHT20   & NNPDF31  & MSHT20xNNPDF40 & MSHT20     & NNPDF40    \\ \hline
@@ -641,6 +639,55 @@ Pending a complete N$^4$LO HTL calculation performed without the soft-virtual ap
 %\paragraph{Contributors}
 %G. Das, S. Moch, A. Vogt.
 
-%\subsection{Comparison to Yellow Report 4 Recommendations}
-%\label{sec:ggf_yr4}
+\subsection{Comparison to Yellow Report 4}
+\label{sec:ggf_yr4}
 
+\begin{table}[]
+{\renewcommand{\arraystretch}{1.4}
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+$\sqrt{s}=13$ TeV & YR4           & YR5         & Comments                                                                                                   \\ \hline
+$\sigma$                         & 48.58 pb        & 48.09 pb     & Reduced by -1.01\%                                                                                          \\ \hline
+{\color{black!55} $\delta(\text{scale})$} & $^{+0.21\%}_{-2.37\%}$ & $^{+0.29\%}_{-3.33\%}$ & $M_t^{\overline{\mathrm{MS}}} \rightarrow M_t^\mathrm{OS}$, 3-point scale variation                                \\
+{\color{black!55} $\delta(\text{EWK})$}   & $\pm 1\%$        & $\pm 1\%$      & Mixed QCD-EW approx. checked against full calculation~\cite{Becchetti:2020wof}                  \\
+{\color{black!55} $\delta(t,b,c)$}        & $\pm0.83\%$     & $\pm0.34\%$   & Included $\sigma^{\mathrm{NNLO}, (t)}, \sigma^{\mathrm{NNLO}, (t \times b)}$                         \\
+{\color{black!55} $\delta(1/m_t)$}        & $\pm1\%$        & 0           & Included $\sigma^{\mathrm{NNLO}, (t)}$, remaining uncertainty included in $\delta(t,b,c)$              \\
+{\color{black!55} $\delta(\text{trunc})$} & $\pm 0.37\%$     & 0           & Included complete N$^3$LO HTL corrections~\cite{Mistlberger:2018etf}                               \\
+$\delta(\text{theory})$                 & $^{+3.41\%}_{-5.57\%}$   & $^{+1.63\%}_{-4.67\%}$ & --                                                                                                            \\ \hline
+$\delta(\text{PDF}+\alpha_s)$            & $\pm 3.2\%$      & $^{+2.69\%}_{-2.28\%}$ & $\text{PDF4LHC15} \rightarrow \text{PDF4LHC21}$                                                                             \\
+$\delta(\text{PDF-TH})$                  & $\pm 1.16\%$     & $\pm 2.31$       & Increased by $\times 2$ \\ \hline
+\end{tabular}
+\caption{
+Comparison of the recommendation and uncertainties of Yellow Report 4 (YR4)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} and the current recommendation (YR5) for collider energy $\sqrt{s} = 13$ TeV and Higgs boson mass $m_H = 125$ GeV with all other parameters chosen as their default in the respective reports.
+In the $\delta(\text{theory})$ uncertainty of each recommendation the $\delta(\text{PDF-TH})$ uncertainty is omitted and reported separately.
+}
+}
+\label{tab:ggf_yr4_vs_yr5}
+\end{table}
+
+In this Section the uncertainty estimate of the current gluon fusion total cross section recommendation and that of the original Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} are compared.
+In Table~\ref{tab:ggf_yr4_vs_yr5}, each of the uncertainties presented in the current and previous report are summarised and the main factors driving the change in the uncertainty estimates are recorded.
+The uncertainties presented are for collider energy $\sqrt{s} = 13$ TeV and Higgs boson mass $m_H = 125$ GeV, all other choices and settings are chosen as originally presented in their respective report.
+
+The Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} contains a discussion and analysis of how the various uncertainties can be interpreted, namely, either as a flat 100\% confidence interval (procedure F) or a Gaussian one-sigma symmetric 68\% confidence interval (procedure G).
+We do not repeat this analysis here, however, we do record the relevant differences between how uncertainties are calculated in the two reports:
+\begin{itemize}
+\item $\delta(\text{scale})$ - In Yellow Report 4 the F-uncertainty of $^{+0.2\%}_{-2.4\%}$ was estimated by performing a scale variation scan in the range $M_H/4 \le \mu_R = \mu_F \le M_H$, while the G-uncertainty of $^{+3.0\%}_{-3.0\%}$ was estimated via a symmetrised 7-point scale uncertainty. 
+In the current recommendation the scale uncertainty is estimated via a 3-point scale uncertainty.
+As described in Section~\ref{sec:ggf_htl}, the previous recommendations used the $\overline{\mathrm{MS}}$ top-quark mass with scale $\mu_R$, which was varied in the re-weighting factor, $\text{R}_\text{LO}$, leading to a smaller scale uncertainty estimate.
+In the current recommendation a fixed on-shell top-quark mass is used.
+\item $\delta(\text{EWK})$ - The EW and mixed QCD-EW corrections are included identically to those in Yellow Report 4.
+The uncertainty numbers quoted in the current recommendation are the same as those given for the F-uncertainty in the previous recommendation.
+An additional check was performed to confirm that the EFT approximation used, in which the weak bosons are assumed to be heavier than the Higgs boson, is compatible with the full result~\cite{Becchetti:2020wof} within the $\pm 1\%$ uncertainty assigned.
+\item $\delta(t,b,c)$ - In the current recommendation, the missing N$^3$LO top and top-bottom quark mass effects, and NNLO bottom, charm, top-charm and bottom-charm quark mass effects are estimated via 7- and 3-point scale variations, respectively.
+This procedure differs from both the F-uncertainty and G-uncertainty presented in Yellow Report 4.
+\item $\delta(\text{PDF}+\alpha_s)$ - The current recommendation is based on the PDF4LHC21 NNLO PDF set, the PDF and $\alpha_s$ uncertainties are estimated via the usual procedure, which matches that used in the previous report.
+Total cross section numbers and PDF uncertainties are also provided for the combined MSHT20xNNPDF40 aN$^3$LO set, these numbers include within the $\delta(\text{PDF})$ uncertainty also an estimate of the missing higher-order uncertainty associated with the fixed order matrix elements used within the PDF fits.
+\item $\delta(\text{PDF-TH})$ - The uncertainty related to the mismatch between the N$^3$LO matrix element and the NNLO PDF is estimated using Eq.~\ref{eq:ggf_pdf_th}, this estimate is twice that reported in the previous Yellow Report 4.
+As explained in Section~\ref{sec:ggf_an3lo_pdf}, approximate N$^3$LO PDFs have been produced by two global fitting groups and were combined in Ref.~\cite{Cridge:2024icl}.
+Switching from the PDF4LHC21 NNLO set to the MSHT20xNNPDF40 aN$^3$LO combination set reduces the total cross section at $\sqrt{s}=13$ TeV by around $-4.70\%$, this discrepancy motivates the decision to inflate the PDF-TH uncertainty.
+This difference would be smaller at LHC energies (and larger at a 100 TeV collider) if the the NNLO PDF was convoluted with the NNLO matrix element instead of the N$^3$LO matrix element.
+An alternative, favoured by some of the community, is to estimate the PDF-TH associated with the use of the PDF4LHC21 NNLO set by directly taking the difference between using NNLO or aN$^3$LO PDF sets.
+Furthermore, if agreement within the community is reached on the use of aN$^3$LO PDF sets, it is conceivable that the current PDF-TH uncertainty can be eliminated or significantly reduced, along with an update of the central cross section prediction.
+\end{itemize}
