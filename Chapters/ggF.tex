@@ -62,13 +62,13 @@ In Table~\ref{tab:ggf_cite} we collect a list of references for theory work eith
 % Better citation than Barontini:2024dyb (?)
 
 In addition to the parameters specified in Section~\ref{sec:setup}, we further choose a central scale of $\mu_R=\mu_F=m_H/2$ and use a 3-point scale variation to assess scale uncertainties.
-For our central recommendation we use the quark masses,
-\begin{align}
-&M_t^\mathrm{OS}=172.5\,\mathrm{GeV},&
-&M_b^{\overline{\mathrm{MS}}}(M_b^{\overline{\mathrm{MS}}})=4.18\,\mathrm{GeV},&
-&M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV},&
-\end{align}
-and neglect the quark widths.
+For our central recommendation we use the quark masses as specified in eq.~\eqref{eq:qmasses}.
+%\begin{align}
+%&M_t^\mathrm{OS}=172.5\,\mathrm{GeV},&
+%&M_b^{\overline{\mathrm{MS}}}(M_b^{\overline{\mathrm{MS}}})=4.18\,\mathrm{GeV},&
+%&M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV},&
+%\end{align}
+%and neglect the quark widths.
 %\SJ{TODO: other parameters from ihixs missing? I think we take $\alpha_s$ from the PDF set, true? compatible with Sec 2.3?)}
 
 The uncertainty associated with each contribution is computed as described in the following sections. 
@@ -436,7 +436,7 @@ The N$^3$LO hadronic coefficient functions are largely unknown and are approxima
 In Ref.~\cite{Cooper-Sarkar:2024crx}, a benchmarking exercise was undertaken to understand the impact of the different splitting function approximations used in the global fits.
 Recently, additional Mellin moments of the splitting functions have been computed and used to produce a new estimate of the four-loop splitting functions~\cite{Falcioni:2024qpd}.
 Furthermore, the computation of all operator matrix elements has been completed~\cite{Ablinger:2024xtt}.
-Including this new information in the aN$^3$LO PDF fits reduces the NNPDF prediction for the gluon-fusion Higgs total cross section by around 0.5\% and increases the MSHT prediction by around 0.5\% relative to the fits used in the combination set MSHT20xNNPDF40 which enters this recommendation, bringing the two fits closer together by a shift that falls within their respective PDF uncertainties~\cite{Thorne:2024npj,Hekhorn:2025xke}.
+Including this new information in the aN$^3$LO PDF fits reduces the NNPDF prediction~\cite{NNPDF:2024nan} for the gluon-fusion Higgs total cross section by around 0.5\% and increases the MSHT prediction~\cite{McGowan:2022nag} by around 0.5\% relative to the fits used in the combination set MSHT20xNNPDF40~\cite{Cridge:2024icl} which enters this recommendation, bringing the two fits closer together by a shift that falls within their respective PDF uncertainties~\cite{Thorne:2024npj,Hekhorn:2025xke}.
 
 
 \begin{table}[]
@@ -627,8 +627,8 @@ Results obtained using the calculation of Ref.~\cite{Das:2020adl}.
 \end{table}
 
 As described in Section~\ref{sec:ggf_htl}, results for Higgs production in gluon-fusion are available at order N$^3$LO in the heavy top-quark limit.
-Beyond this order, it is possible to produce an approximation of the N$^4$LO result using the soft-virtual approximation, which captures the leading terms in the expansion near to the Higgs boson production threshold.
-In Ref.~\cite{Das:2020adl}, this approximation was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=M_H/2$ and to reduce the remaining scale uncertainty from about 5\% to less than 3\%.
+Beyond this order, it is possible to produce an approximation of the N$^4$LO result using the soft-virtual approximation, which captures the leading term in the expansion near to the Higgs boson production threshold.
+In Ref.~\cite{Das:2020adl}, an approximation to this was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=M_H/2$ and to reduce the remaining scale uncertainty from about 5\% to less than 3\%.
 In Table~\ref{tab:ggf_n4lo_sv}, we present results obtained using the calculation of Ref.~\cite{Das:2020adl} for $\sqrt{s}=13.6$\,TeV with the recommended parameters of the Higgs working group.
 The magnitude of the correction and reduction in the scale dependence is found to be largely independent of the PDF set choice and order of the PDF.
 
