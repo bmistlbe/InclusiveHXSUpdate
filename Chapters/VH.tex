@@ -1,0 +1,33 @@
+\subsection{Summary of Theory Developments} 
+In this section, we quickly collect results available for the theoretical description of the associated production of a Higgs boson and a weak boson (VH) at the LHC, and  we outline recent developments in theory predictions. We recall that the dominant partonic contribution to the process comes from the $q\bar{q}$-initiated channel, while a subleading contribution due to a loop-induced $gg$-initiated channel arises at NNLO QCD for the $ZH$ final state.
+
+Concerning fixed-order predictions, the QCD corrections for the $q \bar{q}$-initiated process have been known at NNLO \cite{HAN1991167, Brein:2003wg}. For the Drell-Yan-like contribution, N$^3$LO QCD corrections have become available \cite{Baglio:2022wzu}. Electroweak NLO corrections have been computed in Refs.~\cite{Ciccolini:2003jy, Denner:2011id} and are available in the code \texttt{HAWK} \cite{Denner:2011id,Denner:2014cla}, including the leptonic decays of the weak bosons.  Differential predictions are available in \cite{Ferrera:2011bk, Ferrera:2013yga,Ferrera:2014lca,Campbell:2016jau,Gauld:2021ule}, including NNLO QCD and NLO EW effects. Given the relevance of VH production as an experimental probe of the Higgs coupling to bottom quarks, several articles have discussed the effects of supplementing VH predictions with the Higgs decay to a $b \bar{b}$ pair~\cite{Caola:2017xuq,Gauld:2019yng,Behring:2020uzq}.
+
+In recent years, a lot of interest has been devoted to the QCD corrections to the subdominant process $gg \to ZH$~\cite{Dicus:1988yh,Kniehl:1990iva}, with the aim of reducing the non-negligible impact of the associated scale uncertainties. The NLO QCD corrections have been obtained in multiple approaches~\cite{Altenkamp:2012sx,Hasselhuhn:2016rqt,Davies:2020drs,Chen:2020gae,Wang:2021rxu,Alasfar:2021ppe,Chen:2022rua,Degrassi:2022mro,Davies:2025out}. Refs.~\cite{Chen:2022rua,Degrassi:2022mro} discuss an additional source of theoretical uncertainty due to the choice of renormalization scheme for the top-quark mass. More recently, QCD corrections at NNLO have been computed~\cite{Davies:2025otz} in the large-$m_t$ limit. 
+
+
+
+The resummation of threshold logarithms for the Drell-Yan component of VH production has been carried out at N$^3$LL accuracy~\cite{Kumar:2014uwa, Das:2022zie}. Soft-gluon resummation in the $gg$-initiated channel has been studied in Refs.~\cite{Harlander:2014wda,Das:2025wbj,Das:2025qym}. The matching of fixed-order corrections to parton showers has been obtained for VH production at NLO QCD~\cite{Luisoni:2013cuh,Granata:2017iod} and at NLO EW~\cite{Granata:2017iod} accuracy. Considering NNLO QCD corrections, merged predictions including 1 jet for $gg \to ZH$ have been presented~\cite{Hespel:2015zea, Goncalves:2015mfa}, while NNLO+PS predictions for the full VH process have been achieved in Refs.~\cite{Astill:2016hpa,Astill:2018ivh, Alioli:2019qzz}. Matched predictions including the $H\to b \bar{b}$ decay at full NNLO+PS accuracy have been obtained in Ref.~\cite{Zanoli:2021iyp}.
+
+\subsection{Inclusive Cross Section Predictions}
+\label{sec:vh_inclxs_breakdown}
+
+The results compiled in tables~\ref{tab:w+h_xs_7tev}-\ref{tab:zh_xs_14tev} are obtained from the following combination of the different contributions to the cross section
+\begin{align}
+    \sigma^{VH} &= \sigma_\mathrm{DY}^{VH}(1+ \delta_\mathrm{EW})+\sigma_\mathrm{I}^{VH} + \delta_{\tiny VZ} \left(\sigma_\mathrm{II}^{ZH} + \sigma^\mathrm{NLO}_{gg\to ZH} \right), 
+    \label{eq:sigma_vh_breakdown}
+\end{align}
+where $\sigma_\mathrm{DY}^{VH}$ is the Drell-Yan-like contribution at NNLO QCD, $\delta_\mathrm{EW}$ is a multiplicative factor that accounts for the relative EW corrections at NLO, $\sigma_\mathrm{I}^{VH}$ and $\sigma_\mathrm{II}^{ZH}$ are contributions mediated by top-quark loops in the $q\bar{q}$-initiated channel (denoted as $\sigma_\mathrm{top}$ in the tables) and $\sigma^\mathrm{NLO}_{gg\to ZH}$ is the NLO QCD cross section for the $gg$-initiated channel.  As specified in the last contribution of  Eq.~\eqref{eq:sigma_vh_breakdown}, the terms $\sigma_\mathrm{II}^{ZH}$ and  $\sigma^\mathrm{NLO}_{gg\to ZH}$ are present only for the $ZH$ final state. In the tables~\ref{tab:w+h_xs_7tev}-\ref{tab:zh_xs_14tev} we provide results for on-shell bosons.
+
+The results for all the contributions in Eq.~\eqref{eq:sigma_vh_breakdown} except $\sigma^\mathrm{NLO}_{gg\to ZH}$ were obtained using \texttt{vh@nnlo}~\cite{Harlander:2018yio}. The results for $\sigma^\mathrm{NLO}_{gg\to ZH}$ at CM energies $\sqrt{s}=\{13, 13.6, 14\}$~TeV are taken from Ref.~\cite{CampilloAveleira:2025rbh}, which provides a comparison of the virtual corrections of \cite{Chen:2022rua,Degrassi:2022mro} and supplements the latter with the new results for the real corrections using \texttt{GoSam}~\cite{Braun:2025afl}. We refer to Ref.~\cite{CampilloAveleira:2025rbh} for the discussion of theoretical uncertainties in $gg\to ZH$. For $\sqrt{s}=\{7, 8\}$~TeV, the values of $\sigma^\mathrm{NLO}_{gg\to ZH}$ are computed using \texttt{vh@nnlo}.  
+
+
+
+%\paragraph{Contributors}
+%
+%The the results of \texttt{vh@nnlo} have been provided by Robert Harlander, Sven Yannick Klein, Lukas Simon based on Ref.~\cite{Harlander:2018yio}.
+%The NLO QCD corrections for $gg \to ZH$ have been provided by Benjamin Campillo Aveleira, Ramona Gr\"ober and Marco Vitti(?).
+
+
+
+
