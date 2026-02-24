@@ -1,14 +1,14 @@
 
 \subsection{Summary of Theory Developments} 
 In this section, we briefly summarise theory work which has been carried out in recent years to describe Higgs production via Vector-Boson Fusion (VBF) at the LHC.
-Recently, a comparative study of differential cross sections at fixed order, including parton-shower corrections, has been made public~\cite{TOBEADDED}.
-In addition to provide recommendations for theory uncertainties in parton-shower simulations, it contains a pedagogical description of higher-order corrections in VBF as well as a review of the state-of-the-art.
-We therefore refer the interested reader to Ref.~\cite{TOBEADDED}.
+Recently, a comparative study of differential cross sections at fixed order, including parton-shower corrections, has been made public~\cite{Barone:2025jey}.
+In addition to provide state-of-the-art differential predictions at fixed order and recommendations for theory uncertainties in parton-shower simulations, it contains a pedagogical description of higher-order corrections in VBF as well as a review of the state-of-the-art for both theoretical and experimental progresses.
+We therefore refer the interested reader to Ref.~\cite{Barone:2025jey}.
 In addition, regarding fixed-order calculations, the Les Houches wishlist~\cite{Huss:2025nlt} provides a useful resource for recent developments.
 For the sake of completeness, we nonetheless provide a short review of recent and state-of-the-art theory calculations for VBF at the LHC.
 
 The electroweak (EW) production of a Higgs boson in association with two jets (HJJ) is comprised of several contributions - the VBF and the VH contribution.
-The quality of the VBF approximation has been studied in the literature along with the impact of higher-multiplicity contributions~\cite{Figy:2003nv,Berger:2004pca,Ciccolini:2007jr,Bolzoni:2011cu,Campanario:2013fsa,Campanario:2018ppz,TOBEADDED}.
+The quality of the VBF approximation has been studied in the literature along with the impact of higher-multiplicity contributions~\cite{Figy:2003nv,Berger:2004pca,Ciccolini:2007jr,Bolzoni:2011cu,Campanario:2013fsa,Campanario:2018ppz,Barone:2025jey}.
 
 The current state-of-the-art for EW corrections is NLO EW ~\cite{Ciccolini:2007jr,Ciccolini:2007ec}, which are used in this article.
 At the differential level, the state-of-the-art for QCD corrections is NNLO QCD in the VBF approximation~\cite{Cacciari:2015jma,Cruz-Martinez:2018rod}.
@@ -17,7 +17,7 @@ Given that state-of-the-art QCD computations are done in the VBF approximation, 
 In the predictions presented here, non-factorisable corrections are accounted for in terms of an uncertainty.
 As mentioned above, the EW production of HJJ can happen through several production mechanisms.
 In addition, separate contributions at different orders in perturbative theory also lead to the same final state~\cite{Andersen:2006ag,Andersen:2007mp,Harlander:2008xn,Greiner:2016awe,Greiner:2015jha,Andersen:2017kfc,Andersen:2018tnm,Andersen:2018kjg,Chen:2021azt,Andersen:2022zte}.
-A summary of these irreducible backgrounds can be found in Ref.~\cite{TOBEADDED}.
+A summary of these irreducible backgrounds can be found in Ref.~\cite{Barone:2025jey}.
 Also, the characteristics of the VBF production mechanism have been study in several phase-space regions, including the ones where the Higgs boson is boosted~\cite{Becker:2020rjp,Buckley:2021gfw}.
 Finally, while historically the focus of both theory and experimental work has been on stable Higgs, recent works~\cite{Asteriadis:2021gpd,Asteriadis:2024nbg} have shown that considering the decay products of the Higgs boson long with its production mechanism can induce non-trivial effects.
 
@@ -25,7 +25,7 @@ In addition to fixed-order corrections, significant work related to parton showe
 Parton-shower corrections matched to QCD~\cite{Nason:2009ai,Frixione:2013mta} and even EW~\cite{Jager:2022acp} corrections are available at NLO accuracy.
 Also, multi-jet merged results have been investigated over the years~\cite{Hoche:2021mkv,Chen:2021phj}.
 Uncertainties related to NLO QCD+PS simulations have been also studied in details ~\cite{Jager:2020hkz,Buckley:2021gfw,Hoche:2021mkv}.
-Recommendations regarding such uncertainties have been made in Ref.~\cite{TOBEADDED}.
+Recommendations regarding such uncertainties have been made in Ref.~\cite{Barone:2025jey}.
 Finally, soft-physics effects such as multi-parton interaction and hadronisation~\cite{Hoche:2021mkv,Bittrich:2021ztq} have been studied.
 Developments regarding next-to-leading-logarithm showers for VBF~\cite{vanBeekveld:2023chs} have also been made.
 
@@ -44,7 +44,8 @@ On the other hand, the theory uncertainties are computed as
   \label{eq:vbf-TU}
   \Delta_{\mathrm{TU}} = \max\left\{0.5\%,\delta_{\ELWK}^2\right\} + \frac{|\sigma_{\mbox{\scriptsize nf}}| + |\sigma_{\mbox{\scriptsize s/t/u}}|}{\sigma^{\VBF}}\%
 \end{align}
-for $\sqrt{s}=\{13,13.6,14\}$ TeV. For the legacy numbers corresponding to $\sqrt{s}=\{7,8\}$ TeV the non-factorisable contribution, $\sigma_{\mbox{\scriptsize nf}}$, was not computed, and we instead set
+%
+where $\sigma_{\mbox{\scriptsize s/t/u}}$ refers to the size of the interference contribution between $s$, $t$, and $u$ diagrams for $\sqrt{s}=\{13,13.6,14\}$ TeV. For the legacy numbers corresponding to $\sqrt{s}=\{7,8\}$ TeV the non-factorisable contribution, $\sigma_{\mbox{\scriptsize nf}}$, was not computed, and we instead set
 \begin{align}
   \label{eq:vbf-TU}
   \Delta_{\mathrm{TU}} = \max\left[\max\left\{0.5\%,\delta_{\ELWK}^2\right\} + \frac{|\sigma_{\mbox{\scriptsize s/t/u}}|}{\sigma^{\VBF}}\%,1.0\%\right].
@@ -56,4 +57,4 @@ In fact, in this case it always corresponds to $1\%$.
 The $\NNNLO$ cross section has been provided by Alexander Karlberg based on Ref.~\cite{Dreyer:2016oyx}.
 The NLO EW corrections, including the photon-induced contributions have been provided by Alexander M\"uck based on Ref.~\cite{Denner:2014cla}.
 The size of the interferences between $s/t/u$ contributions have been estimated with the help of {\sc Hawk}~\cite{Denner:2014cla} by Alexander Mück.
-The non-factorisable corrections have been provided by Christian Br{\o}nnum-Hansen based on Ref.~\cite{????}.
+The non-factorisable corrections have been provided by Christian Br{\o}nnum-Hansen based on Ref.~\cite{Asteriadis:2023nyl}.
