@@ -17,7 +17,11 @@ for the mass values
 \begin{equation}
     m_H \in [ 124.6, 125., 125.09, 125.38, 125.6, 126.] \rm GeV\,,
 \end{equation}
-have been computed. Other values have been obtained via linear interpolation.
+have been computed. Other values have been obtained via linear interpolation, using the formula
+\begin{equation}
+    \sigma(m_H)=\sigma(124.6) +\frac{\sigma(126)-\sigma(124.6)}{1.4}(m_H-124.6)\,. 
+    \label{eq:inttth}
+\end{equation}
 For other energies, we advise to employ the numbers
 presented in Ref.~\cite{Karlberg:2024zxx}.
 
@@ -56,14 +60,14 @@ scheme (known as DR2), as implemented in {\sc MadGraph5\_aMC@NLO}, see Refs.~\ci
 
 Tabs.~\ref{tab:th-t-tot},~\ref{tab:th-t-top} and~~\ref{tab:th-t-atop}
 show predictions for $t$-channel production of $tH\,+\,\bar tH$, $tH$ and $\bar tH$ production. Tabs.~\ref{tab:th-s-tot},~\ref{tab:th-s-top} and~~\ref{tab:th-s-atop}
-show predictions for $s$-channel production of $tH\,+\,\bar tH$, $tH$ and $\bar tH$ production. Finally, Tab.~\label{tab:thw-tot}
+show predictions for $s$-channel production of $tH\,+\,\bar tH$, $tH$ and $\bar tH$ production. Finally, Tab.~\ref{tab:thw-tot}
 shows predictions for $tW^-H \,+ \,\bar t W^+H$ associated production (the cross section of the two separate processes are equal to each other in this case).
 As for $t\bar t H$, cross sections
 for the mass values
 \begin{equation}
     m_H \in [ 124.6, 125., 125.09, 125.38, 125.6, 126.] \rm GeV\,,
 \end{equation}
-have been computed. Other values have been obtained via linear interpolation.
+have been computed. Other values have been obtained via linear interpolation using Eq.~\ref{eq:inttth}.
 
 
 
