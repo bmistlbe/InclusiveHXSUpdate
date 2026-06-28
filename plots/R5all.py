@@ -19,61 +19,61 @@ plt.rcParams.update({
 # YR4 : https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG136TeVxsec_extrap
 
 data = {
-      "$\\sigma_{ggF}$": {
+      "$\delta\sigma_{ggF}$": {
         "YR4": (-7.4, 5.6),
         "R5": (-7.4, 4.8),
         "R5 without PDF": (-4.6, 1.7),
         "HL-LHC": (-1.60, 1.60),
     },
-      "$\\sigma_{ggF(gauss)}$": {
+      "$\delta\sigma_{ggF(gauss)}$": {
         "YR4": (-5, 5),
         "R5": (-4.7, 4.7),
         "R5 without PDF": (-2.7, 2.7), # 4.6/sqrt(3)
         "HL-LHC": (-1.60, 1.60),
     },
-    "$\\sigma_{VBF}$": {
+    "$\delta\sigma_{VBF}$": {
         "YR4": (-2.6, 2.6), # included delta_ew of 1.5% from YR4 pg 89 (like TU+scale in R5)
         "R5": (-2.4, 2.4),
         "R5 without PDF": (-1.1, 1.1),
         "HL-LHC": (-3.1, 3.1),
     },
-    "$\\sigma_{WH}$": {
+    "$\delta\sigma_{WH}$": {
         "YR4": (-1.9, 1.8),   
         "R5": (-1.9, 1.8), # From W+/W-H in note seems to match YR4
         "R5 without PDF": (-0.7, 0.5),
         "HL-LHC": (-5.7, 5.7),
     },
-    "$\\sigma_{ZH}$": {
+    "$\delta\sigma_{ZH}$": {
         "YR4": (-3.6, 4.1), 
         "R5": (-3.1, 3.3),
         "R5 without PDF": (-2.7, 2.9),
         "HL-LHC": (-4.2, 4.2),
     },
-    "$\\sigma_{ttH}$": {
+    "$\delta\sigma_{ttH}$": {
         "YR4": (-9.8, 6.7),
         "R5": (-3.6, 3.2),
         "R5 without PDF": (-2.3, 1.7),
         "HL-LHC": (-4.3, 4.3),
     },
-    "$\\sigma_{tH (t-ch)}$": {
+    "$\delta\sigma_{tH (t-ch)}$": {
         "YR4": (-15.1, 7.3),
         "R5": (-15.1, 6.6),
         "R5 without PDF": (-15, 6.3),
         "HL-LHC": (0.0, 0.0),
     },
-    "$\\sigma_{tH (s-ch)}$": {
+    "$\delta\sigma_{tH (s-ch)}$": {
         "YR4": (-2.7, 3.1),
         "R5": (-2.9, 3.3),
         "R5 without PDF": (-1.8, 2.4),
         "HL-LHC": (0.0, 0.0),
     },
-     "$\\sigma_{tH (W-as)}$": {
+     "$\delta\sigma_{tH (W-as)}$": {
         "YR4": (-9.3, 8),
         "R5": (-7.3, 6),
         "R5 without PDF": (-6.4, 4.8),
         "HL-LHC": (0.0, 0.0),
     },
-    "$\\sigma_{bbH}$": {
+    "$\delta\sigma_{bbH}$": {
         "YR4": (-24.1, 20.1),
         "R5": (-8.9, 8.9),
         "R5 without PDF": (-8.2, 8.2),

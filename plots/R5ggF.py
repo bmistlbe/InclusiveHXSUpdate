@@ -15,7 +15,7 @@ plt.rcParams.update({
 })
 
 data = {
-    r"$\delta(total)$": {
+    r"$\delta\sigma_{ggF}$": {
         "YR4": (-7.4, 5.6),  
         "R5": (-7.4, 4.8),
         "HL-LHC": (-1.6, 1.6),  
@@ -80,9 +80,11 @@ ax.tick_params(
     length=6,
 )
 
+block_height = 0.09
+
 offsets = {
-    "YR4": -0.10,
-    "R5": 0.10,
+    "YR4": -block_height/2,
+    "R5": block_height/2,
 }
 
 for i, mode in enumerate(production_modes):
@@ -101,8 +103,6 @@ for i, mode in enumerate(production_modes):
             linewidth=2.0,
             zorder=0,
         )
-
-block_height = 0.09
 
 for method in prediction_methods:
 
