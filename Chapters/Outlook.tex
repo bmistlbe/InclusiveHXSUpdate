@@ -1,17 +1,46 @@
 
-The comparison plots presented in this section illustrate the evolution of the theoretical uncertainties on the Higgs boson production cross sections between Yellow Report 4 and the current recommendations described in this report, and place these results in the context of the projected experimental precision at the HL-LHC. They demonstrate the significant reduction in theoretical uncertainties achieved through advances in higher-order calculations, improvements in PDFs, and refined treatments of theoretical and parametric uncertainties. HL-LHC projection studies by ATLAS and CMS show that further reductions in theoretical uncertainties will be important for fully exploiting the precision potential of the HL-LHC. Optimistic projection scenarios typically assume theory uncertainties reduced by approximately a factor of two relative to those of Yellow Report 4. The recommendations presented in this report represent the current state of the art. Continued progress in higher-order perturbative calculations, PDF determinations, and the assessment of residual theoretical uncertainties will be essential to match the experimental precision expected from the HL-LHC program.
+Figure~\ref{fig:YR5_summary_uncertainties} illustrates the evolution of the theoretical uncertainties on the Higgs boson production cross sections between YR4 and the current recommendations described in this report, and places these results in the context of the most precise LHC Run 2 Higgs boson signal strength measurements~\cite{ATLAS:2025qxq,CMS:2026nce} and their projected precision at the HL-LHC~\cite{ATLAS:2022hsp}. The corresponding numerical values are summarised in Table~\ref{tab:prod_uncertainties}. Figure~\ref{fig:YR5_ggfsummary_uncertainties} focuses on the ggF production mode and shows the breakdown of the individual contributions to its total theoretical uncertainty. These comparisons demonstrate the significant reduction in theoretical uncertainties achieved through advances in higher-order calculations, improvements in PDFs, and refined treatments of theoretical and parametric uncertainties. HL-LHC projection studies by ATLAS and CMS show that further reductions in theoretical uncertainties will be important for fully exploiting the precision potential of the HL-LHC. Optimistic projection scenarios typically assume theory uncertainties reduced by approximately a factor of two relative to those of YR4. The recommendations presented in this report represent the current state of the art. Continued progress in higher-order perturbative calculations, PDF determinations, and the assessment of residual theoretical uncertainties will be essential to match the experimental precision expected from the HL-LHC program.
 
 
-\begin{figure}[!ht]
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{plots/production_mode_uncertainties.pdf}
-    \caption{Comparison of the theoretical uncertainties on the Higgs boson production cross sections recommended in Yellow Report 4 (black) and the current report (red) for collider energy $\sqrt{s} = 14$ TeV and Higgs boson mass $m_h = 125$ GeV. The current recommended uncetainties are also shown without the PDF$+_\alpha_{s}$ and PDF$-$Th contributions considered (green). Where available, the projected precision for cross section measurements at the HL-LHC from the ATLAS and CMS experiments (blue) are also shown.}
+    \caption{Comparison of the theoretical uncertainties on the Higgs boson production cross sections recommended in YR4 (black) and the current report (red) for collider energy $\sqrt{s} = 14$ TeV and Higgs boson mass $m_h = 125.09$ GeV. The current recommendations excluding the PDF$+_\alpha_{s}$ and PDF$-$Th contributions are also shown (green). These are compared with the most precise LHC Run 2 Higgs boson signal strength measurements (blue outlined boxes), whose total uncertainties include statistical, experimental, and theoretical components, and with the projected HL-LHC ATLAS+CMS combined precision (filled blue box).}
     \label{fig:YR5_summary_uncertainties}
 \end{figure}
 
-\begin{figure}[!ht]
+
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.3}
+\setlength{\belowcaptionskip}{10pt}
+\centering
+\caption{Relative uncertainties (\%) on Higgs boson production cross sections from YR4 and R5, including the R5 uncertainties excluding PDF$+_\alpha_{s}$ and PDF$-$Th contributions. These are compared with the most precise LHC Run~2 Higgs boson signal strength measurements, whose total uncertainties include statistical, experimental, and theoretical components, and with the projected HL-LHC ATLAS+CMS combined precision.}
+\label{tab:prod_uncertainties}
+\begin{tabular}{lccccc}
+\toprule
+Production mode &
+YR4 &
+R5 &
+R5 (no PDF) &
+Run 2 &
+HL-LHC \\
+\midrule
+ggF          & ${}^{+5.6}_{-7.4}$  & ${}^{+4.8}_{-7.4}$  & ${}^{+1.7}_{-4.6}$  & ${}^{+7.0}_{-6.0}$  & $\pm1.6$ \\
+VBF          & $\pm2.6$            & $\pm2.4$            & $\pm1.1$            & ${}^{+12.0}_{-11.0}$& $\pm3.1$ \\
+WH           & ${}^{+1.8}_{-1.9}$  & ${}^{+1.8}_{-1.9}$  & ${}^{+0.5}_{-0.7}$  & $\pm16.0$           & $\pm5.7$ \\
+ZH           & ${}^{+4.1}_{-3.6}$  & ${}^{+3.3}_{-3.1}$  & ${}^{+2.9}_{-2.7}$  & ${}^{+17.0}_{-15.0}$& $\pm4.2$ \\
+ttH          & ${}^{+6.7}_{-9.8}$  & ${}^{+3.2}_{-3.6}$  & ${}^{+1.7}_{-2.3}$  & ${}^{+15.0}_{-14.0}$& $\pm4.3$ \\
+tH ($t$-ch.) & ${}^{+7.3}_{-15.1}$ & ${}^{+6.6}_{-15.1}$ & ${}^{+6.3}_{-15.0}$ & --                  & -- \\
+tH ($s$-ch.) & ${}^{+3.1}_{-2.7}$  & ${}^{+3.3}_{-2.9}$  & ${}^{+2.4}_{-1.8}$  & --                  & -- \\
+tH ($Wt$)    & ${}^{+8.0}_{-9.3}$  & ${}^{+6.0}_{-7.3}$  & ${}^{+4.8}_{-6.4}$  & --                  & -- \\
+bbH          & ${}^{+20.1}_{-24.1}$& ${}^{+8.9}_{-8.9}$  & ${}^{+8.2}_{-8.2}$  & --                  & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{plots/ggF_uncertainties.pdf}
-    \caption{Comparison of the individual contributions to the total theoretical uncertainty on the ggF Higgs boson production cross section recommended in Yellow Report 4 (black) and the current report (red) for collider energy $\sqrt{s} = 14$ TeV and Higgs boson mass $m_h = 125$ GeV.}
-    \label{fig:YR5_summary_uncertainties}
+    \caption{Comparison of the individual contributions to the total theoretical uncertainty on the ggF Higgs boson production cross section recommended in YR4 (black) and the current report (red) for collider energy $\sqrt{s} = 14$ TeV and Higgs boson mass $m_h = 125.09$ GeV. This is compared with the most precise LHC Run 2 Higgs boson signal strength measurement (blue outlined box), whose total uncertainty includes statistical, experimental, and theoretical components, and with the projected HL-LHC ATLAS+CMS combined precision (filled blue box).}
+    \label{fig:YR5_ggfsummary_uncertainties}
 \end{figure}
