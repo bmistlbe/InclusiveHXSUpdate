@@ -23,7 +23,7 @@ plt.rcParams.update({
 #         Using measurement with smallest uncertainty   
 
 # HL-LHC : sigma_i/sigma_SM projection from snowmass (https://arxiv.org/abs/2209.07510)
-#          Originally from CERN-2019-007 (Fig 28)
+#          Originally from CERN-2019-007 (Fig 28), check page 278
 
 
 data = {
