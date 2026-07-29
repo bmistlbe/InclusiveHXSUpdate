@@ -15,45 +15,39 @@ plt.rcParams.update({
 })
 
 data = {
-    r"$\delta\sigma_{ggF}$": {
+    r"$\delta(Total)$": {
         "YR4": (-7.4, 5.6),  
         "R5": (-7.4, 4.8),
-        "HL-LHC": (-1.6, 1.6),  
+        "HL-LHC": (-1.6, 1.6),
+        "Run 2": (-6.0, 7.0),
     },
     r"$\delta(PDF+\alpha_s)$": {
         "YR4": (-3.2, 3.2),  
         "R5": (-2.5, 2.5),   
-        "HL-LHC": (0.0, 0.0),
     },
     r"$\delta(PDF-TH)$": {
         "YR4": (-1.2, 1.2), 
         "R5": (-2.4, 2.4),   
-        "HL-LHC": (0.0, 0.0),
     },
     r"$\delta(scale)$": {
         "YR4": (-2.4, 0.2), 
         "R5": (-3.3, 0.3),  
-        "HL-LHC": (0.0, 0.0),
     },
     r"$\delta(EWK)$": {
         "YR4": (-1.0, 1.0),
         "R5": (-1.0, 1.0), 
-        "HL-LHC": (0.0, 0.0),
     },
     r"$\delta(t,b,c)$": {
         "YR4": (-0.8, 0.8),  
         "R5": (-0.34, 0.34), 
-        "HL-LHC": (0.0, 0.0),
     },
     r"$\delta(1/m_t)$": {
         "YR4": (-1.0, 1.0), 
         "R5": (0.0, 0.0),
-        "HL-LHC": (0.0, 0.0),
     },
     r"$\delta(trunc.)$": {
         "YR4": (-0.4, 0.4), 
         "R5": (0.0, 0.0),
-        "HL-LHC": (0.0, 0.0),
     },
 }
 
@@ -80,29 +74,45 @@ ax.tick_params(
     length=6,
 )
 
-block_height = 0.09
+block_height = 0.15
 
 offsets = {
     "YR4": -block_height/2,
     "R5": block_height/2,
 }
 
-for i, mode in enumerate(production_modes):
+# Draw HL-LHC and Run 2
 
-    neg, pos = data[mode]["HL-LHC"]
+neg, pos = data["$\delta(Total)$"]["HL-LHC"]
 
-    if neg != 0.0 or pos != 0.0:
-        ax.barh(
-            y_base[i],
-            -neg + pos,
-            left=neg,
-            height=0.62,
-            facecolor="#BFD7EA",
-            edgecolor="#BFD7EA",
-            alpha=0.45,
-            linewidth=2.0,
-            zorder=0,
-        )
+if neg != 0.0 or pos != 0.0:
+ ax.barh(
+    y_base[0],
+    -neg + pos,
+    left=neg,
+    height=0.62,
+    facecolor="#BFD7EA",
+    edgecolor="tab:blue",
+    alpha=0.45,
+    linewidth=1.0,
+    zorder=0,
+ )
+
+neg, pos = data["$\delta(Total)$"]["Run 2"]
+
+if neg != 0.0 or pos != 0.0:
+ ax.barh(
+    y_base[0],
+    width=pos-neg,
+    left=neg,
+    height=0.62,
+    facecolor="none",
+    edgecolor="tab:blue",
+    linewidth=1.0,
+    linestyle="-",
+    zorder=1,
+ )
+        
 
 for method in prediction_methods:
 
@@ -135,14 +145,17 @@ ax.axvline(
 )
 
 for i in range(len(production_modes) - 1):
+    lw = 2.5 if i == 0 else 1.5
+    la = 1 if i == 0 else 0.5
     ax.axhline(
         i + 0.5,
         color="0.2",
         linestyle="--",
-        linewidth=1.5,
-        alpha=0.5,
+        linewidth=lw,
+        alpha=la,
         zorder=0,
     )
+
 
 ax.set_yticks(y_base)
 #ax.set_yticklabels(production_modes)
@@ -165,12 +178,11 @@ ax.tick_params(
     length=6,
 )
 
-
 ax.invert_yaxis()
 
-ax.set_xlabel("Relative uncertainty [%]")
+ax.set_xlabel("Relative uncertainty on production rate [%]")
 ax.set_title(
-    r"ggF - $\sqrt{s}=14$ TeV, $m_h=125.09$ GeV                   LHC Higgs WG1"
+    r"ggF - LHC Higgs WG1"
 )
 
 ax.xaxis.set_major_locator(MultipleLocator(2))
@@ -185,24 +197,62 @@ ax.grid(
 ax.set_axisbelow(True)
 
 legend_handles = [
-    Patch(facecolor="black", edgecolor="black", label="YR4"),
-    Patch(facecolor="tab:red", edgecolor="tab:red", label="Report 5"),
+    Patch(
+        facecolor="black",
+        edgecolor="black",
+        label="$\mathrm{\sigma}$ YR4 [$\sqrt{s}=14$ TeV]", # , $m_{h}=125.09$ GeV
+    ),
+    Patch(
+        facecolor="tab:red",
+        edgecolor="tab:red",
+        label="$\mathrm{\sigma}$ R5 [$\sqrt{s}=14$ TeV]",
+    ),
+    Patch(
+        facecolor="none",
+        edgecolor="tab:blue",
+        label="$\mathrm{\mu}$ LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
+    ),
     Patch(
         facecolor="#BFD7EA",
-        edgecolor="#BFD7EA",
+        edgecolor="blue",
+        #hatch="///",
         alpha=0.45,
-        linewidth=2.0,
-        label="HL-LHC projection\nATLAS and CMS",
+        linewidth=1.0,
+        label="$\mathrm{\mu}$ HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
     ),
 ]
 
 ax.legend(
     handles=legend_handles,
-    loc="center right",
+    loc="upper right",
+    bbox_to_anchor=(1,0.88),   # slightly outside right
+    labelspacing=0.75,    
     frameon=True,
     framealpha=1,
     edgecolor="black",
     fancybox=False,
+)
+
+y_brace = (y_base[6] + y_base[7]) / 2
+ax.text(
+    2.0, # -9.5                    # x-position (adjust as needed)
+    y_brace,
+    r"$\}$",
+    fontsize=60,            # adjust size to span both rows
+    color="tab:red",
+    va="center",
+    ha="center",
+    bbox=dict(facecolor="white", edgecolor="none", pad=0.3),
+)
+ax.text(
+    2.4,                    # x-position of text
+    y_brace,
+    "  Eliminated in R5   ",
+    color="tab:red",
+    fontsize=15,
+    va="center",
+    ha="left",
+    bbox=dict(facecolor="white", edgecolor="none", pad=0.3), 
 )
 
 fig.tight_layout()

@@ -8,76 +8,94 @@ from matplotlib.patches import Patch
 plt.rcParams.update({
     "font.size": 16,
     "axes.labelsize": 18,
-    "axes.titlesize": 20,
-    "xtick.labelsize": 15,
+    "axes.titlesize": 18,
+    "xtick.labelsize": 12,
     "ytick.labelsize": 17,
-    "legend.fontsize": 14,
+    "legend.fontsize": 13,
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
 })
 
-# YR4 : https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG136TeVxsec_extrap
+## NOTES :
+
+# Run 2 : signal stregth measurements from ATLAS-CONF-2025-006 (Figure 3) and CMS-HIG-21-018 (Figure 6)
+#         bbH scaled with ggH, tH scaled with ttH  
+#         Using measurement with smallest uncertainty   
+
+# HL-LHC : sigma_i/sigma_SM projection from snowmass (https://arxiv.org/abs/2209.07510)
+#          Originally from CERN-2019-007 (Fig 28), check page 278
+
 
 data = {
-      "$\delta\sigma_{ggF}$": {
+      "ggF": {
         "YR4": (-7.4, 5.6),
         "R5": (-7.4, 4.8),
         "R5 without PDF": (-4.6, 1.7),
         "HL-LHC": (-1.60, 1.60),
+        "Run 2": (-6.0, 7.0),   
     },
-      "$\delta\sigma_{ggF(gauss)}$": {
+      "ggF(gauss)": {
         "YR4": (-5, 5),
         "R5": (-4.7, 4.7),
         "R5 without PDF": (-2.7, 2.7), # 4.6/sqrt(3)
         "HL-LHC": (-1.60, 1.60),
+        "Run 2": (-6.0, 7.0),  
     },
-    "$\delta\sigma_{VBF}$": {
-        "YR4": (-2.6, 2.6), # included delta_ew of 1.5% from YR4 pg 89 (like TU+scale in R5)
+    "VBF": {
+        "YR4": (-2.6, 2.6), # included delta_ew of 1.5% from YR4 pg 89 (as TU+scale in R5)
         "R5": (-2.4, 2.4),
         "R5 without PDF": (-1.1, 1.1),
         "HL-LHC": (-3.1, 3.1),
+        "Run 2": (-11.0, 12.0), 
     },
-    "$\delta\sigma_{WH}$": {
+    "WH": {
         "YR4": (-1.9, 1.8),   
         "R5": (-1.9, 1.8), # From W+/W-H in note seems to match YR4
         "R5 without PDF": (-0.7, 0.5),
         "HL-LHC": (-5.7, 5.7),
+        "Run 2": (-16.0, 16.0),
     },
-    "$\delta\sigma_{ZH}$": {
+    "ZH": {
         "YR4": (-3.6, 4.1), 
         "R5": (-3.1, 3.3),
         "R5 without PDF": (-2.7, 2.9),
         "HL-LHC": (-4.2, 4.2),
+        "Run 2": (-15.0, 17.0),
     },
-    "$\delta\sigma_{ttH}$": {
+    "ttH": {
         "YR4": (-9.8, 6.7),
         "R5": (-3.6, 3.2),
         "R5 without PDF": (-2.3, 1.7),
         "HL-LHC": (-4.3, 4.3),
+        "Run 2": (-14.0, 15.0), 
     },
-    "$\delta\sigma_{tH (t-ch)}$": {
+    "tH (t-ch)": {
         "YR4": (-15.1, 7.3),
         "R5": (-15.1, 6.6),
         "R5 without PDF": (-15, 6.3),
         "HL-LHC": (0.0, 0.0),
+        "Run 2": (0.0, 0.0),
     },
-    "$\delta\sigma_{tH (s-ch)}$": {
+    "tH (s-ch)": {
         "YR4": (-2.7, 3.1),
         "R5": (-2.9, 3.3),
         "R5 without PDF": (-1.8, 2.4),
         "HL-LHC": (0.0, 0.0),
+        "Run 2": (0.0, 0.0),
     },
-     "$\delta\sigma_{tH (W-as)}$": {
+     "tH (W-as)": {
         "YR4": (-9.3, 8),
         "R5": (-7.3, 6),
         "R5 without PDF": (-6.4, 4.8),
         "HL-LHC": (0.0, 0.0),
+        "Run 2": (0.0, 0.0),
     },
-    "$\delta\sigma_{bbH}$": {
+    "bbH": {
         "YR4": (-24.1, 20.1),
         "R5": (-8.9, 8.9),
         "R5 without PDF": (-8.2, 8.2),
         "HL-LHC": (0.0, 0.0),
+        "Run 2": (0.0, 0.0),
     },
 }
 
@@ -95,8 +113,8 @@ colors = {
 
 markers = {
     "YR4": "o",
-    "R5": "s",
-    "R5 without PDF": "s",
+    "R5": "o",
+    "R5 without PDF": "o",
 }
 
 linestyles = {
@@ -122,29 +140,44 @@ ax.tick_params(
 )
 
 offsets = {
-    "YR4": -0.12,
-    "R5": 0.00,
-    "R5 without PDF": 0.12,
+    "YR4": -0.15,
+    "R5": 0.0,
+    "R5 without PDF": 0.15,
 }
 
-for i, mode in enumerate(production_modes):
+for i, mode in enumerate(production_modes): # Draw HL-LHC and Run 2 constraints
 
     neg, pos = data[mode]["HL-LHC"]
 
     ax.barh(
         y_base[i],
-        -neg + pos, #DM
+        -neg + pos, 
         left=neg,
         height=0.62,
         facecolor="#BFD7EA",
-        edgecolor="#BFD7EA",
+        edgecolor="blue",
         #hatch="///",
         alpha=0.45,
-        linewidth=2.0,
+        linewidth=1.0,
         zorder=0,
     )
 
-block_height = 0.09  # try 0.08–0.12
+    neg, pos = data[mode]["Run 2"]
+
+    ax.barh(
+      y_base[i],
+      width=pos-neg,
+      left=neg,
+      height=0.62,
+      facecolor="none",
+      edgecolor="tab:blue",
+      linewidth=1.0,
+      linestyle="-",
+      zorder=1,
+    )
+     
+
+block_height = 0.1  
     
 for method in prediction_methods:
 
@@ -189,8 +222,8 @@ ax.set_yticklabels(production_modes)
 
 ax.invert_yaxis()
 
-ax.set_xlabel("Relative uncertainty [%]")
-ax.set_title(r"$\sqrt{s}=14$ TeV, $m_{h}=125.09$ GeV                   LHC Higgs WG1")
+ax.set_xlabel("Relative uncertainty on production rate [%]") # $\delta\sigma/\sigma$ 
+ax.set_title(r"LHC Higgs WG1")
 
 ax.xaxis.set_major_locator(MultipleLocator(2))
 
@@ -208,39 +241,47 @@ max_unc = max(
 )
 
 ax.set_xlim(
-    -1.05 * max_unc,
-     1.05 * max_unc,
+    -1.22 * max_unc,
+     1.22 * max_unc,
 )
+#ax.set_xlim(-30, 30)
 
 legend_handles = [
     Patch(
         facecolor="black",
         edgecolor="black",
-        label="YR4",
+        label="$\mathrm{\sigma}$ YR4 [$\sqrt{s}=14$ TeV]", # , $m_{h}=125.09$ GeV
     ),
     Patch(
         facecolor="tab:red",
         edgecolor="tab:red",
-        label="Report 5",
+        label="$\mathrm{\sigma}$ R5 [$\sqrt{s}=14$ TeV]",
     ),
     Patch(
         facecolor="tab:green",
         edgecolor="tab:green",
-        label="Report 5 without\nPDF+$\\alpha_{s}$ & PDF-TH",
+        label="$\mathrm{\sigma}$ R5 [$\sqrt{s}=14$ TeV]\nexcl. PDF+$\\alpha_{s}$ & PDF-TH",
+    ),
+    Patch(
+        facecolor="none",
+        edgecolor="tab:blue",
+        label="$\mathrm{\mu}$ LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
     ),
     Patch(
         facecolor="#BFD7EA",
-        edgecolor="#BFD7EA",
+        edgecolor="blue",
         #hatch="///",
         alpha=0.45,
-        linewidth=2.0,
-        label="HL-LHC projection\nATLAS and CMS",
+        linewidth=1.0,
+        label="$\mathrm{\mu}$ HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
     ),
 ]
 
 ax.legend(
     handles=legend_handles,
-    loc="center right",
+    loc="upper right",
+    bbox_to_anchor=(1.08, 1.1),   # slightly outside right
+    labelspacing=0.75,    
     frameon=True,
     framealpha=1,
     edgecolor="black",
