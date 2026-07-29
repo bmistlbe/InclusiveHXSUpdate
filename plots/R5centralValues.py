@@ -1,15 +1,47 @@
 
-# Central values of the cross-sections, from the R5 and YR4. 
+# Central values of the cross-sections in pb, from the R5 and YR4. 
 # All for mH=125.09 GeV at 14 TeV.
 
 CentralValues = {
     "ggF": {
-        "R5": 
-        "YR4": 
-    }
+        "R5": 54.09,
+        "YR4": 54.60
+    },
+    "VBF": {
+        "R5": 4.312,
+        "YR4": 4274.8
+    },
+    "WH": {
+        "R5":1.521, #0.9304+0.5906
+        "YR4": 1.510
+    },
+    "ZH": {
+        "R5":0.9875,
+        "YR4": 0.9835
+    },
+    "ttH": {
+        "R5":0.6361,
+        "YR4": 0.6128
+    },
+    "tH (s-ch)": {
+        "R5":0.00330,
+        "YR4": 0.003240
+    },
+    "tH (t-ch)": {
+        "R5":0.09189,
+        "YR4": 0.09012
+    },
+    # "tH (W-ass)": {
+    #     "R5":0.1876,
+    #     "YR4": # Not in the YR4?
+    # },
+    "bbH": {
+        "R5":0.596,
+        "YR4": 0.55210
+    },
 }
 
-# Uncertainties on the cross-sections (down, up) in percent, from the R5. 
+# Relative uncertainties on the cross-sections (down, up) in percent, from the R5. 
 # All on mH=125.09 GeV at 14 TeV.
 
 
