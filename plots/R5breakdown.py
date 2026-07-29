@@ -27,7 +27,7 @@ data = {
     "ggF": {
         "PDFaS": (-2.5, 2.5),
         "PDFTH": (-2.4, 2.4),
-        "EWK": (-1, 1),
+        "EWK": (-1.0, 1.0),
         "tbc": (-0.34, 0.34),
         "QCDscale": (-3.3, 0.32),
     },
@@ -190,9 +190,9 @@ SOURCE_COLORS = {
     "EWK":         "#a946a2",  # purple
     "tbc":         "#08519c",  # dark blue
     "TU":          "#eeb800",  # deep yellow
-    "virt":        "#08519c",  # matches tbc
-    "muB":         "#a946a2",  # matches EWK
-    "mB":          "#eeb800",  # matches TU
+    "virt":        "#1b5e20",  # dark green
+    "muB":         "#6fbf73",  # light green
+    "mB":          "#8c564b",  # brown
     "PDFTH":       "#f4a6a6",  # light pink/red
 }
 
@@ -358,7 +358,7 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
     ]
     ax.legend(
         handles=legend_handles,
-        loc="center right",
+        loc="upper right",
         frameon=True,
         framealpha=1,
         edgecolor="black",
@@ -374,14 +374,10 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
 
 
 plot_uncertainty_breakdown(
-    ["ggF", "VBF", "WH", "ZH"],
-    "uncertainty_breakdown_ggF_VBF_WH_ZH.pdf",
-    legend_order=["QCDscale", "tbc", "EWK", "PDFTH", "TU", "PDFaS"],
-)
-plot_uncertainty_breakdown(
-    ["ttH", "tH (t-ch)", "tH (s-ch)", "tH (W-ass)", "bbH"],
-    "uncertainty_breakdown_ttH_tH_bbH.pdf",
+    ["ggF", "VBF", "WH", "ZH", "ttH", "tH (t-ch)", "tH (s-ch)", "tH (W-ass)", "bbH"],
+    "uncertainty_breakdown_all.pdf",
     qcd_label_override="QCD scale (+FS for ttH/tH)",
+    legend_order=["QCDscale", "tbc", "EWK", "PDFTH", "TU", "virt", "muB", "mB", "PDFaS"],
 )
 
 plt.show()
