@@ -11,3 +11,7 @@
 *.bib~
 *.ps
 *.tex.backup
+*~*
+*#*
+*latexmk
+*.fls

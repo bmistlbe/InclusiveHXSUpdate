@@ -1,19 +1,33 @@
-% ==============================================
-% Template for LHCHWG Public Notes Front Page
-% 	- Please modify the corresponding information	
+% =========================================================================
+% SciPost LaTeX template
+% Version 2024-07
 %
-% 2021.01.15: adapted to name change LHCH$\sigma$WG -> LHCHWG (by R. Harlander)
-% 2015.04.29: 1st version, R.T.
-% ==============================================
-\documentclass[11pt]{article}
-\setlength{\textwidth}{18cm}
-\setlength{\textheight}{25cm}
-\setlength{\hoffset}{-2.5cm}
-\setlength{\voffset}{-3cm}
-% Hyperlink
+% Submissions to SciPost Journals should make use of this template.
+%
+% INSTRUCTIONS: simply look for the `TODO:' tokens and adapt your file.
+% ========================================================================
+
+\documentclass{SciPost_better_arXiv}
+
+% Prevent all line breaks in inline equations.
+\binoppenalty=10000
+\relpenalty=10000
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage[bitstream-charter]{mathdesign}
+\urlstyle{same}
+
+% Fix \cal and \mathcal characters look (so it's not the same as \mathscr)
+\DeclareSymbolFont{usualmathcal}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{usualmathcal}
+
 \usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{cleveref}
 \usepackage{booktabs}
 \usepackage{xcolor}
@@ -22,14 +36,6 @@
 \usepackage{placeins}
 \usepackage{graphicx}
 
-%\usepackage[hidelinks]{hyperref}
-% Remove boarder color
-%\hypersetup{pdfborder = {0 0 0}}
-%\hypersetup{colorlinks=false,pdfborder={0 0 0},}
-%\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
-%\usepackage{xcolor}
-%\hypersetup{colorlinks,linkcolor={red!50!black},citecolor={blue!50!black},urlcolor={blue!80!black}}
-%
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 \newcommand{\MH}{M_\mathrm{H}}
@@ -43,99 +49,134 @@
 \newcommand{\GeV}{~\mathrm{GeV}}
 \newcommand{\OS}{\mathrm{OS}}
 
-% 
+
+\fancypagestyle{SPstyle}{
+\fancyhf{}
+\lhead{\colorbox{scipostblue}{\bf \color{white} ~SciPost Physics Community Reports }}
+\rhead{{\bf \color{scipostdeepblue} ~Submission }}
+\renewcommand{\headrulewidth}{1pt}
+\fancyfoot[C]{\textbf{\thepage}}
+}
+
 \begin{document}
-\hypersetup{pageanchor=false}
 
-% --- Front Page
-\thispagestyle{empty}
-\begin{titlepage}
-  
-  % Report No. and Date
-  \begin{flushright}
-    {\large
-      \textbf{\href{https://https://cds.cern.ch/record/XXXXX}{LHCHWG-2024-XXXX}}} \\[0.5cm]	
-    {\large 	\textrm{March 13, 2024}} \\[2.0cm]
-  \end{flushright}
-  
-  \begin{center}
-    
-    % LHCH$\sigma$WG
-    \textsc{\Large 	\href{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG}{LHC Higgs Working Group}\footnote{\href{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG}{\sl https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG}}} \\[0.5cm]
-    \textsc{\Large 	Public Note} \\[1.5cm]
-    
-    % Title
-    \HRule \\[0.9cm]
-    \textbf{\Large Predictions for Production Cross Sections of the Higgs Boson at the LHC and HL-LHC} \\[1.0cm]
-    \HRule \\[1.5cm]
-           {\color{blue} {\bf Instructions for authors:} \begin{itemize} \item Add your name on the author list in the appropriate group. Anyone who was/is a convener since we started this work should be listed as such. External people should be listed in the ``In collaboration with''. All groups should be alphabetical. \item Add your affiliation(s) and \emph{update} the affiliation list appropriately. \item Please respect the formatting of tables etc by looking at previously committed material. \item Each chapter should serve as a review of the state-of-the-art theory. We should aim to be generous with references, and hence make sure to also cite work that is no longer state-of-the-art, but is now considered important work towards the state-of-the-art. \end{itemize}}
-	   % Author
-	   \textrm{
-             {\large {\bf WG1 conveners:} Hannah Arnold$^{1}$, Alessandro Calandri$^{2}$, Alexander Karlberg$^{3}$, Bernhard Mistlberger$^{4}$\\
-               {\bf $\boldsymbol{ggF}$ conveners:}  Alessandra Cappati$^{5}$, Robin Hayes$^{6}$, {\color{red}Yanping Huang$^{17}$}, Alexander Huss$^{3}$, Stephen Jones$^{7}$\\
-<<<<<<< HEAD
-               {\bf VBF conveners:} Gaetano Barone$^{8}$, Jiayi Chen$^{9}$, Silvia Ferrario Ravsio$^{3}$, Mathieu Pellen$^{10}$\\
-               {\bf $\boldsymbol{VH}$ conveners:} Suman Chatterjee$^{11}$, Valerio Dao$^{3}$, Giancarlo Ferrera$^{12}$, Matthew Lim$^{13}$, Marco Vitti$^{}$, Silvia Zanoli$^{}$\\
-               {\bf $\boldsymbol{t\bar{t}H/tH}$ conveners:} Josh McFayden$^{13}$, Valeria Botta$^{14}$, Malgorzata Worek$^{14}$, Marco Zaro$^{12}$\\
-               {\bf $\boldsymbol{b\bar{b}H/bH}$ conveners:} Tim Barklow$^{4}$, Christian Biello$^{15}$, Michael Spira$^{16}$, Marius Wiesemann$^{15}$\\
-               {\bf In collaboration with:} 
-               Christian Br{\o}nnum-Hansen$^{18}$, Alexander M\"uck$^{19}$
-           }} \\[0.3cm]	
-           \textit{$^{1}$Brookhaven National Laboratory, PO Box 5000, Upton, NY 11973, USA}\\   
-           \textit{$^{2}$ETH Zurich—Institute for Particle Physics and Astrophysics (IPA), Zurich, Switzerland}\\
-           \textit{$^{3}$CERN, Theoretical Physics Department, CH-1211 Geneva 23, Switzerland } \\
-           \textit{$^{4}$SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94039, USA } \\
-           \textit{$^{5}$Laboratoire Leprince-Ringuet, CNRS/IN2P3, Ecóle Polytechnique, Institut Polytechnique de Paris, Av. Chasles, 91120 Palaiseau, France}\\
-           \textit{$^{6}$Nikhef, Science Park 105, 1098 XG Amsterdam, The Netherlands }\\
-           \textit{$^{7}$Institute for Particle Physics Phenomenology, Durham University, Durham DH1 3LE, UK}\\
-           \textit{$^{8}$Brown University, Providence, RI 02912, USA} \\
-           \textit{$^{9}$Department of Physics, Simon Fraser University, Burnaby, BC V5H0G9, Canada}\\
-           \textit{$^{10}$Physikalisches Institut, Albert-Ludwigs-Universit\"at Freiburg, D-79104 Freiburg, Germany} \\
-           \textit{$^{11}$Institute of High Energy Physics (HEPHY), Austrian Academy of Sciences (\"{O}AW), Nikolsdorfer Gasse 18, 1050 Vienna, Austria}\\
-           \textit{$^{12}$Universit\'{a} degli Studi di Milano $\&$ INFN, Sezione di Milano, Via Celoria 16, 20133 Milano, Italy}\\
-           \textit{$^{13}$Department of Physics and Astronomy, University of Sussex, Sussex House, Brighton, BN1 9RH, UK}\\
-           \textit{$^{14}$Institute for Theoretical Particle Physics and Cosmology, RWTH Aachen University, \\D-52056 Aachen, Germany}\\
-           \textit{$^{15}$Max-Planck-Institut f\"ur Physik, Boltzmannstrasse 8, 85748 Garching, Germany}\\
-           \textit{$^{16}$Paul Scherrer Institut, CH–5232 Villigen PSI, Switzerland}\\
-           \textit{\color{red} $^{17}$ ---------- TODO --------}\\
-           \textit{$^{18}$Institute for Theoretical Particle Physics, Karlsruhe Institute of Technology (KIT), Wolfgang-Gaede-Straße 1, 76131 Karlsruhe, Germany}\\
-           \textit{$^{19}$Institute for Theoretical Particle Physics and Cosmology, RWTH Aachen University, 52056 Aachen, Germany}\\
+\pagestyle{SPstyle}
+\begin{flushright}
+LHCHWG-2026-005
+\end{flushright}
+\begin{center}{\Large \textbf{\color{scipostdeepblue}{
+%%%%%%%%%% TODO: Write your article's title here
+Predictions for Inclusive Production Cross Sections of the Higgs Boson at the LHC and HL-LHC\\
+%%%%%%%%%% END TODO: TITLE
+}}}\end{center}
 
-           %    \textit{$^{20}$Universit\'{a} degli Studi and INFN Roma Tre, Via della Vasca Navale 84, I-00146, Rome, Italy}\\
-           %    \textit{$^{21}$IRFU, CEA, Universit\'e Paris-Saclay, Gif-sur-Yvette, F-91191, France} \\
-           %    \textit{$^{10}$University of California San Diego, 500 Gilman Dr, La Jolla, CA 92093, USA}\\
-           %    \textit{$^{15}$Department of Physics, University at Buffalo, The State University of New York, Buffalo, 14260, USA}\\
-           %    \textit{$^{17}$Department of Physics, Faculty of Science, Chulalongkorn University, 10330 Bangkok, Thailand}\\
-           %    \textit{$^{19}$Max-Planck-Institut f\"ur Physik, F\"ohringer Ring 6, 80805 M\"unchen, Germany}\\
-           
-           
-           
-           \textbf{}
-  \end{center}
-  
-  \thispagestyle{empty}
-  %% \end{titlepage}
-  
-  
-  % ------ blank page after title
-  %\thispagestyle{empty}
-  %\clearpage\mbox{}\clearpage
-  
-  % ------ abstract
-  %% \thispagestyle{empty}
-  
-  \mbox{}\vspace*{3em}
-  %
-  \begin{center}
-    \textbf{Abstract}
-    This note documents state-of-the-art predictions for the production cross sections of the Higgs Boson at the LHC. 
-    Specifically, Standard Model predictions for the LHC with centre-of-mass. energy of 7, 8, 13, 13.6 and 14 TeV are presented. \cite{xsecr5}
-  \end{center}
-  %
-\end{titlepage}
-\newpage
+\begin{center}\textbf{
+%%%%%%%%%% TODO: AUTHORS
+% Write the author list here. 
+% Use (full) first name (+ middle name initials) + surname format.
+% Separate subsequent authors by a comma, omit comma and use "and" for the last author.
+% Mark the corresponding author(s) with a superscript symbol in this order
+    % \star, \dagger, \ddagger, \circ, \S, \P, \parallel, ...
+    {\it Editors$^\star$:} Hannah~Arnold$^{1}$, Alessandro~Calandri$^{2}$, Robin~Hayes$^{6\dagger}$
+    Alexander Karlberg$^{3\ddagger}$, Bernhard Mistlberger$^{4\circ}$, Dermot A. Moran$^{20\S}$\\[0.3cm]    
+    {\it Contributors:} Alessandra Cappati$^{5}$,
+    Yanping Huang$^{17}$, Alexander Huss$^{3}$, Stephen Jones$^{7}$,
+    Gaetano Barone$^{8}$, Jiayi Chen$^{9}$, Silvia Ferrario
+    Ravsio$^{3}$, Mathieu Pellen$^{10}$, Suman Chatterjee$^{11}$,
+    Valerio Dao$^{3}$, Giancarlo Ferrera$^{12}$, Matthew Lim$^{13}$,
+    Marco Vitti$^{}$, Silvia Zanoli$^{}$, Josh McFayden$^{13}$,
+    Valeria Botta$^{14}$, Malgorzata Worek$^{14}$, Marco Zaro$^{12}$,
+    Tim Barklow$^{4}$, Christian Biello$^{15}$, Michael Spira$^{16}$,
+    Marius Wiesemann$^{15}$, Christian Br{\o}nnum-Hansen$^{18}$,
+    Alexander M\"uck$^{19}$
+%%%%%%%%%% END TODO: AUTHORS
+}\end{center}
+
+\begin{center}
+%%%%%%%%%% TODO: AFFILIATIONS
+% Write all affiliations here.
+% Format: institute, city, country
+  {\bf 1} Brookhaven National Laboratory, PO Box 5000, Upton, NY 11973, USA\\   
+  {\bf 2} ETH Zurich—Institute for Particle Physics and Astrophysics (IPA), Zurich, Switzerland\\
+  {\bf 3} Max Planck Institute for Physics, Boltzmannstr. 8, 85748 Garching, Germany \\
+  {\bf 4} SLAC National Accelerator Laboratory, Stanford University, Stanford, CA 94039, USA  \\
+  {\bf 5} Laboratoire Leprince-Ringuet, CNRS/IN2P3, Ecóle Polytechnique, Institut Polytechnique de Paris, Av. Chasles, 91120 Palaiseau, France\\
+  {\bf 6} Nikhef, Science Park 105, 1098 XG Amsterdam, The Netherlands \\
+  {\bf 7} Institute for Particle Physics Phenomenology, Durham University, Durham DH1 3LE, UK\\
+  {\bf 8} Brown University, Providence, RI 02912, USA \\
+  {\bf 9} Department of Physics, Simon Fraser University, Burnaby, BC V5H0G9, Canada\\
+  {\bf 10} Physikalisches Institut, Albert-Ludwigs-Universit\"at Freiburg, D-79104 Freiburg, Germany \\
+  {\bf 11} Institute of High Energy Physics (HEPHY), Austrian Academy of Sciences (\"OAW), Nikolsdorfer Gasse 18, 1050 Vienna, Austria\\
+  {\bf 12} Universit\'{a} degli Studi di Milano INFN, Sezione di Milano, Via Celoria 16, 20133 Milano, Italy\\
+  {\bf 13} Department of Physics and Astronomy, University of Sussex, Sussex House, Brighton, BN1 9RH, UK\\
+  {\bf 14} Institute for Theoretical Particle Physics and Cosmology, RWTH Aachen University, \\D-52056 Aachen, Germany\\
+  {\bf 15} Max-Planck-Institut f\"ur Physik, Boltzmannstrasse 8, 85748 Garching, Germany\\
+  {\bf 16} Paul Scherrer Institut, CH–5232 Villigen PSI, Switzerland\\
+  {\bf 18} Institute for Theoretical Particle Physics, Karlsruhe Institute of Technology (KIT), Wolfgang-Gaede-Straße 1, 76131 Karlsruhe, Germany\\
+  {\bf 19} Institute for Theoretical Particle Physics and Cosmology, RWTH Aachen University, 52056 Aachen, Germany
+ %%%%%%%%%% END TODO: AFFILIATIONS
+%%%%%%%%%% TODO: EMAIL
+% Provide email address of corresponding author(s)
+\\[\baselineskip]
+$\star$~\href{mailto:lhc-higgs-xsbr-convener@cern.ch}{\small lhc-higgs-xsbr-convener@cern.ch}\,,\quad
+$\dagger$~\href{mailto:robin.hayes@cern.ch}{\small robin.hayes@cern.ch}\,,\quad
+$\ddagger$~\href{mailto:alexander.karlberg@cern.ch}{\small alexander.karlberg@cern.ch}\,,\quad
+$\circ$~\href{mailto:bernhard@slac.stanford.edu}{\small bernhard@slac.stanford.edu}\,,\quad
+$\S$~\href{mailto:dermot.anthony.moran@cern.ch}{\small dermot.anthony.moran@cern.ch}
+%%%%%%%%%% END TODO: EMAIL
+\end{center}
+
+\section*{\color{scipostdeepblue}{Abstract}}
+\textbf{\boldmath{%
+%%%%%%%%%% TODO: ABSTRACT
+% Write your abstract here.
+This note documents state-of-the-art predictions for the production cross sections of the Higgs Boson at the LHC. 
+Specifically, Standard Model predictions for the LHC with centre-of-mass. energy of 7, 8, 13, 13.6 and 14 TeV are presented.
+%%%%%%%%%% END TODO: ABSTRACT
+}}
+
+\vspace{\baselineskip}
+
+%%%%%%%%%% BLOCK: Copyright information
+% This block will be filled during the proof stage, and finilized just before publication.
+% It exists here only as a placeholder, and should not be modified by authors.
+\noindent\textcolor{white!90!black}{%
+\fbox{\parbox{0.975\linewidth}{%
+\textcolor{white!40!black}{\begin{tabular}{lr}%
+  \begin{minipage}{0.6\textwidth}%
+    {\small Copyright attribution to authors. \newline
+    This work is a submission to SciPost Phys. Comm. Rep. \newline
+    License information to appear upon publication. \newline
+    Publication information to appear upon publication.}
+  \end{minipage} & \begin{minipage}{0.4\textwidth}
+    {\small Received Date \newline Accepted Date \newline Published Date}%
+  \end{minipage}
+\end{tabular}}
+}}
+}
+%%%%%%%%%% BLOCK: Copyright information
+
+
+%%%%%%%%%% TODO: LINENO
+% For convenience during refereeing we turn on line numbers:
+\linenumbers
+% You should run LaTeX twice in order for the line numbers to appear.
+%%%%%%%%%% END TODO: LINENO
+
+%%%%%%%%%% TODO: TOC 
+% Guideline: if your paper is longer that 6 pages, include a TOC
+% To remove the TOC, simply cut the following block
+\vspace{10pt}
+\noindent\rule{\textwidth}{1pt}
 \tableofcontents
-% - Reset command
+\noindent\rule{\textwidth}{1pt}
+\vspace{10pt}
+%%%%%%%%%% END TODO: TOC
+
+
+%%%%%%%%% TODO: CONTENTS 
+% Write your article contents here, starting from first \section.
+% An example structure is given below.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Intro
 \section{Introduction}
@@ -188,14 +229,35 @@
 This work was done on behalf of the LHCHWG.
 \newpage
 \appendix
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bib
-\bibliographystyle{jhep}
-\bibliography{refs}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  All the tables
 \section{Reference tables}
 \label{app:tables}
 \input{Chapters/Appendix_tables}
+\clearpage
+%%%%%%%%% END TODO: CONTENTS
+
+
+%%%%%%%%%% TODO: BIBLIOGRAPHY
+% Provide your bibliography here. You have two options:
+
+%%% FIRST OPTION
+% Write your entries here directly, following the example below, including:
+% Author(s), Title, Journal Ref. with year in parentheses at the end, followed by the DOI number.
+
+% \begin{thebibliography}{99}
+% \bibitem{1931_Bethe_ZP_71}
+% H. A. Bethe, \textit{Zur Theorie der Metalle. i. Eigenwerte und Eigenfunktionen der linearen Atomkette}, Zeit. f{\"u}r Phys. \textbf{71}, 205 (1931), \doi{10.1007\%2FBF01341708}.
+
+% \bibitem{arXiv:1108.2700}
+% P. Ginsparg, \textit{It was twenty years ago today...}, (arXiv preprint) \doi{10.48550/arXiv.1108.2700}.
+
+% \end{thebibliography}
+
+%%% SECOND OPTION
+% Use your bibtex library, formatted by the SciPost style file.
+\bibliography{refs.bib}
+
+%%%%%%%%%% END TODO: BIBLIOGRAPHY
 
 
 \end{document}
