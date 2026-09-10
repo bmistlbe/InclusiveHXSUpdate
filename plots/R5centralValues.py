@@ -50,10 +50,10 @@ CentralValues = {
         "R5":0.09189,
         "YR4": 0.09012
     },
-    # "tH (W-ass)": {
-    #     "R5":0.1876,
-    #     "YR4": # Not in the YR4?
-    # },
+    "tH (W-ass)": {
+         "R5":0.1876,
+         "YR4": 0.1856 # for 125 GeV
+    },
     "bbH": {
         "R5":0.596,
         "YR4": 0.55210
@@ -103,7 +103,7 @@ mode_keys = list(UncertaintiesR5YR4.keys())
 y_base = np.arange(len(mode_keys))
 
 # Relative difference of the R5 central value from the YR4 one, for every mode with both
-# R5 and YR4 central values available (tH (W-ass) has no YR4 value).
+# R5 and YR4 central values available.
 relative_diffs = {}
 for mode in mode_keys:
     if mode not in CentralValues:
