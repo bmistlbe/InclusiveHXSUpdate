@@ -78,47 +78,86 @@ analyses, the current LHC programme, and the HL-LHC:
 \end{align}
 
 
-\subsection{PDF and $\alphas$}
+\subsection{Parton distributions and $\alphas$}
 \label{sec:pdf}
-Following the PDF4LHC
-recommendation~\cite{PDF4LHCWorkingGroup:2022cjn} we use PDF4LHC21\_40
-PDF set for all predictions. The value of the strong coupling,
-$\alphas$, is given at the $Z$ boson mass
+
+Following the PDF4LHC recommendation~\cite{PDF4LHCWorkingGroup:2022cjn},
+we use the PDF4LHC21\_40 NNLO set as the baseline for the predictions in
+this report. The strong coupling is taken to be
 \begin{equation}
-        \alphas(M_Z) = 0.1180\pm0.001\,.
-\end{equation}  
-We estimate the $\alphas$ and PDF uncertainties following the same
-recommendation. The $4$-flavour version of the PDF is used whenever a
-calculations is performed in the $4$-flavour scheme. The above
-combined PDF sets do not contain any photon content, and at the time
-when the setup was converged on, there was no recommendation for how
-to handle the missing photon. Only very recently have the main PDF
-collaborations published a procedure for how to include the photon PDF
-is Higgs production~\cite{Cooper-Sarkar:2025sqw}. As discussed in
-Sec.~\ref{sec:ggf_qed_pdf} we have included these recommendations for
-the gluon-fusion production mode. For the other production modes, When
-computing photon initiated processes, we instead use the previous
-PDF4LHC PDF set,
-LUXqed17\_plus\_PDF4LHC15\_nnlo\_100~\cite{Manohar:2017eqh}, but
-crucially for the photon content \emph{only}. This is not fully consistent
-with using PDF4LHC21\_40 for the quarks and gluons, as the
-presence of the photon in the PDF inevitably impacts the distributions
-of all the other partons. However, since the photon-initiated
-component is at the order of a few percent at most, this inconsistency
-is expected to be fully contained within other theoretical
-uncertainties even when assuming a $100\%$ uncertainty.
+    \alphas(M_Z)=0.1180\pm0.001\,.
+\end{equation}
+The PDF and $\alphas$ uncertainties are evaluated following the same
+recommendation. Whenever a calculation is performed in the four-flavour
+scheme, the corresponding four-flavour PDF set is used.
+
+The baseline PDF4LHC21\_40 set does not include a photon distribution.
+Where photon-initiated contributions are included in the electroweak
+corrections, we therefore use the photon distribution from
+LUXqed17\_plus\_PDF4LHC15\_nnlo\_100~\cite{Manohar:2017eqh}, while retaining
+PDF4LHC21\_40 for the quark and gluon distributions. This hybrid prescription
+is not fully consistent, since the inclusion of a photon PDF together with
+QED corrections to the DGLAP evolution also modifies the quark and gluon
+distributions. It is useful to distinguish these two effects:
+photon-initiated partonic channels give an explicit contribution to the
+hard-scattering cross section, whereas QED evolution modifies the parton
+luminosities entering the remaining channels.
+
+The size of the explicit photon-initiated contribution is process dependent.
+For VBF production at $\sqrt{s}=14$~TeV and $m_H=125.09\GeV$, for example,
+the photon-initiated contribution included in our prediction is
+$40.6\,\mathrm{fb}$, corresponding to approximately $0.94\%$ of the total
+cross section. This fraction is very stable over the LHC energy range,
+amounting to approximately $0.92\%$, $0.93\%$, and $0.94\%$ at
+$\sqrt{s}=13$, $13.6$, and $14$~TeV, respectively. Previous LHCHWG studies
+using a LUXqed-based photon PDF also illustrate that the relative importance
+of photon-initiated channels can vary considerably between processes. For
+leptonic $W^\pm H$ production at $14$~TeV, photon-initiated contributions of
+about $4$--$5\%$ were found, whereas for $ZH$ production with a charged
+leptonic $Z$ decay the corresponding contribution is approximately
+$0.5\%$~\cite{Cepeda:2019klc}. These numbers refer to the specified leptonic
+final states and should not be identified directly with corrections to the
+on-shell $VH$ cross sections presented in this report. More recent studies
+using modern QED PDF sets find a similar photon-initiated contribution for
+leptonic $WH$ production and only a small dependence on the choice of the
+photon PDF~\cite{Cooper-Sarkar:2025sqw}.
+
+The separate effect of QED evolution on the quark and gluon distributions is
+typically at the sub-percent level for inclusive Higgs production at LHC
+energies~\cite{Cooper-Sarkar:2025sqw}. Using a PDF4LHC21-based prescription,
+Ref.~\cite{Cooper-Sarkar:2025sqw} finds at $14$~TeV shifts of approximately
+$-0.7\%$ for VBF, $-0.6\%$ for $ZH$ and $W^+H$, and $-0.55\%$ for $W^-H$.
+For comparison, the PDF+$\alphas$ and total uncertainties of our VBF
+prediction at $14$~TeV are approximately $2.2\%$ and $2.4\%$, respectively,
+while those for $W^\pm H$ are around $2\%$. The omitted QED-evolution effect
+is therefore subdominant to the uncertainties assigned to these production
+modes. We consequently do not assign an additional uncertainty specifically
+associated with the use of the hybrid photon-PDF prescription. This should
+not be interpreted as implying that the effect is negligible, but rather that
+its estimated size does not qualitatively alter the central predictions or
+their present uncertainty budgets. We also note that the photon-initiated
+contribution and the QED-evolution effect are distinct and should not be
+regarded as correlated; in particular, their partial numerical cancellation
+in VBF is incidental.
+
+For gluon-fusion Higgs production, where sub-percent changes in the gluon
+distribution are relevant at the precision of the present prediction, we
+instead account explicitly for the impact of QED evolution following the
+prescription of Ref.~\cite{Cooper-Sarkar:2025sqw}. Photon-initiated Higgs
+production is not included in this case. The implementation and numerical
+impact of QED evolution on the gluon-fusion prediction are discussed in
+Sec.~\ref{sec:ggf_qed_pdf}.
 
 
 \subsection{Parton distributions beyond NNLO}
 \label{sec:an3lo-pdfs}
-
-The increasing perturbative accuracy of LHC cross-section calculations has
-motivated a corresponding effort to extend global determinations of parton
-distribution functions (PDFs) beyond NNLO. This is particularly relevant for
-Higgs-boson phenomenology, since inclusive predictions for the dominant
-gluon-fusion production mode, as well as for vector-boson fusion and the
-Drell--Yan-like contribution to associated $VH$ production, are available at
-N$^3$LO in QCD~\cite{Mistlberger:2018etf,Dreyer:2016oyx,Baglio:2022wzu}.
+Beyond the QED effects discussed above, the perturbative accuracy of the QCD
+evolution and determination of the PDFs is an important consideration for the
+highest-order predictions presented in this report. This is particularly
+relevant for Higgs-boson phenomenology, since inclusive predictions for the
+dominant gluon-fusion production mode, as well as for vector-boson fusion and
+the Drell--Yan-like contribution to associated $VH$ production, are available
+at N$^3$LO in QCD~\cite{Mistlberger:2018etf,Dreyer:2016oyx,Baglio:2022wzu}.
 A formally consistent prediction at this order requires PDFs whose evolution
 and determination are performed at the corresponding perturbative accuracy.
 Until recently, however, several ingredients required for a complete N$^3$LO
