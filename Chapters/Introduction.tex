@@ -1,11 +1,119 @@
 \renewcommand*{\thefootnote}{\arabic{footnote}}
-\setcounter{footnote}{0}
-\setcounter{page}{1}
-Production cross sections for the Higgs boson based on the Standrad Model of particle physics were collected in the CERN Yellow Report "Deciphering the Nature of the Higgs Sector" (YR4) (CERN-2017-002)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.  
-Since this document became public many advancements in our abilities to predict production cross sections were achieved. 
-Furthermore, the LHC performed measurements at a higher centre-of-mass energy of $13.6$ TeV for which YR4 does not contain any predictions.
-Looking ahead to Run-3 and the High Luminosity phase of the LHC  (HL-LHC) and the associated wealth of data that will be collected an update of the HWG recommendation of all production cross sections to reflect the current state of the art is called for.
-The aim of this note is to document recent advancements and review the ingredients for the prediction of Standard Model predictions for the production cross sections of the Higgs boson at the LHC (similar in spirit as in YR4). 
-Updated numerical predictions for central values of the production cross sections and associated theoretical and parametric uncertainties are the main result of this article. This note supersedes the interpolation of Ref.~\cite{Karlberg:2024zxx}.
-\\
-For now, instructions and input parameters for the generation of numerical values can be found here:  \url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG136TeVxsec}
+\setcounter{footnote}{0} \setcounter{page}{1}
+The discovery of a scalar particle compatible with the Standard Model
+(SM) Higgs boson by the ATLAS and CMS collaborations in
+2012~\cite{ATLAS:2012yve,CMS:2012qbp} completed the particle content
+of the SM and inaugurated a systematic and ever more precise
+experimental study of the Higgs sector. In the years since, the LHC
+experiments have measured the mass, spin, parity, and couplings of the
+Higgs boson in ever finer detail. Combined analyses of the full LHC
+Run-2 dataset by ATLAS and CMS~\cite{ATLAS:2022vkf,CMS:2022dwd},
+together with more recent updates based on the complete Run-2
+sample~\cite{ATLAS:2025qxq,CMS:2026nce}, have established the
+couplings of the Higgs boson to third-generation fermions and to the
+electroweak gauge bosons at the level of a few to ten percent,
+observed its decay to muons, and set increasingly stringent limits on
+its couplings to light quarks, its total width, possible CP-violating
+admixtures, and on Higgs boson pair production, which probes the
+trilinear self-coupling directly.  The LHC is now operating in Run 3
+at a centre-of-mass energy of $\sqrt{s}=13.6$~TeV, and the
+High-Luminosity LHC (HL-LHC) is expected to ultimately deliver up to
+$3\,000$--$4\,000\,\mathrm{fb}^{-1}$ per experiment, which will reduce
+the statistical uncertainties on many Higgs-boson observables to the
+percent level or below~\cite{Cepeda:2019klc}.
+
+This remarkable experimental progress, and the even higher precision
+anticipated at the HL-LHC, places correspondingly stringent demands on
+the accuracy of the theoretical predictions used to interpret the
+data. For several production and decay channels, the precision of
+current measurements is already comparable to, or in some cases better
+than, the theoretical uncertainties quoted in the most recent
+comprehensive reference for Higgs production cross sections, the CERN
+Yellow Report~4 (YR4)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw},
+compiled by the LHC Higgs Cross Section Working Group (LHCHWG) in
+2016. Moreover, YR4 does not provide predictions at
+$\sqrt{s}=13.6$~TeV, the current LHC operating energy; an interim
+interpolation was subsequently provided by the working
+group~\cite{Karlberg:2024zxx} as a stop-gap measure pending a full
+update. Both of these facts make clear that a systematic update of the
+SM predictions for all Higgs-boson production modes, incorporating the
+theoretical progress of the past decade, is both timely and necessary
+if the LHC and HL-LHC precision programmes are to be fully exploited.
+
+Since the publication of YR4, substantial advances have been made in
+the calculation of Higgs production cross sections at the LHC. The
+inclusive cross section for gluon fusion, the dominant production
+mode, is now known at N$^3$LO in QCD in the heavy-top-quark effective
+theory~\cite{Anastasiou:2015vya,Mistlberger:2018etf}, and has been
+supplemented by exact finite-quark-mass corrections up to
+NNLO~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}, by mixed
+QCD-electroweak corrections retaining the full dependence on the
+electroweak boson masses~\cite{Becchetti:2020wof}, and by first
+studies of approximate N$^4$LO
+effects~\cite{Das:2020adl}. Vector-boson fusion is now available at
+N$^3$LO in QCD~\cite{Dreyer:2016oyx}, complemented by a detailed
+assessment of non-factorisable corrections and of the quality of the
+structure-function approximation~\cite{Barone:2025jey}.  Associated
+production with a vector boson has reached NNLO QCD accuracy including
+the loop-induced $gg\to ZH$
+channel~\cite{Brein:2003wg,Ferrera:2011bk,Chen:2022rua}, while
+$t\bar{t}H$ production now benefits from NNLO QCD corrections matched
+to NNLL soft-gluon resummation and combined with NLO electroweak
+effects~\cite{Catani:2022mfv,Devoto:2024nhl}.  Production in
+association with bottom quarks has reached N$^3$LO accuracy in the
+five-flavour scheme~\cite{Duhr:2019kwi}, consistently matched to
+four-flavour-scheme calculations~\cite{Duhr:2020kzd}. In parallel, the
+parton distribution functions (PDFs) entering all of these predictions
+have been substantially refined: the PDF4LHC21
+combination~\cite{PDF4LHCWorkingGroup:2022cjn} is now the recommended
+baseline set, approximate N$^3$LO PDFs have become available from the
+MSHT and NNPDF collaborations~\cite{McGowan:2022nag,NNPDF:2024nan} and
+have subsequently been combined~\cite{Cridge:2024icl}, and the impact
+of QED corrections to the DGLAP evolution has been assessed for the
+first time in this
+context~\cite{Manohar:2016nzj,Cooper-Sarkar:2025sqw}.  These
+developments affect not only the central predictions but, in several
+cases, motivate a substantial revision of the associated theoretical
+uncertainties, as we discuss in detail below.
+
+The purpose of this report is to collect and combine all of these
+developments into an updated set of LHCHWG recommendations for the
+inclusive Higgs-boson production cross sections at
+$\sqrt{s}=7,\,8,\,13,\,13.6$, and $14$~TeV, covering gluon fusion
+(ggF), vector-boson fusion (VBF), associated production with a $W$ or
+$Z$ boson (VH), associated production with a top-quark pair
+($t\bar{t}H$) or a single top quark ($tH$), and associated production
+with bottom quarks ($b\bar{b}H$). For each production mode we document
+the state-of-the-art ingredients entering the recommendation, define a
+common and consistent procedure for combining fixed-order QCD and
+electroweak corrections with residual theoretical and parametric
+uncertainties, and compare the resulting predictions with those of
+YR4. We further place the resulting precision in the context of the
+most precise current LHC measurements and of projected HL-LHC
+sensitivities~\cite{Cepeda:2019klc}, in order to assess to what extent
+the present theoretical uncertainties will remain sufficient, or
+become a limiting factor, over the coming decade of LHC running. This
+report supersedes both
+YR4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} and the ad interim
+recommendations of Ref.~\cite{Karlberg:2024zxx}.
+
+The remainder of this note is organised as
+follows. Section~\ref{sec:setup} defines the common input parameters
+and conventions used throughout. Sections~\ref{sec:ggF}--\ref{sec:bbH}
+present the state of the art and the resulting recommendations for
+ggF, VBF, VH, $t\bar t H$/$tH$, and $b\bar b H$ production,
+respectively. Section~\ref{sec:Outlook} discusses the resulting
+uncertainties in comparison with YR4 and with current and projected
+experimental precision, and Section~\ref{sec:conclusions}
+concludes. Numerical tables for all production modes, collision
+energies and Higgs-boson masses considered are collected in
+Appendix~\ref{app:tables}.
+%Production cross sections for the Higgs boson based on the Standrad Model of particle physics were collected in the CERN Yellow Report "Deciphering the Nature of the Higgs Sector" (YR4) (CERN-2017-002)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.  
+%Since this document became public many advancements in our abilities to predict production cross sections were achieved. 
+%Furthermore, the LHC performed measurements at a higher centre-of-mass energy of $13.6$ TeV for which YR4 does not contain any predictions.
+%Looking ahead to Run-3 and the High Luminosity phase of the LHC  (HL-LHC) and the associated wealth of data that will be collected an update of the HWG recommendation of all production cross sections to reflect the current state of the art is called for.
+%The aim of this note is to document recent advancements and review the ingredients for the prediction of Standard Model predictions for the production cross sections of the Higgs boson at the LHC (similar in spirit as in YR4). 
+%Updated numerical predictions for central values of the production cross sections and associated theoretical and parametric uncertainties are the main result of this article. This note supersedes the interpolation of Ref.~\cite{Karlberg:2024zxx}.
+%\\
+%For now, instructions and input parameters for the generation of numerical values can be found here:  \url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG136TeVxsec}
+%
