@@ -51,7 +51,7 @@ CentralValues = {
         "YR4": 0.09012
     },
     "tH (W-ass)": {
-         "R5":0.1876,
+         "R5":0.1886, # for 125 GeV
          "YR4": 0.1856 # for 125 GeV
     },
     "bbH": {
