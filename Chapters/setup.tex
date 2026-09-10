@@ -79,6 +79,7 @@ component is at the order of a few percent at most, this inconsistency
 is expected to be fully contained within other theoretical
 uncertainties even when assuming a $100\%$ uncertainty.
 
+
 \subsection{Parton distributions beyond NNLO}
 \label{sec:an3lo-pdfs}
 
@@ -88,12 +89,13 @@ distribution functions (PDFs) beyond NNLO. This is particularly relevant for
 Higgs-boson phenomenology, since inclusive predictions for the dominant
 gluon-fusion production mode, as well as for vector-boson fusion and the
 Drell--Yan-like contribution to associated $VH$ production, are available at
-N$^3$LO in QCD~\cite{Mistlberger:2018etf,Dreyer:2016oyx,Baglio:2022wzu}. A formally consistent prediction at this order requires PDFs
-whose evolution and determination are performed at the corresponding
-perturbative accuracy. Until recently, however, several ingredients required
-for a complete N$^3$LO global PDF analysis were only partially known. As a
-consequence, N$^3$LO partonic cross sections have conventionally been
-convoluted with NNLO PDFs, introducing a mismatch in perturbative accuracy.
+N$^3$LO in QCD~\cite{Mistlberger:2018etf,Dreyer:2016oyx,Baglio:2022wzu}.
+A formally consistent prediction at this order requires PDFs whose evolution
+and determination are performed at the corresponding perturbative accuracy.
+Until recently, however, several ingredients required for a complete N$^3$LO
+global PDF analysis were only partially known. As a consequence, N$^3$LO
+partonic cross sections have conventionally been convoluted with NNLO PDFs,
+introducing a mismatch in perturbative accuracy.
 
 A central ingredient in extending PDF determinations to N$^3$LO is the
 four-loop splitting functions governing DGLAP evolution. Their calculation has
@@ -102,15 +104,15 @@ specific colour structures, large-$n_f$ contributions and the non-singlet
 splitting functions in the planar limit
 \cite{Davies:2016jie,Moch:2017uml,Moch:2018wjh}. Subsequently, low Mellin
 moments of the four-loop splitting functions were calculated
-\cite{Moch:2021qrk}, providing important constraints on the singlet evolution matrix. This information was extended considerably in a
-series of calculations of additional Mellin moments and exact contributions
-to the four-loop kernels
+\cite{Moch:2021qrk}, providing important constraints on the singlet evolution
+matrix. This information was extended considerably in a series of calculations
+of additional Mellin moments and exact contributions to the four-loop kernels
 \cite{Falcioni:2023luc,Falcioni:2023tzp,Moch:2023tdj,
 Gehrmann:2023cqm,Gehrmann:2023iah}. In particular, exact all-$N$ results have
-been obtained for several fermionic contributions, while the increasing
-number of known moments, together with constraints on the small- and large-$x$
-limits, has allowed increasingly precise approximations to the full
-$x$-dependence of the splitting functions.
+been obtained for several fermionic contributions, while the increasing number
+of known moments, together with constraints on the small- and large-$x$ limits,
+has allowed increasingly precise approximations to the full $x$-dependence of
+the splitting functions.
 
 More recently, the available information on the phenomenologically important
 singlet evolution has improved significantly. Higher Mellin moments of the
@@ -132,33 +134,86 @@ implementations of approximate N$^3$LO evolution have also been performed,
 providing an important validation of the approximations and their associated
 uncertainties~\cite{Cooper-Sarkar:2024crx}.
 
-The first global PDF determination incorporating approximate N$^3$LO
-information was performed by the MSHT collaboration
-\cite{McGowan:2022nag}. The resulting MSHT20aN$^3$LO PDFs included the at that time
-available four-loop splitting-function information, N$^3$LO DIS
-coefficient functions and heavy-flavour contributions, together with
-approximations for ingredients that were not known exactly at the time
-of the fit. Unknown higher-order contributions are parameterised and
-their associated uncertainties propagated into the resulting PDFs. An
-independent approximate-N$^3$LO determination was subsequently
-presented by the NNPDF collaboration~\cite{NNPDF:2024nan}. In this
-approach, missing higher-order uncertainties are incorporated through
-a theory covariance matrix, while the available N$^3$LO information is
-included in the PDF evolution and in the theoretical predictions
-entering the fit. The two determinations therefore provide
-complementary implementations of global PDF fits beyond NNLO and
-different treatments of the theoretical uncertainties associated with
-the remaining approximate ingredients.
+A second essential ingredient is the treatment of heavy flavours. Heavy-quark
+contributions exhibit scaling violations that differ from those in the
+massless case~\cite{Blumlein:2016xcy}, and must be accounted for through the
+corresponding heavy-flavour Wilson coefficients in deep-inelastic scattering
+and other hard-scattering processes. Heavy-flavour corrections also determine
+the matching of the parton densities across flavour thresholds in
+variable-flavour-number schemes (VFNS), for both single-heavy-quark
+\cite{Buza:1996wv} and two-heavy-quark cases~\cite{Ablinger:2017err}, through
+the corresponding massive operator matrix elements (OMEs). Until recently,
+these matching corrections were available only through two loops
+\cite{Laenen:1992zk,Laenen:1992xs,Buza:1995ie,Buza:1996wv,
+Bierenbaum:2007qe,Bierenbaum:2008yu,Bierenbaum:2009zt,Bierenbaum:2022biv}.
+For the structure function $F_2(x,Q^2)$, the asymptotic description reaches
+the $O(1\%)$ level for $Q^2/m_Q^2 \gtrsim 10$, cf.~\cite{Buza:1995ie}, a
+region relevant to the cuts commonly employed in PDF fits to suppress
+higher-twist contributions.
+
+Progress towards the three-loop description began with the calculation of a
+series of three-loop Mellin moments in Ref.~\cite{Bierenbaum:2009mv}. Over the
+period 2009--2025, the three-loop contributions to the massive OMEs in the
+unpolarized and polarized single- and two-mass cases were calculated, including
+the corresponding asymptotic heavy-flavour Wilson coefficients for
+deep-inelastic scattering. The different contributions were obtained in
+Refs.~\cite{Ablinger:2010ty,
+Ablinger:2014vwa,Ablinger:2014nga,Ablinger:2014lka,Behring:2014eya,
+Ablinger:2017err,Ablinger:2018brx,Ablinger:2017xml,
+Ablinger:2022wbb,Ablinger:2023ahe,Ablinger:2024xtt,Ablinger:2025joi,
+Ablinger:2025nnq}; a survey of the mathematical methods developed for these
+calculations can be found in Ref.~\cite{Blumlein:2023aso}. In the singlet
+sector, the heavy-quark corrections to the structure functions are sizeable
+and exhibit scaling violations that differ significantly from the massless
+case. These results make it possible to perform consistent NNLO QCD
+non-singlet analyses~\cite{Blumlein:2021lmf}, as well as singlet analyses with
+a correlated treatment of $\alpha_s$, $m_c$, $m_b$ and the parton densities.
+They also lift the VFNS matching from two-loop~\cite{Ablinger:2017err} to
+three-loop order, providing the heavy-flavour threshold matching required for
+N$^3$LO PDF evolution. The numerical importance of these corrections has
+recently been illustrated in a public implementation of N$^3$LO evolution:
+while N$^3$LO effects on light-flavour PDFs are generally at or below the
+percent level over much of the LHC-relevant $x$ range, substantially larger
+effects can occur for the heavy-quark distributions, driven predominantly by
+the three-loop flavour-threshold matching corrections
+\cite{Karlberg:2025hxk}.
+
+These advances in massless evolution and heavy-flavour matching form part of
+the theoretical basis for global PDF determinations beyond NNLO. The first
+global PDF determination incorporating approximate N$^3$LO information was
+performed by the MSHT collaboration~\cite{McGowan:2022nag}. The resulting
+MSHT20aN$^3$LO PDFs included the then-available four-loop splitting-function
+information, N$^3$LO DIS coefficient functions and heavy-flavour
+contributions, together with approximations for ingredients that were not
+known exactly at the time of the fit. Unknown higher-order contributions are
+parameterised and their associated uncertainties propagated into the
+resulting PDFs.
+
+An independent approximate-N$^3$LO determination was subsequently presented
+by the NNPDF collaboration~\cite{NNPDF:2024nan}. In this approach, missing
+higher-order uncertainties are incorporated through a theory covariance
+matrix, while the available N$^3$LO information is included in the PDF
+evolution and in the theoretical predictions entering the fit. In particular,
+the treatment of heavy-quark mass effects in deep-inelastic scattering is
+extended to this order within the FONLL general-mass scheme. The two
+determinations therefore provide complementary implementations of global PDF
+fits beyond NNLO and different treatments of the theoretical uncertainties
+associated with the remaining approximate ingredients.
 
 Since these first fits were performed, the theoretical information entering
-N$^3$LO PDF evolution has continued to improve substantially. In particular,
-the additional four-loop splitting-function results discussed above reduce
-the uncertainty associated with the approximations to DGLAP evolution.
-Updated studies incorporating this information find shifts in the resulting
-PDFs relative to the original aN$^3$LO determinations that are generally
-contained within the theoretical PDF uncertainties assigned in those fits.
-The continued calculation of exact N$^3$LO ingredients is nevertheless
-important both for reducing these uncertainties and for ultimately replacing
+N$^3$LO PDF determinations has continued to improve substantially. In
+particular, additional information on the four-loop splitting functions and
+newly determined three-loop transition matrix elements have become available,
+reducing the reliance on approximations in both DGLAP evolution and
+heavy-flavour matching. The impact of these developments has been studied in
+an update of the MSHT aN$^3$LO analysis
+\cite{Cridge:2025oel}. The resulting changes in the PDFs are found to be at
+most comparable to, and typically smaller than, the uncertainties assigned in
+the original MSHT20aN$^3$LO fit, with still smaller effects on the corresponding
+parton luminosities. This provides an important validation of the uncertainty
+treatment adopted in the original approximate N$^3$LO determination. The
+continued calculation of exact N$^3$LO ingredients is nevertheless important
+both for further reducing these uncertainties and for ultimately replacing
 the present approximate fits by fully consistent N$^3$LO PDF determinations.
 
 The availability of independent MSHT and NNPDF aN$^3$LO sets has also made it
@@ -190,58 +245,11 @@ available at N$^3$LO~\cite{Cridge:2024icl}.
 For the common setup adopted in this report, PDF4LHC21 at NNLO remains the
 baseline PDF set, as described above. The availability of aN$^3$LO PDFs
 nevertheless provides important information with which to assess the
-uncertainty associated with combining N$^3$LO matrix elements with NNLO
-PDFs. This issue is numerically most important for gluon-fusion Higgs
-production and is therefore discussed in detail in
-Sec.~\ref{sec:ggf_an3lo_pdf}. There we compare predictions obtained using
-the PDF4LHC21 NNLO set with those obtained using the individual and combined
-aN$^3$LO PDFs, and discuss the implications for both the central prediction
-and the treatment of the PDF-related theoretical uncertainty.
+uncertainty associated with combining N$^3$LO matrix elements with NNLO PDFs.
+This issue is numerically most important for gluon-fusion Higgs production and
+is therefore discussed in detail in Sec.~\ref{sec:ggf_an3lo_pdf}. There we
+compare predictions obtained using the PDF4LHC21 NNLO set with those obtained
+using the individual and combined aN$^3$LO PDFs, and discuss the implications
+for both the central prediction and the treatment of the PDF-related
+theoretical uncertainty.
 
-\subsubsection{Heavy quark corrections to the parton densities}
-\label{sec:vfns}
-\ak{The inclusion of this sub-section here feel out of place. Also, if J Blumlein contriubted it, should he not be a author...?}
-% SJ COMMENT: Gluon fusion input:
-
-The heavy quark contributions to the parton distribution functions
-(PDFs) are known to have different scaling violations if compared to
-the massless case \cite{Blumlein:2016xcy}. In the PDF-fits this has to
-be considered by accounting for the heavy flavor Wilson coefficients
-to deep-inelastic scattering and other hard scattering processes in
-addition to the light flavor contributions. Furthermore, the heavy
-flavor corrections determine the parton densities in the variable
-flavor number schemes (VFNS) in single heavy quark \cite{Buza:1996wv}
-and two heavy quark cases \cite{Ablinger:2017err}, based on the
-respective massive operator matrix elements (OMEs).  Until very
-recently these corrections were only available to two-loop order
-\cite{Laenen:1992zk,Laenen:1992xs,Buza:1995ie,Buza:1996wv,Bierenbaum:2007qe,Bierenbaum:2008yu,Bierenbaum:2009zt,Bierenbaum:2022biv}. For the structure function
-$F_2(x,Q^2)$ the asymptotic description is possible at the $O(1\%)$
-level if $Q^2/m^2_Q \gtrsim 10$, cf. \cite{Buza:1995ie}, being a usual
-cut in PDF-fits to avoid higher twist contributions.
-
-A first step to reach the three-loop level consisted in the
-calculation of a series of three-loop Mellin moments in
-Ref.~\cite{Bierenbaum:2009mv}. In the years 2009--2025 all three-loop
-contributions to the massive OMEs in the unpolarized and polarized
-single- and two mass cases have been calculated. This includes the
-asymptotic heavy flavor Wilson coefficients for deep inelastic
-scattering. The different contributions were obtained in
-Refs.~\cite{Ablinger:2010ty,
-Ablinger:2014vwa,Ablinger:2014nga,Ablinger:2014lka,Behring:2014eya,
-Ablinger:2017err,Ablinger:2018brx,Ablinger:2017xml,
-Ablinger:2022wbb,Ablinger:2023ahe,Ablinger:2024xtt,Ablinger:2025joi,Ablinger:2025nnq}. To
-perform these calculations a lot of new mathematical methods had to be
-developed, for a survey see Ref.~\cite{Blumlein:2023aso}.
-
-One should note that in the singlet case the heavy quark corrections
-to the structure functions are large and exhibit quite different
-scaling violations if compared to the massless case.  Based on these
-results it is for the first time possible to perform consistent NNLO
-QCD non-singlet \cite{Blumlein:2021lmf} and singlet analyses with
-correlated treatment of $\alpha_s, m_c, m_b$ and the parton densities
-now.
-
-Related to it the VFNS scheme is now lifted from two- 
-\cite{Ablinger:2017err} to three-loop order, which allows for a refined description of the process of a heavy quark becoming light at large virtualities.
-
-\paragraph{Contributors:} J.~Bl\"{u}mlein
