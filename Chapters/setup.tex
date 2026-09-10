@@ -8,39 +8,55 @@ Any departures from this common setup are stated explicitly in the
 corresponding sections.
 
 \subsection{Fermion masses}
-
-% SJ COMMENT: Gluon fusion input:
+We use the following quark-mass inputs:
 \begin{align}
 \label{eq:qmasses}
 &M_t^\mathrm{OS}=172.5\,\mathrm{GeV},&
 &M_b^{\overline{\mathrm{MS}}}(M_b^{\overline{\mathrm{MS}}})=4.18\,\mathrm{GeV},&
-&M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV},&
+&M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV}.&
 \end{align}
-We neglect quark widths. In case the $\overline{\mathrm{MS}}$ scheme is used for the top quark mass, we use
+Quark widths are neglected. The mass-renormalisation schemes employed in the
+individual calculations are specified in the corresponding production-mode
+sections. When an $\overline{\mathrm{MS}}$ top-quark mass is required, we use
 \begin{align}
-M_t^{\overline{\mathrm{MS}}}(M_t^{\overline{\mathrm{MS}}})=162.5\,\mathrm{GeV}.
+M_t^{\overline{\mathrm{MS}}}(M_t^{\overline{\mathrm{MS}}})
+=162.5\,\mathrm{GeV}.
 \end{align}
 
 \subsection{Gauge boson masses}
-We use the following on-shell values for the $W$ and $Z$ boson masses
-and widths
+
+We use the following on-shell values for the $W$- and $Z$-boson masses and
+widths:
 \begin{align}
-        M^\OS_W &= 80.379\GeV\,, \qquad \Gamma^\OS_W=2.085\GeV \notag \\
-        M^\OS_Z &= 91.1876\GeV\,, \qquad \Gamma^\OS_W=2.4952\GeV\,.
+M^\OS_W &= 80.379\GeV\,, \qquad &\Gamma^\OS_W &= 2.085\GeV\,, \notag\\
+M^\OS_Z &= 91.1876\GeV\,, \qquad &\Gamma^\OS_Z &= 2.4952\GeV\,.
 \end{align}
-When needed for EW computations they are translated into their pole
-masses~\cite{BARDIN1988539} according to
+When required for electroweak calculations, these on-shell parameters are
+converted to the corresponding pole masses and widths~\cite{BARDIN1988539}
+according to
 \begin{align}
-        M_V = \frac{M^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,, \qquad \Gamma_V = \frac{\Gamma^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,.
-\end{align}     
-We use the $G_\mu$-scheme~\cite{Denner:2000bj} to compute the fine
-structure constant $\alpha$ from $G_F$, $M^\OS_W$, and $M^\OS_Z$
-\begin{align}
-        \alpha = \frac{\sqrt{2}}{\pi}G_F(M^\OS_W)^2\sin^2\theta_W\,, \quad \sin^2\theta_W = 1-\frac{(M^\OS_W)^2}{(M^\OS_Z)^2}\,,\quad G_F=1.16638\cdot 10^{-5} \GeV^2\,.
+M_V &=
+\frac{M^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,,
+\qquad
+\Gamma_V =
+\frac{\Gamma^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,.
 \end{align}
-This yields a value
+
+The electromagnetic coupling is defined in the $G_\mu$ scheme
+\cite{Denner:2000bj}. In terms of the Fermi constant and the on-shell
+gauge-boson masses, we use
+\begin{align}
+\alpha_{G_\mu}
+&= \frac{\sqrt{2}}{\pi}G_F(M^\OS_W)^2\sin^2\theta_W\,,
+&
+\sin^2\theta_W
+&=1-\frac{(M^\OS_W)^2}{(M^\OS_Z)^2}\,,
+&
+G_F&=1.16638\cdot10^{-5}\GeV^{-2}\,.
+\end{align}
+With the inputs above, this gives
 \begin{equation}
-        \alpha = 0.007565210\,.
+\alpha_{G_\mu}=0.007565210\,.
 \end{equation}
 
 \subsection{Higgs masses and collider energies}
