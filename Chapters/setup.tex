@@ -168,15 +168,19 @@ and exhibit scaling violations that differ significantly from the massless
 case. These results make it possible to perform consistent NNLO QCD
 non-singlet analyses~\cite{Blumlein:2021lmf}, as well as singlet analyses with
 a correlated treatment of $\alpha_s$, $m_c$, $m_b$ and the parton densities.
-They also lift the VFNS matching from two-loop~\cite{Ablinger:2017err} to
-three-loop order, providing the heavy-flavour threshold matching required for
-N$^3$LO PDF evolution. The numerical importance of these corrections has
-recently been illustrated in a public implementation of N$^3$LO evolution:
-while N$^3$LO effects on light-flavour PDFs are generally at or below the
+They also lift the VFNS matching from two-loop~\cite{Ablinger:2017err}
+to three-loop order~\cite{Ablinger:2025joi}, providing the heavy-flavour
+threshold matching required for N$^3$LO PDF evolution.
+Fast numerical implementations of the three-loop single-mass OMEs and
+the corresponding VFNS matching relations are publicly available through
+the \texttt{libome} library~\cite{Ablinger:2025joi}. The numerical importance
+of these corrections has recently been illustrated in the HOPPET
+implementation of N$^3$LO evolution, which interfaces to \texttt{libome} for
+the three-loop flavour-threshold matching~\cite{Karlberg:2025hxk}.
+While N$^3$LO effects on light-flavour PDFs are generally at or below the
 percent level over much of the LHC-relevant $x$ range, substantially larger
 effects can occur for the heavy-quark distributions, driven predominantly by
-the three-loop flavour-threshold matching corrections
-\cite{Karlberg:2025hxk}.
+the three-loop flavour-threshold matching corrections.
 
 These advances in massless evolution and heavy-flavour matching form part of
 the theoretical basis for global PDF determinations beyond NNLO. The first
@@ -189,24 +193,27 @@ known exactly at the time of the fit. Unknown higher-order contributions are
 parameterised and their associated uncertainties propagated into the
 resulting PDFs.
 
-An independent approximate-N$^3$LO determination was subsequently presented
-by the NNPDF collaboration~\cite{NNPDF:2024nan}. In this approach, missing
-higher-order uncertainties are incorporated through a theory covariance
-matrix, while the available N$^3$LO information is included in the PDF
-evolution and in the theoretical predictions entering the fit. In particular,
-the treatment of heavy-quark mass effects in deep-inelastic scattering is
-extended to this order within the FONLL general-mass scheme. The two
-determinations therefore provide complementary implementations of global PDF
-fits beyond NNLO and different treatments of the theoretical uncertainties
-associated with the remaining approximate ingredients.
+An independent approximate-N$^3$LO determination was subsequently
+presented by the NNPDF collaboration~\cite{NNPDF:2024nan}. In this
+approach, missing higher-order uncertainties are incorporated through
+a theory covariance matrix, while the available N$^3$LO information is
+included in the PDF evolution and in the theoretical predictions
+entering the fit. In particular, the treatment of heavy-quark mass
+effects in deep-inelastic scattering is extended to this order within
+the FONLL general-mass scheme~\cite{Forte:2010ta}. The two
+determinations therefore provide complementary implementations of
+global PDF fits beyond NNLO and different treatments of the
+theoretical uncertainties associated with the remaining approximate
+ingredients.
 
-Since these first fits were performed, the theoretical information entering
-N$^3$LO PDF determinations has continued to improve substantially. In
-particular, additional information on the four-loop splitting functions and
-newly determined three-loop transition matrix elements have become available,
-reducing the reliance on approximations in both DGLAP evolution and
-heavy-flavour matching. The impact of these developments has been studied in
-an update of the MSHT aN$^3$LO analysis
+Since these first fits were performed, the theoretical information
+entering N$^3$LO PDF determinations has continued to improve
+substantially. In particular, additional information on the four-loop
+splitting functions and newly determined three-loop transition matrix
+elements have become available, reducing the reliance on
+approximations in both DGLAP evolution and heavy-flavour matching. The
+impact of these developments has been studied in an update of the MSHT
+aN$^3$LO analysis
 \cite{Cridge:2025oel}. The resulting changes in the PDFs are found to be at
 most comparable to, and typically smaller than, the uncertainties assigned in
 the original MSHT20aN$^3$LO fit, with still smaller effects on the corresponding
