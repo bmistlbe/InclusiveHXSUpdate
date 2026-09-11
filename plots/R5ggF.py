@@ -19,7 +19,7 @@ data = {
         "YR4": (-7.4, 5.6),  
         "R5": (-7.4, 4.8),
         "HL-LHC": (-1.6, 1.6),
-        "Run 2": (-6.0, 7.0),
+        "Run 2": (-5.8, 5.8),
     },
     r"$\delta(PDF+\alpha_s)$": {
         "YR4": (-3.2, 3.2),  
@@ -200,17 +200,17 @@ legend_handles = [
     Patch(
         facecolor="black",
         edgecolor="black",
-        label="$\mathrm{\sigma}$ YR4 [$\sqrt{s}=14$ TeV]", # , $m_{h}=125.09$ GeV
+        label="YR4 [$\sqrt{s}=14$ TeV]", # , $m_{h}=125.09$ GeV
     ),
     Patch(
         facecolor="tab:red",
         edgecolor="tab:red",
-        label="$\mathrm{\sigma}$ R5 [$\sqrt{s}=14$ TeV]",
+        label="R5 [$\sqrt{s}=14$ TeV]",
     ),
     Patch(
         facecolor="none",
         edgecolor="tab:blue",
-        label="$\mathrm{\mu}$ LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
+        label="LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
     ),
     Patch(
         facecolor="#BFD7EA",
@@ -218,7 +218,7 @@ legend_handles = [
         #hatch="///",
         alpha=0.45,
         linewidth=1.0,
-        label="$\mathrm{\mu}$ HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
+        label=" HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
     ),
 ]
 
