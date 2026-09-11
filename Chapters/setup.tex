@@ -182,24 +182,27 @@ of known moments, together with constraints on the small- and large-$x$ limits,
 has allowed increasingly precise approximations to the full $x$-dependence of
 the splitting functions.
 
-More recently, the available information on the phenomenologically important
-singlet evolution has improved significantly. Higher Mellin moments of the
-quark-to-gluon and gluon-gluon splitting functions have been calculated in
-Refs.~\cite{Falcioni:2024xyt,Falcioni:2024qpd}. Combined with the known
-endpoint behaviour, these results permit precise $x$-space approximations to
-the corresponding four-loop kernels. The residual uncertainty associated with
-these approximations is small over the range in $x$ relevant for most LHC
-applications, and the resulting N$^3$LO contribution to the evolution of the
-gluon distribution is at the percent level or below over a broad
-phenomenologically relevant range. The status of the non-singlet sector has
-advanced further still: following a number of exact partial results, the
-complete four-loop non-singlet splitting functions have recently been
-calculated analytically~\cite{Gehrmann:2026qbl}. Thus, while the full singlet
-evolution kernels are not yet known analytically as functions of $x$, the
-information presently available permits N$^3$LO evolution at a precision
-suitable for current collider phenomenology. Comparisons between independent
-implementations of approximate N$^3$LO evolution have also been performed,
-providing an important validation of the approximations and their associated
+More recently, the available information on the phenomenologically
+important singlet evolution has improved significantly. Higher Mellin
+moments of the quark-to-gluon and gluon-gluon splitting functions have
+been calculated in
+Refs.~\cite{Falcioni:2024xyt,Falcioni:2024qpd}. Combined with the
+known endpoint behaviour, these results permit precise $x$-space
+approximations to the corresponding four-loop kernels. The residual
+uncertainty associated with these approximations is small over the
+range in $x$ relevant for most LHC applications, and the resulting
+N$^3$LO contribution to the evolution of the gluon distribution is at
+the percent level or below over a broad phenomenologically relevant
+range. The status of the non-singlet sector has advanced further
+still: following a number of exact partial results, the complete
+four-loop non-singlet splitting functions have recently been
+calculated analytically~\cite{Gehrmann:2026qbl}. Thus, while the full
+singlet evolution kernels are not yet known analytically as functions
+of $x$, the information presently available permits approximate
+N$^3$LO evolution at a precision suitable for current collider
+phenomenology. Comparisons between independent implementations of
+approximate N$^3$LO evolution have also been performed, providing an
+important validation of the approximations and their associated
 uncertainties~\cite{Cooper-Sarkar:2024crx}.
 
 A second essential ingredient is the treatment of heavy flavours. Heavy-quark
@@ -239,16 +242,19 @@ a correlated treatment of $\alpha_s$, $m_c$, $m_b$ and the parton densities.
 They also lift the VFNS matching from two-loop~\cite{Ablinger:2017err}
 to three-loop order~\cite{Ablinger:2025joi}, providing the heavy-flavour
 threshold matching required for N$^3$LO PDF evolution.
-Fast numerical implementations of the three-loop single-mass OMEs and
-the corresponding VFNS matching relations are publicly available through
-the \texttt{libome} library~\cite{Ablinger:2025joi}. The numerical importance
-of these corrections has recently been illustrated in the HOPPET
-implementation of N$^3$LO evolution, which interfaces to \texttt{libome} for
-the three-loop flavour-threshold matching~\cite{Karlberg:2025hxk}.
-While N$^3$LO effects on light-flavour PDFs are generally at or below the
-percent level over much of the LHC-relevant $x$ range, substantially larger
-effects can occur for the heavy-quark distributions, driven predominantly by
-the three-loop flavour-threshold matching corrections.
+
+The increasing maturity of the ingredients entering N$^3$LO PDF evolution
+is also reflected in their implementation in several independent public
+evolution frameworks, including \texttt{HOPPET}, \texttt{APFEL++},
+\texttt{EKO} and \texttt{Candia}~\cite{Bertone:2017gds,Candido:2022tld,Karlberg:2025hxk,Hampson:2025pvi}. Detailed benchmarking of the
+MSHT and NNPDF evolution implementations, together with the FHMRUVV
+splitting-function approximation, finds excellent agreement when common
+evolution ingredients are used~\cite{Cooper-Sarkar:2024crx}. Independent implementations of
+the N$^3$LO DIS structure functions in \texttt{APFEL++} and \texttt{HOPPET}
+have likewise been benchmarked at high numerical precision~\cite{Bertone:2024dpm}.
+These comparisons provide important cross-checks of the perturbative
+ingredients and their numerical implementation as progressively more exact
+N$^3$LO information becomes available.
 
 These advances in massless evolution and heavy-flavour matching form part of
 the theoretical basis for global PDF determinations beyond NNLO. The first

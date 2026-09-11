@@ -15,7 +15,7 @@ N$^3$LL Threshold Resummation & \cite{Anastasiou:2016cez,Bonvini:2014joa,Catani:
 \hline
 \textbf{PDFs} & \textbf{References} \\
 \hline
-Approximate N$^3$LO PDFs & \cite{Cridge:224icl,McGowan:2022nag,NNPDF:2024nan,Cooper-Sarkar:2024crx} \\
+Approximate N$^3$LO PDFs & \cite{Cridge:2024icl,McGowan:2022nag,NNPDF:2024nan,Cooper-Sarkar:2024crx} \\
 QED Evolution PDFs & \cite{Manohar:2016nzj,Manohar:2017eqh,Bertone:2017bme,Harland-Lang:2019pla,Xie:2021equ,Cridge:2021pxm,Cridge:2023ryv,Barontini:2024dyb,NNPDF:2024djq} \\
 NNLO PDFs & \cite{PDF4LHCWorkingGroup:2022cjn,Hou:2019efy,Bailey:2020ooq,Alekhin:2017kpj,NNPDF:2017mvq}\\
 \hline
@@ -207,11 +207,11 @@ dependence, was subsequently calculated in Ref.~\cite{Becchetti:2020wof}.
 For comparison with the effective-theory implementation used in
 \texttt{iHixs2}, the finite-electroweak-boson-mass result can be mapped onto
 an effective value of $C_{1w}$. For our central scale choice
-$\mu_R=m_h/2$, this corresponds to $C_{1w}^{\rm eff}\simeq-1.7$, compared
+$\mu_R=m_H/2$, this corresponds to $C_{1w}^{\rm eff}\simeq-1.7$, compared
 with $C_{1w}=7/6$ in the large-electroweak-boson-mass approximation.
 Naively replacing $C_{1w}=7/6$ by $C_{1w}^{\rm eff}=-1.7$ in this
 parametrisation changes the total Higgs-production cross section by
-approximately $-0.53\%$ for $m_h=125.09\GeV$ over the range
+approximately $-0.53\%$ for $m_H=125.09\GeV$ over the range
 $\sqrt{s}=7$--$14$~TeV. We use this comparison as a check of the numerical
 impact of the finite-electroweak-boson-mass effects rather than as a
 replacement for the mixed QCD--EW prescription entering the central
@@ -757,14 +757,13 @@ MSHT20xNNPDF40\_aN3LO combination. The conversion is defined by
 \right],
 \label{eq:ggf_pdf_conversion}
 \end{align}
-where the QED-evolution correction
-$\Delta^\text{NNLO}_\text{QED}$ is defined in
-Section~\ref{sec:ggf_qed_pdf}. It is important to note that, when using the
-MSHT20xNNPDF40\_aN3LO prediction, the PDF+$\alpha_s$ uncertainty should be
-taken from the corresponding aN$^3$LO tables and
-$\delta(\mathrm{PDF\text{--}TH})$ should not be included, since there is no
-longer a mismatch between the perturbative orders of the hard-scattering
-calculation and the PDFs.
+where the QED-evolution correction $\Delta^\text{NNLO}_\text{QED}$ is
+defined in Section~\ref{sec:ggf_qed_pdf}. It is important to note
+that, when using the MSHT20xNNPDF40\_aN3LO prediction, the
+PDF+$\alpha_s$ uncertainty should be taken from the corresponding
+aN$^3$LO tables and $\delta(\mathrm{PDF\text{--}TH})$ should not be
+included, since the explicit mismatch associated with using NNLO PDFs
+together with the N$^3$LO hard-scattering calculation is removed.
 
 \paragraph{Recommendation}
 The baseline recommendation uses the N$^3$LO HTL matrix element with the
@@ -774,20 +773,22 @@ the standard Hessian prescription through
 LHAPDF~\cite{Buckley:2014ana}. We additionally assign the PDF-order
 uncertainty $\delta(\mathrm{PDF\text{--}TH})$ defined in
 Eq.~\eqref{eq:ggf_pdf_th}. As an alternative, we provide predictions using
-the MSHT20xNNPDF40\_aN3LO combination~\cite{Cridge:2024icl}; for these
-predictions the PDF uncertainty is taken directly from the aN$^3$LO set and
-no separate $\delta(\mathrm{PDF\text{--}TH})$ uncertainty is assigned.
+the MSHT20xNNPDF40\_aN3LO combination~\cite{Cridge:2024icl}; for these predictions the PDF uncertainty is taken directly from the
+aN$^3$LO set and no separate $\delta(\mathrm{PDF\text{--}TH})$ uncertainty
+associated with the use of NNLO PDFs is assigned.
 
 \subsection{Impact of QED Evolution in the PDFs}
 \label{sec:ggf_qed_pdf}
 
-As discussed in Section~\ref{sec:pdf}, QED corrections to DGLAP evolution
-modify the quark and gluon distributions in addition to generating a photon
-PDF. For gluon-fusion Higgs production, the relevant effect is primarily the
-resulting modification of the gluon luminosity. Since this effect is at the
-sub-percent level for the baseline PDF4LHC21 prescription, it is included in
-the central prediction. Photon-initiated Higgs production is not included;
-a fully consistent treatment of QED effects would require both contributions.
+As discussed in Section~\ref{sec:pdf}, QED corrections to DGLAP
+evolution modify the quark and gluon distributions in addition to
+generating a photon PDF. For gluon-fusion Higgs production, the
+relevant effect is primarily the resulting modification of the gluon
+luminosity. Since this effect is at the sub-percent level for the
+baseline PDF4LHC21 prescription, it is included in the central
+prediction. Photon-initiated Higgs production is not included; a more
+complete treatment of QED effects would include this contribution
+consistently with the QED-evolved PDFs.
 
 \begin{table}[h!]
 {\small
