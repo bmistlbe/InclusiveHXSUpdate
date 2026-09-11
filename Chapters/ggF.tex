@@ -189,53 +189,59 @@ effective theory to the Standard Model. It is known through
 NNLO~\cite{Kramer:1996iq,Chetyrkin:1997un} and
 N$^3$LO~\cite{Schroder:2005hy,Chetyrkin:2005ia}. The quantity
 $\lambda_\mathrm{EWK}$ incorporates the leading electroweak correction
-\cite{Aglietti:2004nj,Actis:2008ug}, while $C_{1w}$ parametrises the QCD
-correction to the light-quark-mediated electroweak contribution.
+\cite{Aglietti:2004nj,Actis:2008ug}, while $C_{1w}$ parametrises its QCD
+correction within the effective-theory treatment.
 
-The dominant electroweak contribution of this type arises from light-quark
-loops coupling the initial-state gluons to electroweak gauge bosons, which in
-turn couple to the Higgs boson. The corresponding mixed QCD--EW correction
-was first obtained in the limit of large electroweak-boson masses
-\cite{Anastasiou:2008tj}, yielding $C_{1w}=7/6$. Subsequent calculations
-considered the opposite small-mass limit~\cite{Anastasiou:2018adr} and the
-virtual corrections with exact $W$- and $Z$-boson mass dependence
+An important contribution to the electroweak correction arises from
+light-quark loops coupled to the Higgs boson through electroweak gauge
+bosons. The corresponding mixed QCD--EW correction was first obtained in the
+limit of large electroweak-boson masses~\cite{Anastasiou:2008tj}, yielding
+$C_{1w}=7/6$. Subsequent calculations considered the opposite small-mass
+limit~\cite{Anastasiou:2018adr} and virtual corrections with exact $W$- and
+$Z$-boson mass dependence
 \cite{Bonetti:2016brm,Bonetti:2017ovy,Bonetti:2018ukf,Bonetti:2020hqh,
-Bonetti:2022lrk}. The complete NLO-QCD correction to the light-quark-mediated
-contribution, including the real-radiation and quark-initiated channels with
-the full electroweak-boson mass dependence, was subsequently calculated in
-Ref.~\cite{Becchetti:2020wof}.
+Bonetti:2022lrk}. The exact NLO-QCD correction to the light-quark-mediated
+$gg\to H+X$ contribution, retaining the full electroweak-boson mass
+dependence, was subsequently calculated in Ref.~\cite{Becchetti:2020wof}.
 
-For our central scale choice, the treatment retaining the finite
-electroweak-boson masses corresponds effectively to $C_{1w}\simeq-1.7$,
-compared with $C_{1w}=7/6$ in the large-mass approximation. Using the
-finite-mass result changes the total Higgs-production cross section by
-approximately $-0.53\%$ for $m_H=125.09\GeV$ over the range
-$\sqrt{s}=7$--$14$~TeV. The exact light-quark calculation therefore supports
-the earlier estimate of the mixed QCD--EW correction and lies within the
-$\delta(\mathrm{EWK})=1\%$ uncertainty assigned in
-YR4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.
+For comparison with the effective-theory implementation used in
+\texttt{iHixs2}, the finite-electroweak-boson-mass result can be mapped onto
+an effective value of $C_{1w}$. For our central scale choice
+$\mu_R=m_h/2$, this corresponds to $C_{1w}^{\rm eff}\simeq-1.7$, compared
+with $C_{1w}=7/6$ in the large-electroweak-boson-mass approximation.
+Naively replacing $C_{1w}=7/6$ by $C_{1w}^{\rm eff}=-1.7$ in this
+parametrisation changes the total Higgs-production cross section by
+approximately $-0.53\%$ for $m_h=125.09\GeV$ over the range
+$\sqrt{s}=7$--$14$~TeV. We use this comparison as a check of the numerical
+impact of the finite-electroweak-boson-mass effects rather than as a
+replacement for the mixed QCD--EW prescription entering the central
+prediction.
 
-Recent progress has provided the complete set of two-loop master integrals
-required for the top-quark-mediated mixed QCD--EW contribution, retaining the
-full dependence on $m_t$, $m_H$, $M_W$ and $M_Z$~\cite{Marzucca:2025eak}.
-This constitutes an important ingredient towards a complete calculation, but
-does not yet provide a corresponding inclusive cross-section prediction.
+The exact light-quark result represents an important improvement over the
+large-electroweak-boson-mass approximation, but does not complete the mixed
+QCD--EW calculation in all contributions relevant to the inclusive cross
+section. In particular, contributions involving the Higgs coupling to a
+top-quark loop require additional massive amplitudes. Recent progress has
+provided the complete set of two-loop master integrals required for these
+top-quark-mediated mixed QCD--EW contributions, retaining the full dependence
+on $m_t$, $m_H$, $M_W$ and $M_Z$~\cite{Marzucca:2025eak}. This constitutes
+an important ingredient towards a complete calculation, but does not yet
+provide a corresponding inclusive cross-section prediction.
 
 \paragraph{Recommendation}
 The central prediction includes the electroweak corrections of
-Refs.~\cite{Aglietti:2004nj,Actis:2008ug}. For consistency with the
-established implementation used for the predictions in this report, the
-mixed QCD--EW correction entering the central value is evaluated using the
-large-electroweak-boson-mass approximation of
-Ref.~\cite{Anastasiou:2008tj}. The calculation with exact electroweak-boson
-mass dependence~\cite{Becchetti:2020wof} shows that the resulting shift in
-the total cross section is contained within the assigned uncertainty.
-We therefore retain
+Refs.~\cite{Aglietti:2004nj,Actis:2008ug}. The mixed QCD--EW correction
+entering the central value is evaluated using the large-electroweak-boson-mass
+approximation of Ref.~\cite{Anastasiou:2008tj}, as in the established
+implementation used for the predictions in this report. The comparison with
+the finite-electroweak-boson-mass light-quark result discussed above gives a
+shift of approximately $-0.53\%$, which is contained within the uncertainty
+assigned to the mixed QCD--EW treatment. We therefore retain
 \begin{equation}
 \delta(\mathrm{EWK})=\pm1\%
 \end{equation}
-as the uncertainty associated with missing and approximated mixed
-QCD--EW corrections.
+as the uncertainty associated with missing and approximated mixed QCD--EW
+corrections.
 
 \subsection{Finite Quark Mass Corrections}
 \label{sec:ggf_mq}
