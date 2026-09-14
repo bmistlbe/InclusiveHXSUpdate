@@ -40,63 +40,117 @@ SM predictions for all Higgs-boson production modes, incorporating the
 theoretical progress of the past decade, is both timely and necessary
 if the LHC and HL-LHC precision programmes are to be fully exploited.
 
-Since the publication of YR4, substantial advances have been made in
-the calculation of Higgs production cross sections at the LHC. The
-inclusive cross section for gluon fusion, the dominant production
-mode, is now known exactly beyond the threshold expansion at N$^3$LO
-in QCD in the heavy-top-quark effective
-theory~\cite{Anastasiou:2015vya,Mistlberger:2018etf}, and has been
-supplemented by exact finite-quark-mass corrections up to
-NNLO~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}, by mixed
-QCD-electroweak corrections retaining the full dependence on the
-electroweak boson masses~\cite{Becchetti:2020wof}, and by first
-studies of approximate N$^4$LO
-effects~\cite{Das:2020adl}. Vector-boson fusion is available at
+Since the publication of YR4, the theoretical description of every
+production mode considered here has advanced. For gluon fusion, the
+dominant mode, the inclusive cross section in the heavy-top limit is
+now known exactly at N$^3$LO in
+QCD~\cite{Anastasiou:2015vya,Anastasiou:2016cez,Mistlberger:2018etf},
+rather than through a threshold expansion. It has been supplemented by
+exact finite-quark-mass corrections at NNLO, both for the top-only
+contribution~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb} and
+for the top--bottom interference~\cite{Czakon:2023kqm,Czakon:2024ywb},
+by mixed QCD--electroweak corrections to the gluon-induced channel
+retaining the full dependence on the electroweak boson
+masses~\cite{Bonetti:2016brm,Bonetti:2017ovy,Bonetti:2018ukf,Becchetti:2020wof},
+and by an approximate N$^4$LO result obtained in the soft-virtual
+approximation~\cite{Das:2020adl}. Vector-boson fusion is available at
 N$^3$LO in the structure-function approximation~\cite{Dreyer:2016oyx},
-complemented by a detailed assessment of non-factorisable corrections
-and of the quality of the structure-function
-approximation~\cite{Liu:2019tuy,Dreyer:2020urf,Barone:2025jey}. Associated
-production with a $Z$ or a $W$ boson has reached N$^3$LO QCD accuracy
- for the Drell-Yan like contribution~\cite{Baglio:2022wzu}, and the full NLO corrections to the gluon-induced $ZH$ channel has recently been completed as well~\cite{Altenkamp:2012sx,Hasselhuhn:2016rqt,Davies:2020drs,Chen:2020gae,Wang:2021rxu,Alasfar:2021ppe,Chen:2022rua,Degrassi:2022mro,Davies:2025out}. $t\bar{t}H$ production now benefits from NNLO QCD corrections matched
-to NNLL soft-gluon resummation and combined with NLO electroweak
-effects~\cite{Catani:2022mfv,Devoto:2024nhl}. Production in
-association with bottom quarks has reached N$^3$LO accuracy in the
-five-flavour scheme~\cite{Duhr:2019kwi}, consistently matched to
-four-flavour-scheme calculations~\cite{Duhr:2020kzd}. In parallel, the
-parton distribution functions (PDFs) entering all of these predictions
-have been substantially refined: the PDF4LHC21
-combination~\cite{PDF4LHCWorkingGroup:2022cjn} is now the recommended
-baseline set, approximate N$^3$LO PDFs have become available from the
-MSHT and NNPDF collaborations~\cite{McGowan:2022nag,NNPDF:2024nan} and
-have subsequently been combined~\cite{Cridge:2024icl}. The impact of
-QED corrections to the DGLAP evolution has been assessed for the first
-time in this context~\cite{Manohar:2016nzj,Cooper-Sarkar:2025sqw} as
-well. These developments affect not only the central predictions but,
-in several cases, motivate a substantial revision of the associated
-theoretical uncertainties, as we discuss in detail below.
+and the non-factorisable corrections neglected in that approximation
+have since been computed~\cite{Liu:2019tuy,Dreyer:2020urf,Asteriadis:2023nyl}.
+Associated production with a $W$ or $Z$ boson has reached N$^3$LO QCD
+accuracy for the Drell--Yan-like
+contribution~\cite{Baglio:2022wzu}, and the NLO QCD corrections to the
+loop-induced $gg\to ZH$ channel have been completed with full
+top-quark mass
+dependence~\cite{Altenkamp:2012sx,Hasselhuhn:2016rqt,Davies:2020drs,Chen:2020gae,Wang:2021rxu,Alasfar:2021ppe,Chen:2022rua,Degrassi:2022mro,Davies:2025out},
+with first NNLO results in the large-$m_t$ limit appearing
+recently~\cite{Davies:2025otz}. For $t\bar{t}H$, the NNLO QCD
+corrections~\cite{Catani:2022mfv,Devoto:2024nhl} have been matched to
+NNLL soft-gluon resummation and combined with the complete NLO
+electroweak corrections~\cite{Balsach:2025jcw}. Single-top associated
+production remains known at NLO QCD~\cite{Demartin:2015uha,Demartin:2016axk};
+NLO electroweak corrections are also available, but only for the three
+production channels taken together, since the separation into channels
+is no longer well defined once they are
+included~\cite{Pagani:2020mov}. Production in association with bottom
+quarks has reached N$^3$LO accuracy in the five-flavour
+scheme~\cite{Duhr:2019kwi} and has been matched to the four-flavour
+scheme at that order using the FONLL method~\cite{Duhr:2020kzd}; the
+recommendation presented below is instead based on the
+NLO+NNLL\textsubscript{part} matching of
+Refs.~\cite{Bonvini:2015pxa,Bonvini:2016fgf}, which allows an explicit
+resummation-scale uncertainty to be assigned.
 
-The purpose of this report is to collect and combine all of these
-developments into an updated set of LHCHWG recommendations for the
-inclusive Higgs-boson production cross sections at
-$\sqrt{s}=7,\,8,\,13,\,13.6$, and $14$~TeV, covering gluon fusion
-(ggF), vector-boson fusion (VBF), associated production with a $W$ or
-$Z$ boson (VH), associated production with a top-quark pair
-($t\bar{t}H$) or a single top quark ($tH$), and associated production
-with bottom quarks ($b\bar{b}H$). For each production mode we document
-the state-of-the-art ingredients entering the recommendation, define a
-common and consistent procedure for combining fixed-order QCD and
-electroweak corrections with residual theoretical and parametric
-uncertainties, and compare the resulting predictions with those of
-YR4. We further place the resulting precision in the context of the
-most precise current LHC measurements and of projected HL-LHC
-sensitivities~\cite{Cepeda:2019klc}, in order to assess to what extent
-the present theoretical uncertainties will remain sufficient, or
-become a limiting factor, over the coming decade of LHC running. This
-report supersedes both
+The parton distribution functions (PDFs) entering all of these
+predictions have been refined in parallel. The PDF4LHC21
+combination~\cite{PDF4LHCWorkingGroup:2022cjn} is the recommended NNLO
+baseline and is used throughout this report. Beyond NNLO, approximate
+N$^3$LO sets have been produced by the MSHT and NNPDF
+collaborations~\cite{McGowan:2022nag,NNPDF:2024nan}, benchmarked
+against one another~\cite{Cooper-Sarkar:2024crx} and subsequently
+combined~\cite{Cridge:2024icl}. Separately, the effect of QED
+corrections to the DGLAP evolution has been quantified for Higgs
+production for the first time~\cite{Manohar:2016nzj,Cooper-Sarkar:2025sqw}.
+Both developments bear on gluon fusion more than on any other mode,
+since the hard-scattering cross section is known one order beyond the
+PDFs and since sub-percent changes in the gluon luminosity are no
+longer negligible at the precision now reached. They are introduced in
+Section~\ref{sec:setup} and their consequences for the recommendation
+are worked out in Section~\ref{sec:ggF}.
+
+The LHCHWG is currently preparing a set of updates which will
+collectively replace YR4, published as a series of reports in SciPost
+Physics Community Reports and referred to in the following as Report~5
+(R5). Several of these have already appeared, among them dedicated
+studies of vector-boson fusion~\cite{Barone:2025jey}, of
+$t\bar{t}H$~\cite{Balsach:2025jcw}, of the $gg\to ZH$
+channel~\cite{CampilloAveleira:2025rbh}, and of the modelling of
+$b\bar{b}H$ production~\cite{10.21468/SciPostPhysCommRep.18}. The
+present report is the contribution to R5 concerned with inclusive
+production cross sections. It collects the developments listed above
+into an updated set of LHCHWG recommendations at
+$\sqrt{s}=7,\,8,\,13,\,13.6$, and $14$~TeV and for Higgs-boson masses
+between $120$ and $130$~GeV, covering gluon fusion (ggF), vector-boson
+fusion (VBF), associated production with a $W$ or $Z$ boson (VH),
+associated production with a top-quark pair ($t\bar{t}H$) or a single
+top quark ($tH$), and associated production with bottom quarks
+($b\bar{b}H$). For $t\bar{t}H$ and $tH$ predictions are provided at
+$13$, $13.6$ and $14$~TeV only. For each production mode we document
+the ingredients entering the recommendation, define the procedure by
+which they are combined, and state the residual theoretical and
+parametric uncertainties. We further place the resulting precision in
+the context of the most precise current LHC measurements and of
+projected HL-LHC
+sensitivities~\cite{Cepeda:2019klc,ATLAS:2022hsp}, in order to assess
+to what extent the present theoretical uncertainties will remain
+sufficient, or become a limiting factor, over the coming decade of LHC
+running. Within this scope the report supersedes
 YR4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} and the ad interim
-recommendations of Ref.~\cite{Karlberg:2024zxx}.
+recommendations of Ref.~\cite{Karlberg:2024zxx}; branching ratios,
+differential distributions and off-shell effects are not addressed
+here.
 
-The remainder of this note is organised as
+The chapters that follow differ considerably in length, for two
+reasons. For most production modes, the calculations entering the
+recommendation and the reasoning behind the choices made in combining
+them are discussed at length elsewhere in R5 and in the literature it
+builds on. Those chapters therefore concentrate on the ingredients
+that define the present prediction, on the combination formula and on
+the uncertainty prescription, and point the reader onwards for the
+supporting material. Gluon fusion is the exception. No such account
+exists elsewhere, and the number of separate decisions that had to be
+taken is in any case larger. The renormalisation scheme of the
+top-quark mass, the finite quark-mass corrections now available at
+NNLO, the mismatch between an N$^3$LO matrix element and NNLO PDFs,
+and the inclusion of QED evolution each shift either the central value
+or the uncertainty at the percent level, and they do not all act in
+the same direction. Section~\ref{sec:ggF} consequently treats each
+ingredient and its uncertainty in turn, in the manner of YR4, and is
+correspondingly longer than the others. This unevenness reflects where
+the work was needed rather than the relative importance of the
+production modes.
+
+The remainder of this report is organised as
 follows. Section~\ref{sec:setup} defines the common input parameters
 and conventions used throughout. Sections~\ref{sec:ggF}--\ref{sec:bbH}
 present the state of the art and the resulting recommendations for
@@ -106,13 +160,7 @@ uncertainties in comparison with YR4 and with current and projected
 experimental precision, and Section~\ref{sec:conclusions}
 concludes. Numerical tables for all production modes, collision
 energies and Higgs-boson masses considered are collected in
-Appendix~\ref{app:tables}.
-%Production cross sections for the Higgs boson based on the Standrad Model of particle physics were collected in the CERN Yellow Report "Deciphering the Nature of the Higgs Sector" (YR4) (CERN-2017-002)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.  
-%Since this document became public many advancements in our abilities to predict production cross sections were achieved. 
-%Furthermore, the LHC performed measurements at a higher centre-of-mass energy of $13.6$ TeV for which YR4 does not contain any predictions.
-%Looking ahead to Run-3 and the High Luminosity phase of the LHC  (HL-LHC) and the associated wealth of data that will be collected an update of the HWG recommendation of all production cross sections to reflect the current state of the art is called for.
-%The aim of this note is to document recent advancements and review the ingredients for the prediction of Standard Model predictions for the production cross sections of the Higgs boson at the LHC (similar in spirit as in YR4). 
-%Updated numerical predictions for central values of the production cross sections and associated theoretical and parametric uncertainties are the main result of this article. This note supersedes the interpolation of Ref.~\cite{Karlberg:2024zxx}.
-%\\
-%For now, instructions and input parameters for the generation of numerical values can be found here:  \url{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWG136TeVxsec}
-%
+Appendix~\ref{app:tables}; for gluon fusion these also contain the
+information required to convert the recommendation to approximate
+N$^3$LO PDFs. The numbers are additionally available at
+\url{https://gitlab.cern.ch/LHCHIGGSXS/LHCHXSWG1/crosssections}.
