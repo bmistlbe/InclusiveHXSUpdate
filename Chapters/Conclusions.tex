@@ -1,55 +1,66 @@
-We have presented updated LHC Higgs Working Group recommendations for
-the inclusive production cross sections of a Standard Model Higgs
-boson at $\sqrt{s}=7,\,8,\,13,\,13.6$, and $14$~TeV, covering gluon
-fusion, vector-boson fusion, associated production with a vector
-boson, associated production with top quarks, single-top associated
-production, and associated production with bottom quarks. This update
-supersedes the recommendations of Yellow Report~4
-(YR4)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} and the ad interim interpolation of
-Ref.~\cite{Karlberg:2024zxx}, incorporating close to a decade of
-theoretical progress into a single, consistently defined reference.
+We have presented updated LHC Higgs Working Group recommendations for the
+inclusive production cross sections of a Standard Model Higgs boson at
+$\sqrt{s}=7,\,8,\,13,\,13.6$ and $14$~TeV and for Higgs-boson masses between
+$120$ and $130$~GeV, covering gluon fusion, vector-boson fusion, associated
+production with a vector boson, associated production with a top-quark pair or
+a single top quark, and associated production with bottom quarks. Within this
+scope the report supersedes Yellow Report~4
+(YR4)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} and the ad interim
+recommendations of Ref.~\cite{Karlberg:2024zxx}, and constitutes the inclusive
+cross-section contribution to Report~5 of the working group.
 
-For every production mode considered, the resulting central
-predictions are consistent with those of YR4 within the quoted
-uncertainties. At the same time, the precision of the predictions has
-improved markedly for most channels, driven by the availability of new
-higher-order QCD corrections -- including N$^3$LO results for gluon
-fusion and vector-boson fusion, NNLO~+~NNLL soft-gluon resummation
-matched with NLO electroweak corrections for $t\bar{t}H$, and
-N$^3$LO/NLO flavour-scheme-matched predictions for $b\bar{b}H$ --
-together with improved electroweak corrections, refined treatments of
-finite-quark-mass effects, and updated global PDF sets. As a
-consequence, the total theoretical uncertainty (neglecting PDF
-uncertainties) on most production cross sections is now smaller than,
-or comparable to, the projected precision of Higgs-boson
-signal-strength measurements at the HL-LHC, underlining the importance
-of these developments for fully exploiting the physics potential of
-the high-luminosity programme.
+For every production mode the central prediction remains consistent with YR4
+within the uncertainties quoted there, while the precision has improved for
+most channels. The improvements rest on specific calculations rather than on a
+uniform advance: for gluon fusion, the complete N$^3$LO result in the heavy-top
+limit~\cite{Mistlberger:2018etf} together with exact NNLO corrections for the
+top-only contribution and the top--bottom
+interference~\cite{Czakon:2024ywb}; for vector-boson fusion, the N$^3$LO
+structure-function result~\cite{Dreyer:2016oyx} supplemented by explicit
+calculations of the non-factorisable corrections; for $VH$, the completion of
+the NLO QCD corrections to the loop-induced $gg\to ZH$
+channel~\cite{CampilloAveleira:2025rbh}; for $t\bar tH$, NNLO QCD matched to
+NNLL soft-gluon resummation and combined with the complete NLO electroweak
+corrections~\cite{Balsach:2025jcw}; and for $b\bar bH$, the matched
+\nlonnllpart{} prediction~\cite{Bonvini:2016fgf}, which carries an explicit
+resummation-scale uncertainty. As a consequence the total theoretical
+uncertainty, once parton-distribution uncertainties are set aside, is now
+smaller than or comparable to the precision projected for Higgs-boson
+signal-strength measurements at the HL-LHC in every channel considered.
 
-Parton distribution functions remain the dominant source of
-uncertainty across essentially all production modes, and constitute
-the leading bottleneck for further improvement. For gluon fusion in
-particular, the persistent tension between NNLO and approximate
-N$^3$LO PDF sets, and between the aN$^3$LO fits of different
-collaborations, has led us to double the PDF-theory uncertainty
-relative to YR4 in order to conservatively bracket this mismatch. We
-have shown that this discrepancy would be substantially reduced by
-consistent use of N$^3$LO-order PDFs, and we have additionally
-quantified the impact of QED corrections to the DGLAP evolution,
-which can shift the gluon-fusion cross section by up to about $1.7\%$
-depending on the PDF set and collider energy. These observations
-highlight the need for continued progress -- and eventual community
-consensus -- on N$^3$LO PDF determinations ahead of the HL-LHC era.
+Parton distributions are the binding constraint on further improvement, and
+are the dominant uncertainty in essentially every channel. The baseline of this
+report is PDF4LHC21 at NNLO~\cite{PDF4LHCWorkingGroup:2022cjn}, in line with
+the working group's practice of following the PDF4LHC recommendations. Since no
+such recommendation exists beyond NNLO, the mismatch between an N$^3$LO matrix
+element and NNLO distributions cannot be removed and has instead to be carried
+as an uncertainty. How best to estimate that uncertainty proved to depend on
+the process. The two independent approximate N$^3$LO determinations agree well
+for vector-boson fusion, where they differ by $0.3\%$, but not for gluon
+fusion, where they differ by around $3\%$ on an effect of comparable
+size~\cite{Cridge:2024icl}. For gluon fusion we have accordingly doubled the
+PDF-theory uncertainty relative to YR4, and even that does not fully bracket
+the shift; for vector-boson fusion the shift is well determined and comparable
+to the uncertainty already assigned, and is quantified but not applied to the
+central prediction. Establishing a common prescription for parton distributions
+at this accuracy is the single development that would most improve the
+predictions collected here.
 
-The numerical predictions, together with a full breakdown of the
-associated theoretical and parametric uncertainties, are tabulated in
-Appendix~\ref{app:tables} for all production modes, collider energies,
-and Higgs-boson masses considered. We hope that this report will
-serve, as YR4 did previously, as the standard reference for
-Higgs-boson production cross sections at the LHC and HL-LHC, and we
-anticipate that further updates will be required as new perturbative
-calculations, improved PDF sets, and refined uncertainty estimates
-become available.
+We have also quantified the effect of QED corrections to the DGLAP evolution,
+which shifts the gluon-fusion cross section by up to about $1.7\%$ depending on
+the parton distributions and the collider energy, and the vector-boson-fusion
+cross section by about $0.6\%$~\cite{Cooper-Sarkar:2025sqw}. The treatment of
+QED evolution and of photon-initiated production is not uniform across the
+production modes considered here, for reasons of timing set out in
+Section~\ref{sec:pdf}, and a uniform treatment is desirable in a future update.
 
-The results are also made available at the following repository:
-\url{https://gitlab.cern.ch/LHCHIGGSXS/LHCHXSWG1/crosssections}. 
+The numerical predictions, together with a full breakdown of the associated
+theoretical and parametric uncertainties, are tabulated in
+Appendix~\ref{app:tables} for all production modes, collider energies and
+Higgs-boson masses considered, and are also available at
+\url{https://gitlab.cern.ch/LHCHIGGSXS/LHCHXSWG1/crosssections}. We hope that
+this report will serve, as YR4 did before it, as the standard reference for
+Higgs-boson production cross sections at the LHC and HL-LHC, and we anticipate
+that further updates will be required as exact N$^3$LO ingredients, consistent
+N$^3$LO parton distributions and refined uncertainty estimates become
+available.
