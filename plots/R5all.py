@@ -18,8 +18,8 @@ plt.rcParams.update({
 
 ## NOTES :
 
-# Run 2 : signal stregth measurements from ATLAS-CONF-2025-006 (Figure 3) and CMS-HIG-21-018 (Figure 6)
-#         bbH scaled with ggH, tH scaled with ttH  
+# Run 2 : xsec measurements from HIGP-2025-16 (Figure 3) and signal strength from CMS-HIG-21-018 (Figure 6)
+#         bbH scaled with ggH  
 #         Using measurement with smallest uncertainty   
 
 # HL-LHC : sigma_i/sigma_SM projection from snowmass (https://arxiv.org/abs/2209.07510)
@@ -32,42 +32,42 @@ data = {
         "R5": (-7.4, 4.8),
         "R5 without PDF": (-4.6, 1.7),
         "HL-LHC": (-1.60, 1.60),
-        "Run 2": (-6.0, 7.0),   
+        "Run 2": (-5.8, 5.8),   
     },
       "ggF(gauss)": {
         "YR4": (-5, 5),
         "R5": (-4.7, 4.7),
         "R5 without PDF": (-2.7, 2.7), # 4.6/sqrt(3)
         "HL-LHC": (-1.60, 1.60),
-        "Run 2": (-6.0, 7.0),  
+        "Run 2": (-5.8, 5.8),  
     },
     "VBF": {
         "YR4": (-2.6, 2.6), # included delta_ew of 1.5% from YR4 pg 89 (as TU+scale in R5)
         "R5": (-2.4, 2.4),
         "R5 without PDF": (-1.1, 1.1),
         "HL-LHC": (-3.1, 3.1),
-        "Run 2": (-11.0, 12.0), 
+        "Run 2": (-10.7, 11.7), 
     },
     "WH": {
         "YR4": (-1.9, 1.8),   
         "R5": (-1.9, 1.8), # From W+/W-H in note seems to match YR4
         "R5 without PDF": (-0.7, 0.5),
         "HL-LHC": (-5.7, 5.7),
-        "Run 2": (-16.0, 16.0),
+        "Run 2": (-15.6, 15.6),
     },
     "ZH": {
         "YR4": (-3.6, 4.1), 
         "R5": (-3.1, 3.3),
         "R5 without PDF": (-2.7, 2.9),
         "HL-LHC": (-4.2, 4.2),
-        "Run 2": (-15.0, 17.0),
+        "Run 2": (-15.6, 17.0),
     },
     "ttH": {
         "YR4": (-9.8, 6.7),
         "R5": (-3.6, 3.2),
         "R5 without PDF": (-2.3, 1.7),
         "HL-LHC": (-4.3, 4.3),
-        "Run 2": (-14.0, 15.0), 
+        "Run 2": (-19.0, 23.4), 
     },
     "tH (t-ch)": {
         "YR4": (-15.1, 7.3),
@@ -250,22 +250,22 @@ legend_handles = [
     Patch(
         facecolor="black",
         edgecolor="black",
-        label="$\mathrm{\sigma}$ YR4 [$\sqrt{s}=14$ TeV]", # , $m_{h}=125.09$ GeV
+        label="YR4 [$\sqrt{s}=14$ TeV]", # , $m_{h}=125.09$ GeV
     ),
     Patch(
         facecolor="tab:red",
         edgecolor="tab:red",
-        label="$\mathrm{\sigma}$ R5 [$\sqrt{s}=14$ TeV]",
+        label="R5 [$\sqrt{s}=14$ TeV]",
     ),
     Patch(
         facecolor="tab:green",
         edgecolor="tab:green",
-        label="$\mathrm{\sigma}$ R5 [$\sqrt{s}=14$ TeV]\nexcl. PDF+$\\alpha_{s}$ & PDF-TH",
+        label="R5 [$\sqrt{s}=14$ TeV]\nexcl. PDF+$\\alpha_{s}$ & PDF-TH",
     ),
     Patch(
         facecolor="none",
         edgecolor="tab:blue",
-        label="$\mathrm{\mu}$ LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
+        label="LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
     ),
     Patch(
         facecolor="#BFD7EA",
@@ -273,7 +273,7 @@ legend_handles = [
         #hatch="///",
         alpha=0.45,
         linewidth=1.0,
-        label="$\mathrm{\mu}$ HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
+        label="HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
     ),
 ]
 
