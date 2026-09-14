@@ -1,11 +1,11 @@
 Here we specify the common input parameters and baseline conventions used for
 the predictions presented in this report. Unless stated otherwise in the
 individual production-mode sections, the numerical inputs given below are used
-throughout. Where applicable, these inputs were chosen following the Review of
-Particle Physics (PDG)~\cite{ParticleDataGroup:2020ssz}.\footnote{At the time
-when this work was started, the 2020 edition of the PDG was the most recently published.}
-Any departures from this common setup are stated explicitly in the
-corresponding sections.
+throughout. Where applicable, these inputs follow the Review of Particle
+Physics (PDG)~\cite{ParticleDataGroup:2020ssz}.\footnote{The 2020 edition of the
+PDG was the most recent one when this work was started.} Departures from this
+common setup are stated explicitly in the corresponding sections, and the most
+significant of them are collected in Section~\ref{sec:pdf}.
 
 \subsection{Fermion masses}
 We use the following quark-mass inputs:
@@ -15,9 +15,9 @@ We use the following quark-mass inputs:
 &M_b^{\overline{\mathrm{MS}}}(M_b^{\overline{\mathrm{MS}}})=4.18\,\mathrm{GeV},&
 &M_c^{\overline{\mathrm{MS}}}(3.0\,\mathrm{GeV})=0.986\,\mathrm{GeV}.&
 \end{align}
-Quark widths are neglected. The mass-renormalisation schemes employed in the
-individual calculations are specified in the corresponding production-mode
-sections. When an $\overline{\mathrm{MS}}$ top-quark mass is required, we use
+Quark widths are neglected. The mass-renormalisation scheme used in each
+calculation is specified in the corresponding production-mode section. Where an
+$\overline{\mathrm{MS}}$ top-quark mass is required, we use
 \begin{align}
 M_t^{\overline{\mathrm{MS}}}(M_t^{\overline{\mathrm{MS}}})
 =162.5\,\mathrm{GeV}.
@@ -25,15 +25,13 @@ M_t^{\overline{\mathrm{MS}}}(M_t^{\overline{\mathrm{MS}}})
 
 \subsection{Gauge boson masses}
 
-We use the following on-shell values for the $W$- and $Z$-boson masses and
-widths:
+The $W$- and $Z$-boson masses and widths are taken on-shell,
 \begin{align}
 M^\OS_W &= 80.379\GeV\,, \qquad &\Gamma^\OS_W &= 2.085\GeV\,, \notag\\
-M^\OS_Z &= 91.1876\GeV\,, \qquad &\Gamma^\OS_Z &= 2.4952\GeV\,.
+M^\OS_Z &= 91.1876\GeV\,, \qquad &\Gamma^\OS_Z &= 2.4952\GeV\,,
 \end{align}
-When required for electroweak calculations, these on-shell parameters are
-converted to the corresponding pole masses and widths~\cite{BARDIN1988539}
-according to
+and are converted, where an electroweak calculation requires it, to the
+corresponding pole masses and widths~\cite{BARDIN1988539} according to
 \begin{align}
 M_V &=
 \frac{M^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,,
@@ -42,9 +40,9 @@ M_V &=
 \frac{\Gamma^\OS_V}{\sqrt{1+(\Gamma^\OS_V/M^\OS_V)^2}}\,.
 \end{align}
 
-The electromagnetic coupling is defined in the $G_\mu$ scheme
-\cite{Denner:2000bj}. In terms of the Fermi constant and the on-shell
-gauge-boson masses, we use
+The electromagnetic coupling is defined in the $G_\mu$
+scheme~\cite{Denner:2000bj}. In terms of the Fermi constant and the on-shell
+gauge-boson masses,
 \begin{align}
 \alpha_{G_\mu}
 &= \frac{\sqrt{2}}{\pi}G_F(M^\OS_W)^2\sin^2\theta_W\,,
@@ -52,285 +50,188 @@ gauge-boson masses, we use
 \sin^2\theta_W
 &=1-\frac{(M^\OS_W)^2}{(M^\OS_Z)^2}\,,
 &
-G_F&=1.16638\cdot10^{-5}\GeV^{-2}\,.
+G_F&=1.16638\cdot10^{-5}\GeV^{-2}\,,
 \end{align}
-With the inputs above, this gives
+which gives
 \begin{equation}
 \alpha_{G_\mu}=0.007565210\,.
 \end{equation}
 
 \subsection{Higgs masses and collider energies}
-We provide predictions for Higgs-boson masses in the range
-$120\leq m_H\leq130\GeV$. The mass grid includes, in particular,
-$m_H=125.09\GeV$, corresponding to the ATLAS+CMS Run-1 combination
-\cite{ATLAS:2015yey}, and $m_H=125.38\GeV$, as measured by CMS
-\cite{CMS:2020xrn}:
+Predictions are provided on a grid of Higgs-boson masses in the range
+$120\leq m_H\leq130\GeV$. The grid is chosen to resolve the region around the
+measured value, and includes $m_H=125.09\GeV$, the ATLAS+CMS Run-1
+combination~\cite{ATLAS:2015yey}, and $m_H=125.38\GeV$, as measured by
+CMS~\cite{CMS:2020xrn}:
 \begin{align}
 m_H = \{&120, 122, 124, \notag\\
         &124.6, 124.8, 125, 125.09, 125.2, 125.3, 125.38, 125.6, \notag\\
         &126, 128, 130\}\,\mathrm{GeV}.
 \end{align}
 
-Predictions are provided at centre-of-mass energies relevant to legacy LHC
-analyses, the current LHC programme, and the HL-LHC:
+The centre-of-mass energies cover the legacy LHC analyses, the current
+programme, and the HL-LHC:
 \begin{align}
 \sqrt{s}=\{7,8,13,13.6,14\}\,\mathrm{TeV}.
 \end{align}
+The only exception is $t\bar tH$ and $tH$ production, for which predictions are
+given at $13$, $13.6$ and $14$~TeV; for the two lower energies we continue to
+recommend the numbers of Ref.~\cite{Karlberg:2024zxx}.
 
 
 \subsection{Parton distributions and $\alphas$}
 \label{sec:pdf}
 
-Following the PDF4LHC recommendation~\cite{PDF4LHCWorkingGroup:2022cjn},
-we use the PDF4LHC21\_40 NNLO set as the baseline for the predictions in
-this report. The strong coupling is taken to be
+The baseline set for this report is PDF4LHC21\_40 at NNLO, and the strong
+coupling is
 \begin{equation}
-    \alphas(M_Z)=0.1180\pm0.001\,.
+    \alphas(M_Z)=0.1180\pm0.001\,,
 \end{equation}
-The PDF and $\alphas$ uncertainties are evaluated following the same
-recommendation. Whenever a calculation is performed in the four-flavour
-scheme, the corresponding four-flavour PDF set is used.
+with PDF and $\alphas$ uncertainties evaluated following the PDF4LHC
+recommendation~\cite{PDF4LHCWorkingGroup:2022cjn}. The PDF4LHC21 set is a Monte Carlo
+combination of the CT18, MSHT20 and NNPDF3.1
+sets~\cite{Hou:2019efy,Bailey:2020ooq,NNPDF:2017mvq}, reduced here to a
+$40$-member Hessian representation. The working group takes the PDF4LHC
+recommendation as its reference prescription, and PDF4LHC21 is the most recent
+such recommendation; this, rather than a process-by-process optimisation, is
+what fixes the baseline. It also explains why the use of parton distributions
+beyond NNLO is a more delicate matter, since no PDF4LHC recommendation exists
+at that accuracy; we return to this point in Section~\ref{sec:an3lo-pdfs}.
+Whenever a calculation is performed in the four-flavour scheme, the
+corresponding four-flavour set is used.
 
-The baseline PDF4LHC21\_40 set does not include a photon distribution.
-Where photon-initiated contributions are included in the electroweak
-corrections, we therefore use the photon distribution from
-LUXqed17\_plus\_PDF4LHC15\_nnlo\_100~\cite{Manohar:2017eqh}, while retaining
-PDF4LHC21\_40 for the quark and gluon distributions. This hybrid prescription
-is not fully consistent, since the inclusion of a photon PDF together with
-QED corrections to the DGLAP evolution also modifies the quark and gluon
-distributions. It is useful to distinguish these two effects:
-photon-initiated partonic channels give an explicit contribution to the
-hard-scattering cross section, whereas QED evolution modifies the parton
-luminosities entering the remaining channels.
+Two departures from this baseline should be stated plainly.
 
-The size of the explicit photon-initiated contribution is process dependent.
-For VBF production at $\sqrt{s}=14$~TeV and $m_H=125.09\GeV$, for example,
-the photon-initiated contribution included in our prediction is
-$40.6\,\mathrm{fb}$, corresponding to approximately $0.94\%$ of the total
-cross section. This fraction is very stable over the LHC energy range,
-amounting to approximately $0.92\%$, $0.93\%$, and $0.94\%$ at
-$\sqrt{s}=13$, $13.6$, and $14$~TeV, respectively. Previous LHCHWG studies
-using a LUXqed-based photon PDF also illustrate that the relative importance
-of photon-initiated channels can vary considerably between processes. For
-leptonic $W^\pm H$ production at $14$~TeV, photon-initiated contributions of
-about $4$--$5\%$ were found, whereas for $ZH$ production with a charged
-leptonic $Z$ decay the corresponding contribution is approximately
-$0.5\%$~\cite{Cepeda:2019klc}. These numbers refer to the specified leptonic
-final states and should not be identified directly with corrections to the
-on-shell $VH$ cross sections presented in this report. More recent studies
-using modern QED PDF sets find a similar photon-initiated contribution for
-leptonic $WH$ production and only a small dependence on the choice of the
-photon PDF~\cite{Cooper-Sarkar:2025sqw}.
+The first concerns $b\bar bH$ production, which does not use PDF4LHC21. A
+consistent matching of the four- and five-flavour schemes requires the bottom
+distribution to be evolved across the flavour threshold in a uniform way and
+for every value of $m_b$ and of the matching scale $\mu_b$ entering the
+matched prediction. The sets entering the PDF4LHC21 combination adopt
+different values of $m_b$, so the combination itself cannot serve this purpose.
+Dedicated sets are used instead, obtained by re-evolving the
+\texttt{PDF4LHC15\_nnlo\_mc} input from an initial scale of $2\GeV$, as
+described in Ref.~\cite{Bonvini:2016fgf} and in Section~\ref{sec:bbH}.
 
-The separate effect of QED evolution on the quark and gluon distributions is
-typically at the sub-percent level for inclusive Higgs production at LHC
-energies~\cite{Cooper-Sarkar:2025sqw}. Using a PDF4LHC21-based prescription,
-Ref.~\cite{Cooper-Sarkar:2025sqw} finds at $14$~TeV shifts of approximately
-$-0.7\%$ for VBF, $-0.6\%$ for $ZH$ and $W^+H$, and $-0.55\%$ for $W^-H$.
-For comparison, the PDF+$\alphas$ and total uncertainties of our VBF
-prediction at $14$~TeV are approximately $2.2\%$ and $2.4\%$, respectively,
-while those for $W^\pm H$ are around $2\%$. The omitted QED-evolution effect
-is therefore subdominant to the uncertainties assigned to these production
-modes. We consequently do not assign an additional uncertainty specifically
-associated with the use of the hybrid photon-PDF prescription. This should
-not be interpreted as implying that the effect is negligible, but rather that
-its estimated size does not qualitatively alter the central predictions or
-their present uncertainty budgets. We also note that the photon-initiated
-contribution and the QED-evolution effect are distinct and should not be
-regarded as correlated; in particular, their partial numerical cancellation
-in VBF is incidental.
+The second concerns the photon. PDF4LHC21\_40 carries no photon distribution,
+so wherever photon-initiated channels are included in the electroweak
+corrections we take the photon from
+LUXqed17\_plus\_PDF4LHC15\_nnlo\_100~\cite{Manohar:2017eqh} while retaining
+PDF4LHC21\_40 for the quarks and gluons. This hybrid is not internally
+consistent: a photon distribution is inseparable from the QED corrections to
+the DGLAP evolution, which also modify the quark and gluon distributions. It is
+useful to keep the two effects apart. Photon-initiated partonic channels
+contribute explicitly to the hard-scattering cross section, whereas QED
+evolution changes the parton luminosities entering all remaining channels. The
+prescription above accounts for the first and neglects the second.
 
-For gluon-fusion Higgs production, where sub-percent changes in the gluon
-distribution are relevant at the precision of the present prediction, we
-instead account explicitly for the impact of QED evolution following the
-prescription of Ref.~\cite{Cooper-Sarkar:2025sqw}. Photon-initiated Higgs
-production is not included in this case. The implementation and numerical
-impact of QED evolution on the gluon-fusion prediction are discussed in
-Sec.~\ref{sec:ggf_qed_pdf}.
+It should be said that this prescription was adopted at an early stage of the
+present work, before dedicated studies of QED effects in Higgs production were
+available, and that it has been retained for the production modes whose
+predictions were completed under it. The explicit photon-initiated contribution
+is process dependent but numerically stable: for VBF at $\sqrt{s}=14$~TeV and
+$m_H=125.09\GeV$ it amounts to $40.6\,\mathrm{fb}$, or $0.94\%$ of the total
+cross section, and to $0.92\%$ and $0.93\%$ at $13$ and $13.6$~TeV
+respectively. The neglected QED-evolution effect has since been quantified in
+Ref.~\cite{Cooper-Sarkar:2025sqw}, which constructs a PDF4LHC21 QED correction
+from the corresponding CT18, MSHT20 and NNPDF3.1 QED-enhanced sets and finds
+shifts at $14$~TeV of $-0.7\%$ for VBF, $-0.6\%$ for $ZH$ and $W^+H$ and
+$-0.55\%$ for $W^-H$. These are to be compared with a PDF$+\alphas$
+uncertainty of $2.2\%$ and a total uncertainty of $2.4\%$ for VBF, and with
+uncertainties of around $2\%$ for $W^\pm H$. The omitted effect is therefore
+smaller than the uncertainties already assigned, and we do not introduce a
+further uncertainty to cover it. This is not to say that the effect is
+negligible, only that accounting for it would not change the central
+predictions or their uncertainty budgets appreciably. We stress that the
+photon-initiated contribution and the QED-evolution shift are distinct and
+should not be treated as correlated; their partial cancellation in VBF is
+incidental.
+
+Gluon fusion is treated differently, and the report therefore does not apply a
+single QED prescription throughout. There the cross section is known at
+N$^3$LO, sub-percent changes in the gluon luminosity are not negligible against
+the other uncertainties, and the QED-evolution shift is instead included
+explicitly following Ref.~\cite{Cooper-Sarkar:2025sqw}; photon-initiated Higgs
+production is not included in that case. The implementation and its numerical
+impact are described in Section~\ref{sec:ggf_qed_pdf}. A uniform treatment of
+photon-initiated contributions and QED evolution across all production modes
+would be desirable in a future update.
 
 
 \subsection{Parton distributions beyond NNLO}
 \label{sec:an3lo-pdfs}
-Beyond the QED effects discussed above, the perturbative accuracy of the QCD
-evolution and determination of the PDFs is an important consideration for the
-highest-order predictions presented in this report. This is particularly
-relevant for Higgs-boson phenomenology, since inclusive predictions for the
-dominant gluon-fusion production mode, as well as for vector-boson fusion and
-the Drell--Yan-like contribution to associated $VH$ production, are available
-at N$^3$LO in QCD~\cite{Mistlberger:2018etf,Dreyer:2016oyx,Baglio:2022wzu}.
-A formally consistent prediction at this order requires PDFs whose evolution
-and determination are performed at the corresponding perturbative accuracy.
-Until recently, however, several ingredients required for a complete N$^3$LO
-global PDF analysis were only partially known. As a consequence, N$^3$LO
-partonic cross sections have conventionally been convoluted with NNLO PDFs,
-introducing a mismatch in perturbative accuracy.
 
-A central ingredient in extending PDF determinations to N$^3$LO is the
-four-loop splitting functions governing DGLAP evolution. Their calculation has
-progressed substantially over the last decade. Early results determined
-specific colour structures, large-$n_f$ contributions and the non-singlet
-splitting functions in the planar limit
-\cite{Davies:2016jie,Moch:2017uml,Moch:2018wjh}. Subsequently, low Mellin
-moments of the four-loop splitting functions were calculated
-\cite{Moch:2021qrk}, providing important constraints on the singlet evolution
-matrix. This information was extended considerably in a series of calculations
-of additional Mellin moments and exact contributions to the four-loop kernels
-\cite{Falcioni:2023luc,Falcioni:2023tzp,Moch:2023tdj,
-Gehrmann:2023cqm,Gehrmann:2023iah}. In particular, exact all-$N$ results have
-been obtained for several fermionic contributions, while the increasing number
-of known moments, together with constraints on the small- and large-$x$ limits,
-has allowed increasingly precise approximations to the full $x$-dependence of
-the splitting functions.
+Inclusive predictions for gluon fusion, for vector-boson fusion and for the
+Drell--Yan-like part of $VH$ production are available at N$^3$LO in
+QCD~\cite{Mistlberger:2018etf,Dreyer:2016oyx,Baglio:2022wzu}, while the
+baseline parton distributions defined above are determined and evolved at NNLO.
+A formally consistent prediction would require both at the same accuracy. No
+PDF4LHC recommendation exists beyond NNLO, so this mismatch cannot be resolved
+within the prescription the working group follows, and we retain NNLO parton
+distributions as the baseline. The mismatch is instead carried as an
+uncertainty, which is numerically most important for gluon fusion and is
+discussed, together with the alternative of using approximate N$^3$LO sets, in
+Section~\ref{sec:ggf_an3lo_pdf}.
 
-More recently, the available information on the phenomenologically
-important singlet evolution has improved significantly. Higher Mellin
-moments of the quark-to-gluon and gluon-gluon splitting functions have
-been calculated in
-Refs.~\cite{Falcioni:2024xyt,Falcioni:2024qpd}. Combined with the
-known endpoint behaviour, these results permit precise $x$-space
-approximations to the corresponding four-loop kernels. The residual
-uncertainty associated with these approximations is small over the
-range in $x$ relevant for most LHC applications, and the resulting
-N$^3$LO contribution to the evolution of the gluon distribution is at
-the percent level or below over a broad phenomenologically relevant
-range. The status of the non-singlet sector has advanced further
-still: following a number of exact partial results, the complete
-four-loop non-singlet splitting functions have recently been
-calculated analytically~\cite{Gehrmann:2026qbl}. Thus, while the full
-singlet evolution kernels are not yet known analytically as functions
-of $x$, the information presently available permits approximate
-N$^3$LO evolution at a precision suitable for current collider
-phenomenology. Comparisons between independent implementations of
-approximate N$^3$LO evolution have also been performed, providing an
-important validation of the approximations and their associated
-uncertainties~\cite{Cooper-Sarkar:2024crx}.
+The ingredients needed to go beyond NNLO have nevertheless advanced
+considerably in recent years, in the massless evolution kernels and in the
+treatment of heavy quarks alike. For the four-loop splitting functions, even-$N$
+moments of the quark-to-gluon and gluon-gluon kernels have been computed and,
+combined with the known endpoint behaviour, turned into controlled $x$-space
+approximations~\cite{Falcioni:2024xyt,Falcioni:2024qpd}; the resulting N$^3$LO
+contribution to the scale derivative of the gluon distribution amounts to $1\%$
+or less for $x\gtrsim10^{-4}$. The non-singlet sector is now known exactly: all
+four-loop non-singlet splitting functions have been obtained in fully analytic
+form~\cite{Gehrmann:2026qbl}. Independent implementations of approximate
+N$^3$LO evolution in \texttt{APFEL++}, \texttt{EKO}, \texttt{HOPPET} and
+\texttt{Candia}~\cite{Bertone:2017gds,Candido:2022tld,Karlberg:2025hxk,Hampson:2025pvi}
+allow these ingredients to be cross-checked, and dedicated benchmarking of the
+MSHT and NNPDF evolution codes against the FHMRUVV approximation finds
+excellent agreement once common ingredients are
+used~\cite{Cooper-Sarkar:2024crx,Bertone:2024dpm}.
 
-A second essential ingredient is the treatment of heavy flavours. Heavy-quark
-contributions exhibit scaling violations that differ from those in the
-massless case~\cite{Blumlein:2016xcy}, and must be accounted for through the
-corresponding heavy-flavour Wilson coefficients in deep-inelastic scattering
-and other hard-scattering processes. Heavy-flavour corrections also determine
-the matching of the parton densities across flavour thresholds in
-variable-flavour-number schemes (VFNS), for both single-heavy-quark
-\cite{Buza:1996wv} and two-heavy-quark cases~\cite{Ablinger:2017err}, through
-the corresponding massive operator matrix elements (OMEs). Until recently,
-these matching corrections were available only through two loops
-\cite{Laenen:1992zk,Laenen:1992xs,Buza:1995ie,Buza:1996wv,
+Heavy quarks require separate treatment. Their contributions to the structure
+functions exhibit scaling violations that differ from the massless
+case~\cite{Blumlein:2016xcy}, and must be accounted for through the
+heavy-flavour Wilson coefficients in deep-inelastic scattering and in other
+hard-scattering processes. The same corrections fix the parton densities in
+variable-flavour-number schemes (VFNS), in the single-mass~\cite{Buza:1996wv}
+and two-mass~\cite{Ablinger:2017err} cases, through the associated massive
+operator matrix elements (OMEs). For $F_2(x,Q^2)$ the asymptotic description is
+accurate at the $O(1\%)$ level for $Q^2/m_Q^2\gtrsim10$~\cite{Buza:1995ie}, a
+region matching the cuts usually imposed in PDF fits to suppress higher-twist
+contributions. Until recently these corrections were known only to two
+loops~\cite{Laenen:1992zk,Laenen:1992xs,Buza:1995ie,Buza:1996wv,
 Bierenbaum:2007qe,Bierenbaum:2008yu,Bierenbaum:2009zt,Bierenbaum:2022biv}.
-For the structure function $F_2(x,Q^2)$, the asymptotic description reaches
-the $O(1\%)$ level for $Q^2/m_Q^2 \gtrsim 10$, cf.~\cite{Buza:1995ie}, a
-region relevant to the cuts commonly employed in PDF fits to suppress
-higher-twist contributions.
+Starting from the three-loop Mellin moments of
+Ref.~\cite{Bierenbaum:2009mv}, the three-loop contributions to the massive OMEs
+were obtained over the period 2009--2025 in the unpolarised and polarised
+single- and two-mass cases, together with the corresponding asymptotic
+heavy-flavour Wilson coefficients~\cite{Ablinger:2010ty,Ablinger:2014vwa,
+Ablinger:2014nga,Ablinger:2014lka,Behring:2014eya,Ablinger:2017err,
+Ablinger:2018brx,Ablinger:2017xml,Ablinger:2022wbb,Ablinger:2023ahe,
+Ablinger:2024xtt}; the two-mass contributions to
+$\widetilde{A}_{Qg}^{(3)}$ of Ref.~\cite{Ablinger:2025nnq} complete the
+calculation of all unpolarised and polarised massive three-loop OMEs. A survey
+of the mathematical methods developed along the way is given in
+Ref.~\cite{Blumlein:2023aso}. In the singlet sector the heavy-quark corrections
+to the structure functions are large and their scaling violations differ
+markedly from the massless case. These results make consistent NNLO non-singlet
+analyses~\cite{Blumlein:2021lmf} and singlet analyses with a correlated
+treatment of $\alphas$, $m_c$, $m_b$ and the parton densities possible for the
+first time. They also lift the VFNS matching relations from two-loop to
+three-loop order in the single-mass case~\cite{Ablinger:2025joi}, giving a
+refined description of a massive quark becoming light at large virtualities,
+and allowing heavy-quark parton distributions to be defined in that framework.
 
-Progress towards the three-loop description began with the calculation of a
-series of three-loop Mellin moments in Ref.~\cite{Bierenbaum:2009mv}. Over the
-period 2009--2025, the three-loop contributions to the massive OMEs in the
-unpolarized and polarized single- and two-mass cases were calculated, including
-the corresponding asymptotic heavy-flavour Wilson coefficients for
-deep-inelastic scattering. The different contributions were obtained in
-Refs.~\cite{Ablinger:2010ty,
-Ablinger:2014vwa,Ablinger:2014nga,Ablinger:2014lka,Behring:2014eya,
-Ablinger:2017err,Ablinger:2018brx,Ablinger:2017xml,
-Ablinger:2022wbb,Ablinger:2023ahe,Ablinger:2024xtt,Ablinger:2025joi,
-Ablinger:2025nnq}; a survey of the mathematical methods developed for these
-calculations can be found in Ref.~\cite{Blumlein:2023aso}. In the singlet
-sector, the heavy-quark corrections to the structure functions are sizeable
-and exhibit scaling violations that differ significantly from the massless
-case. These results make it possible to perform consistent NNLO QCD
-non-singlet analyses~\cite{Blumlein:2021lmf}, as well as singlet analyses with
-a correlated treatment of $\alpha_s$, $m_c$, $m_b$ and the parton densities.
-They also lift the VFNS matching from two-loop~\cite{Ablinger:2017err}
-to three-loop order~\cite{Ablinger:2025joi}, providing the heavy-flavour
-threshold matching required for N$^3$LO PDF evolution.
-
-The increasing maturity of the ingredients entering N$^3$LO PDF evolution
-is also reflected in their implementation in several independent public
-evolution frameworks, including \texttt{HOPPET}, \texttt{APFEL++},
-\texttt{EKO} and \texttt{Candia}~\cite{Bertone:2017gds,Candido:2022tld,Karlberg:2025hxk,Hampson:2025pvi}. Detailed benchmarking of the
-MSHT and NNPDF evolution implementations, together with the FHMRUVV
-splitting-function approximation, finds excellent agreement when common
-evolution ingredients are used~\cite{Cooper-Sarkar:2024crx}. Independent implementations of
-the N$^3$LO DIS structure functions in \texttt{APFEL++} and \texttt{HOPPET}
-have likewise been benchmarked at high numerical precision~\cite{Bertone:2024dpm}.
-These comparisons provide important cross-checks of the perturbative
-ingredients and their numerical implementation as progressively more exact
-N$^3$LO information becomes available.
-
-These advances in massless evolution and heavy-flavour matching form part of
-the theoretical basis for global PDF determinations beyond NNLO. The first
-global PDF determination incorporating approximate N$^3$LO information was
-performed by the MSHT collaboration~\cite{McGowan:2022nag}. The resulting
-MSHT20aN$^3$LO PDFs included the then-available four-loop splitting-function
-information, N$^3$LO DIS coefficient functions and heavy-flavour
-contributions, together with approximations for ingredients that were not
-known exactly at the time of the fit. Unknown higher-order contributions are
-parameterised and their associated uncertainties propagated into the
-resulting PDFs.
-
-An independent approximate-N$^3$LO determination was subsequently
-presented by the NNPDF collaboration~\cite{NNPDF:2024nan}. In this
-approach, missing higher-order uncertainties are incorporated through
-a theory covariance matrix, while the available N$^3$LO information is
-included in the PDF evolution and in the theoretical predictions
-entering the fit. In particular, the treatment of heavy-quark mass
-effects in deep-inelastic scattering is extended to this order within
-the FONLL general-mass scheme~\cite{Forte:2010ta}. The two
-determinations therefore provide complementary implementations of
-global PDF fits beyond NNLO and different treatments of the
-theoretical uncertainties associated with the remaining approximate
-ingredients.
-
-Since these first fits were performed, the theoretical information
-entering N$^3$LO PDF determinations has continued to improve
-substantially. In particular, additional information on the four-loop
-splitting functions and newly determined three-loop transition matrix
-elements have become available, reducing the reliance on
-approximations in both DGLAP evolution and heavy-flavour matching. The
-impact of these developments has been studied in an update of the MSHT
-aN$^3$LO analysis
-\cite{Cridge:2025oel}. The resulting changes in the PDFs are found to be at
-most comparable to, and typically smaller than, the uncertainties assigned in
-the original MSHT20aN$^3$LO fit, with still smaller effects on the corresponding
-parton luminosities. This provides an important validation of the uncertainty
-treatment adopted in the original approximate N$^3$LO determination. The
-continued calculation of exact N$^3$LO ingredients is nevertheless important
-both for further reducing these uncertainties and for ultimately replacing
-the present approximate fits by fully consistent N$^3$LO PDF determinations.
-
-The availability of independent MSHT and NNPDF aN$^3$LO sets has also made it
-possible to construct a common combination. Following a detailed comparison
-and benchmarking of the two determinations, the
-MSHT20xNNPDF40\_aN3LO set was produced in
-Ref.~\cite{Cridge:2024icl}. This combination provides a useful representation
-of the present knowledge of PDFs at approximate N$^3$LO and allows the impact
-of increasing the perturbative order of the PDFs to be studied independently
-of the choice of a single fitting methodology.
-
-These developments have direct implications for precision Higgs-boson
-phenomenology. The transition from NNLO to aN$^3$LO PDFs changes both the
-parton luminosities and the corresponding inclusive Higgs-boson cross
-sections. This is particularly important for gluon fusion, for which the
-N$^3$LO partonic calculation probes directly the gluon luminosity and where
-the use of NNLO PDFs leaves a mismatch between the perturbative accuracy of
-the hard scattering and the PDF evolution. Studies with the individual MSHT
-and NNPDF aN$^3$LO sets, and subsequently with their combination, have shown
-that the corresponding shift in the gluon-fusion cross section can reach
-several percent at LHC energies
-\cite{McGowan:2022nag,NNPDF:2024nan,Cridge:2024icl}. The size of this effect
-is comparable to, and can exceed, the nominal PDF uncertainty, making the
-perturbative accuracy of the PDFs an important component of the uncertainty
-budget for precision Higgs predictions. Smaller but phenomenologically
-relevant effects are also found for other Higgs-boson production modes
-available at N$^3$LO~\cite{Cridge:2024icl}.
-
-For the common setup adopted in this report, PDF4LHC21 at NNLO remains the
-baseline PDF set, as described above. The availability of aN$^3$LO PDFs
-nevertheless provides important information with which to assess the
-uncertainty associated with combining N$^3$LO matrix elements with NNLO PDFs.
-This issue is numerically most important for gluon-fusion Higgs production and
-is therefore discussed in detail in Sec.~\ref{sec:ggf_an3lo_pdf}. There we
-compare predictions obtained using the PDF4LHC21 NNLO set with those obtained
-using the individual and combined aN$^3$LO PDFs, and discuss the implications
-for both the central prediction and the treatment of the PDF-related
-theoretical uncertainty.
-
+Two approximate N$^3$LO (aN$^3$LO) global determinations exist, from
+MSHT~\cite{McGowan:2022nag} and from NNPDF~\cite{NNPDF:2024nan}, which differ
+in how they treat the ingredients that were unknown at the time of the
+respective fits, and they have been combined into a single
+set~\cite{Cridge:2024icl}. An update of the MSHT analysis incorporating the
+newer splitting-function and transition-matrix-element results finds changes to
+the PDFs at most comparable to, and typically well below, the quoted
+uncertainties, with still smaller effects on the parton
+luminosities~\cite{Cridge:2025oel}. The differences these sets induce in the
+Higgs cross sections are nevertheless significant, in several cases exceeding
+the PDF uncertainty itself~\cite{Cridge:2024icl}; the consequences for the
+present recommendation are examined in Section~\ref{sec:ggf_an3lo_pdf}.
