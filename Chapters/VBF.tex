@@ -7,7 +7,7 @@ providing state-of-the-art differential predictions at fixed order and
 recommendations for theory uncertainties in parton-shower simulations, it
 contains a pedagogical description of higher-order corrections in VBF and a
 review of the experimental and theoretical state of the art, with references
-collected in its Tables~2 and~3 respectively. We therefore refer the interested
+collected in its Tables~2 and~3, respectively. We therefore refer the interested
 reader to Ref.~\cite{Barone:2025jey} and references therein. For fixed-order
 calculations the Les Houches wishlist~\cite{Huss:2025nlt} is a further useful
 resource. For completeness we nonetheless give a short review of recent and
@@ -30,8 +30,7 @@ computations are performed in the VBF approximation, which neglects the cross
 talk between the two quark lines, the impact of non-factorisable corrections
 has been studied in detail~\cite{Liu:2019tuy,Dreyer:2020urf,Asteriadis:2023nyl,
 Bronnum-Hansen:2023vzh,Long:2023mvc,Gates:2023iiv}. In the predictions
-presented here, non-factorisable corrections are accounted for in terms of an
-uncertainty.
+presented here, non-factorisable corrections are accounted for as an uncertainty.
 
 As mentioned above, the EW production of HJJ proceeds through several
 mechanisms. In addition, separate contributions at different orders in
@@ -80,7 +79,7 @@ The $\NNNLO$ QCD cross section is obtained with
 \texttt{proVBFH}~\cite{Cacciari:2015jma,Dreyer:2016oyx}. The NLO EW
 corrections and the photon-induced contributions are computed with
 {\sc Hawk}~\cite{Denner:2014cla}, as are the interferences between the $s$-,
-$t$- and $u$-channel contributions. It is worth mentioning that while
+$t$-, and $u$-channel contributions. It is worth mentioning that while
 {\sc Hawk} takes all partonic channels into account at LO, at NLO the channels
 featuring bottom quarks in the external state are omitted, which is a small
 effect. The non-factorisable corrections are taken from
@@ -125,19 +124,27 @@ $\sqrt{s}=13$, $13.6$ and $14$~TeV, with the NNLO and approximate N$^3$LO
 variants of the MSHT20xNNPDF40 combination of Ref.~\cite{Cridge:2024icl}.
 
 Replacing PDF4LHC21 by the aN$^3$LO combination raises the cross
-section by $3.3\%$ at $\sqrt{s}=13.6$~TeV. This figure combines two
-distinct effects: a change of PDF set at fixed NNLO accuracy, worth
+section by $3.3\%$ at $\sqrt{s}=13.6$~TeV. 
+This correction $\Delta\left(\sigma^{\rm N3LO}_{\rm PDF4LHC(2)}\to \sigma^{\rm N3LO}_{\rm MSHTxNNPDF(3)}\right)$ can seen as
+%
+\begin{align}
+  \Delta\left(\sigma^{\rm N2LO}_{\rm PDF4LHC(2)}\to \sigma^{\rm N2LO}_{\rm MSHTxNNPDF(2)}\right)
+ +
+ \Delta\left(\sigma^{\rm N2LO}_{\rm MSHTxNNPDF(2)}\to \sigma^{\rm N3LO}_{\rm MSHTxNNPDF(3)}\right) ,
+\end{align}
+%
+where $(2)$ and $(3)$ refer to NNLO and N3LO, the accuracy of the respective  determinations of the PDFs.
+The first term is a change of PDF set at fixed NNLO accuracy, worth
 $+1.1\%$, which is already covered by the
-$\Delta_{\mathrm{PDF}\oplus\alphas}$ uncertainty quoted in the tables,
-and a change of perturbative order within the same family, worth
-$+2.2\%$, which is not. Only the second is properly a PDF-theory
-effect. Since the position of the working group is to use PDF4LHC21 at
+$\Delta_{\mathrm{PDF}\oplus\alphas}$ uncertainty quoted in the tables.
+The second term is a change of perturbative order within the same PDF family, worth $+2.2\%$, which is not accounted for. 
+Only the second term describes a genuine PDF-theory effect. Since the position of the working group is to use PDF4LHC21 at
 NNLO as the baseline, we cannot advocate applying this shift directly
 to the cross section. It is in any case comparable to the total
 uncertainty of $^{+2.5}_{-2.4}\%$ already assigned to VBF at this
 energy, and our central prediction and uncertainty therefore do not
 include it. Should a more conservative uncertainty band be desired, we
-recommend that a PDF-TH uncertainty of
+recommend that the PDF-TH uncertainty of
 $\Delta_{\mathrm{PDF-TH}} = \pm 2.2\%$ be added in quadrature to the
 total uncertainty, across collider energies and Higgs-boson masses,
 which brings the latter to approximately $\pm 3.3\%$. The energy dependence of the underlying shift is
@@ -148,10 +155,10 @@ This estimate is taken directly from the difference between NNLO and aN$^3$LO
 sets, rather than from the one-order-down proxy of Eq.~\eqref{eq:ggf_pdf_th}
 used for gluon fusion. The two prescriptions are appropriate in different
 circumstances. A direct difference is only as reliable as the agreement between
-the two independent aN$^3$LO determinations, and for VBF that agreement is
+the two independent aN$^3$LO PDF determinations, and for VBF that agreement is
 good: the MSHT20 and NNPDF4.0 aN$^3$LO sets differ by $0.3\%$, against $1.4\%$
 for the corresponding NNLO sets, so the two groups agree substantially better
-at aN$^3$LO than at NNLO and the shift is well determined. For gluon fusion the
+at aN$^3$LO than at NNLO and the shift is well under control. For gluon fusion the
 same two sets differ by around $3\%$ on an effect of comparable size, so the
 direct difference is not a reliable estimator there; the prescription of
 Section~\ref{sec:ggf_an3lo_pdf} is used instead, and the resulting uncertainty
