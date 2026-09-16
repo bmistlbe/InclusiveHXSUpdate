@@ -18,11 +18,22 @@ for the mass values
 \begin{equation}
     m_H \in [ 124.6, 125., 125.09, 125.38, 125.6, 126.] \rm GeV\,,
 \end{equation}
-have been computed. Other values have been obtained via linear interpolation, using the formula
+have been computed. All other values, inside and outside this range, have been obtained
+from the linear formula
 \begin{equation}
-    \sigma(m_H)=\sigma(124.6) +\frac{\sigma(126)-\sigma(124.6)}{1.4}(m_H-124.6)\,. 
+    \sigma(m_H)=\sigma(124.6) +\frac{\sigma(126)-\sigma(124.6)}{1.4}(m_H-124.6)\,,
     \label{eq:inttth}
 \end{equation}
+which interpolates for $124.6 < m_H < 126$~GeV and extrapolates outside that interval.
+The cross sections at the directly computed mass points carry a residual Monte Carlo
+uncertainty at the level of a few per mille, which Eq.~(\ref{eq:inttth}) does not smooth;
+it is visible as a mild non-monotonicity in $m_H$ of some of the tabulated predictions,
+and is negligible compared with the quoted uncertainties.
+%Other values have been obtained via linear interpolation, using the formula
+%\begin{equation}
+%    \sigma(m_H)=\sigma(124.6) +\frac{\sigma(126)-\sigma(124.6)}{1.4}(m_H-124.6)\,. 
+%    \label{eq:inttth}
+%\end{equation}
 For other energies, we advise employing the numbers
 presented in Ref.~\cite{Karlberg:2024zxx}.
 
@@ -71,7 +82,9 @@ for the mass values
 \begin{equation}
     m_H \in [ 124.6, 125., 125.09, 125.38, 125.6, 126.] \rm GeV\,,
 \end{equation}
-have been computed. Other values have been obtained via linear interpolation using Eq.~\ref{eq:inttth}.
+have been computed. All other values have been obtained from Eq.~(\ref{eq:inttth}),
+which interpolates within the computed range and extrapolates outside it.
+%Other values have been obtained via linear interpolation using Eq.~\ref{eq:inttth}.
 
 
 
