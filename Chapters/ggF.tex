@@ -61,7 +61,7 @@ In Table~\ref{tab:ggf_cite} we collect a list of references for theory work eith
 %The impact of aN$^3$LO PDFs~\cite{McGowan:2022nag, NNPDF:2024nan, MSHT:2024tdn} and the inclusion of QED corrections in the PDF DGLAP evolution~\cite{Cridge:2023ryv,Barontini:2024dyb} is discussed in Section~\ref{sec:ggf_an3lo_pdf} and Section~\ref{sec:ggf_qed_pdf}.
 % Better citation than Barontini:2024dyb (?)
 
-In addition to the parameters specified in Section~\ref{sec:setup}, we further choose a central scale of $\mu_R=\mu_F=m_H/2$ and use a 3-point scale variation to assess scale uncertainties.
+In addition to the parameters specified in Section~\ref{sec:setup}, we further choose a central scale of $\mu_R=\mu_F=\MH/2$ and use a 3-point scale variation to assess scale uncertainties.
 For our central recommendation we use the quark masses as specified in Eq.~\eqref{eq:qmasses}.
 %\begin{align}
 %&M_t^\mathrm{OS}=172.5\,\mathrm{GeV},&
@@ -108,8 +108,8 @@ where $\sigma_{ij}^{\mathrm{LO},(t)}$~\cite{Georgi:1977gs,Wilczek:1977zn} is the
 
 The HTL results presented in this work were produced using the \texttt{iHixs2} code~\cite{Dulat:2018rbf}.
 These corrections are also available in the \texttt{n3loxs}~\cite{Baglio:2022wzu} and  \texttt{ggHiggs}~\cite{Ball:2013bra,Bonvini:2014jma,Bonvini:2016frm,Ahmed:2016otz,Bonvini:2018ixe,Bonvini:2018iwt} tools.
-The theoretical uncertainty associated with the truncation at N$^3$LO corrections is estimated via a 3-point scale variation defined by varying the common perturbative scale $\mu=\mu_R=\mu_F$ by a factor of 2 and 1/2 around the central scale $\mu=m_H/2$.
-This scale variation prescription is at variance with the default implemented in the \texttt{iHixs2} code~\cite{Dulat:2018rbf} where $\mu = 0.4\ m_H$ is used for the lower scale variation, motivated by the fact that it was observed to give a larger scale variation than the usual 3-point prescription.
+The theoretical uncertainty associated with the truncation at N$^3$LO corrections is estimated via a 3-point scale variation defined by varying the common perturbative scale $\mu=\mu_R=\mu_F$ by a factor of 2 and 1/2 around the central scale $\mu=\MH/2$.
+This scale variation prescription is at variance with the default implemented in the \texttt{iHixs2} code~\cite{Dulat:2018rbf} where $\mu = 0.4\ \MH$ is used for the lower scale variation, motivated by the fact that it was observed to give a larger scale variation than the usual 3-point prescription.
 Furthermore, we note that the scale uncertainty of the pure HTL is rather insensitive to the choice of top-quark mass scheme, which enters only at NNLO via the Wilson coefficient $C$.
 However, due to the re-weighting factor $\mathrm{R}_\mathrm{LO}$, the rescaled EFT is sensitive to the top-mass scheme.
 In the on-shell scheme, which we adopt as our central recommendation, the top-quark mass in $\mathrm{R}_\mathrm{LO}$ is fixed for all values of the renormalisation scale, while in the $\overline{\mathrm{MS}}$ scheme, the value of the top-quark mass entering $\mathrm{R}_\mathrm{LO}$ is varied.
@@ -138,7 +138,7 @@ The combined Wilson coefficient also incorporates the leading electro-weak corre
 The term $C_{1w}$ incorporates the mixed QCD--EW corrections.
 The dominant electroweak correction proceeds via a massless quark loop coupled to the Higgs boson via massive gauge bosons, this part of the correction is known in the large $W$ and $Z$ boson mass limit~\cite{Anastasiou:2008tj}, the small $W$ and $Z$ boson mass limit~\cite{Anastasiou:2018adr}, and with exact $W$ and $Z$ boson masses for the gluon-induced channel~\cite{Bonetti:2016brm,Bonetti:2017ovy,Bonetti:2018ukf,Bonetti:2020hqh,Becchetti:2020wof,Bonetti:2022lrk}.
 The calculation performed in the limit of large gauge boson mass yields $C_\mathrm{1w} =7/6$, while the calculation utilising finite gauge boson masses gives $C_\mathrm{1w} = -1.7$ for our central scale choice.
-The use of finite gauge boson masses amounts to a $-0.53\%$ correction to the total cross section for a Higgs boson mass of $M_H=125.09$\,GeV for all collider energies between $7$\,TeV and $14$\,TeV, compatible with the $\delta(\mathrm{EWK})=1\%$ assigned in Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.
+The use of finite gauge boson masses amounts to a $-0.53\%$ correction to the total cross section for a Higgs boson mass of $\MH=125.09$\,GeV for all collider energies between $7$\,TeV and $14$\,TeV, compatible with the $\delta(\mathrm{EWK})=1\%$ assigned in Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw}.
 
 \paragraph{Recommendation}
 The recommendation for the central prediction includes the EW corrections using the calculation of Refs.~\cite{Aglietti:2004nj,Actis:2008ug}.
@@ -215,7 +215,7 @@ $\delta \sigma^{\mathrm{NLO}, (t)}$  & $-0.0630$           & $-0.0907$          
 $\delta \sigma^{\mathrm{NNLO}, (t)}$ & $+0.0395(2)$        & $+0.0538(3)$        & $+0.1488(9)$         & $+0.1634(8)$           & $+0.173(1)$          \\ \hline
 \end{tabular}
 \caption{
-Top-quark mass corrections computed with the top-quark mass renormalised in the on-shell scheme and $M_H=125.09$\,GeV (except for the finite real--virtual corrections where $M_H=125$\,GeV), $M_t=172.5$\,GeV (except for the finite real-virtual corrections where $M_t = 173.055$\,GeV) for $\mu_R = \mu_F = M_H/2$.
+Top-quark mass corrections computed with the top-quark mass renormalised in the on-shell scheme and $\MH=125.09$\,GeV (except for the finite real--virtual corrections where $\MH=125$\,GeV), $M_t=172.5$\,GeV (except for the finite real-virtual corrections where $M_t = 173.055$\,GeV) for $\mu_R = \mu_F = \MH/2$.
 The corrections are based on the calculations of Refs.~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}.
 }
 \label{tab:ggf_mtcorr}
@@ -223,19 +223,19 @@ The corrections are based on the calculations of Refs.~\cite{Czakon:2020vql,Czak
 
 In Table~\ref{tab:ggf_mtcorr}, we report corrections due to a finite top-quark mass at NLO and NNLO computed using the setup of Section~\ref{sec:setup}.
 The corrections are obtained using the original calculations presented in Refs.~\cite{Czakon:2020vql,Czakon:2021yub,Czakon:2024ywb}.
-The numbers are provided for a fixed value of the Higgs boson mass, $M_H^\mathrm{ref}=125.09$\,GeV.
+The numbers are provided for a fixed value of the Higgs boson mass, $\MH^\mathrm{ref}=125.09$\,GeV.
 
-\paragraph{Different values of $M_H$}
+\paragraph{Different values of $\MH$}
 Values for the top-quark mass corrections have not been re-evaluated for all Higgs boson masses required.
 The corrections are extrapolated to different values of the Higgs boson mass by multiplying with the Higgs mass dependence of the corresponding reweighted HTL correction.
-Fixing $M_H^\mathrm{ref}=125.09$\,GeV, our extrapolation formula reads,
+Fixing $\MH^\mathrm{ref}=125.09$\,GeV, our extrapolation formula reads,
 \begin{align}
-&R^H_n(M_H) = & \frac{\left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL}\right]_{\alpha_s^n}(M_H)}{\left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL}\right]_{\alpha_s^n}(M_H^\text{ref})},&
-&\delta \sigma^{\mathrm{NNLO}, (t), \text{ext}}(M_H) = & R^H_4(M_H)\  \delta \sigma^{\mathrm{NNLO}, (t)}(M_H^\text{ref}).&
+&R^H_n(\MH) = & \frac{\left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL}\right]_{\alpha_s^n}(\MH)}{\left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL}\right]_{\alpha_s^n}(\MH^\text{ref})},&
+&\delta \sigma^{\mathrm{NNLO}, (t), \text{ext}}(\MH) = & R^H_4(\MH)\  \delta \sigma^{\mathrm{NNLO}, (t)}(\MH^\text{ref}).&
 \end{align}
-As a conservative error estimate, we assign a $100\%$ uncertainty to the shift induced by the $M_H$ extrapolation,
+As a conservative error estimate, we assign a $100\%$ uncertainty to the shift induced by the $\MH$ extrapolation,
 \begin{align}
-\delta^\text{ext}(t) = & \delta \sigma^{\mathrm{NNLO}, (t), \text{ext}}(M_H) - \delta \sigma^{\mathrm{NNLO}, (t)}(M_H^\text{ref}).
+\delta^\text{ext}(t) = & \delta \sigma^{\mathrm{NNLO}, (t), \text{ext}}(\MH) - \delta \sigma^{\mathrm{NNLO}, (t)}(\MH^\text{ref}).
 \end{align}
 Our extrapolation procedure is validated at NLO by comparing the extrapolation to the true NLO result, we observe that our extrapolated numbers and the true NLO numbers differ by at most $0.02\%$ of the total cross section, while our conservative error estimate is typically larger by a factor of 2 or more.
 At NNLO we validate the extrapolation procedure using the $1/m_t^2$ expansion, we observe that our extrapolated numbers and the true NNLO $1/m_t^2$ numbers differ by at most $0.07\%$ of the total cross section, while our conservative error estimate is approximately equal to this difference.
@@ -290,7 +290,7 @@ We take Eq.~\eqref{eq:ggf_t_mhou} as a flat relative uncertainty across all coll
 
 \paragraph{Recommendation}
 We include the $\delta \sigma^{(t)}$ corrections, known to NNLO, in the central recommendation.
-The uncertainties related to extrapolating the known results to different values of $M_H$ are found to be negligible (for the range considered here), and the remaining scheme uncertainty stemming from the treatment of the top-quark mass is also found to be negligible.
+The uncertainties related to extrapolating the known results to different values of $\MH$ are found to be negligible (for the range considered here), and the remaining scheme uncertainty stemming from the treatment of the top-quark mass is also found to be negligible.
 The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(t)$ should be considered and is included in the total finite quark mass correction uncertainty $\delta(t,b,c)$ quoted in the tables of Appendix~\ref{app:tables}.
 
 %\paragraph{Contributors}
@@ -312,7 +312,7 @@ Total & $-0.68$ & $-0.84$ & $-1.70$ & $-1.80$ & $-1.88$ \\
 \end{tabular}
 \caption{
 Top--bottom interference corrections computed with the top-quark mass renormalised in the on-shell scheme and the bottom-quark renormalised in the 5FS $\overline{\mathrm{MS}}$ scheme.
-The mass of the Higgs boson is taken to be $M_H=125.09$\,GeV (except for the finite real--virtual corrections where $M_H=125$\,GeV), $M_t=172.5$\,GeV (except for the finite real--virtual corrections where $M_t = 173.055$\,GeV) for $\mu_R = \mu_F = M_H/2$. 
+The mass of the Higgs boson is taken to be $\MH=125.09$\,GeV (except for the finite real--virtual corrections where $\MH=125$\,GeV), $M_t=172.5$\,GeV (except for the finite real--virtual corrections where $M_t = 173.055$\,GeV) for $\mu_R = \mu_F = \MH/2$. 
 The corrections are based on the calculations of Refs.~\cite{Czakon:2023kqm,Czakon:2024ywb}.
 }
 \label{tab:ggf_mbmtcorr}
@@ -320,16 +320,16 @@ The corrections are based on the calculations of Refs.~\cite{Czakon:2023kqm,Czak
 
 In Table~\ref{tab:ggf_mbmtcorr} we state top--bottom interference corrections at LO, NLO and NNLO evaluated with the setup of Section~\ref{sec:setup}.
 The corrections were obtained using the original calculations presented in Refs.~\cite{Czakon:2023kqm,Czakon:2024ywb}.
-The numbers are provided for a fixed value of the Higgs boson mass, $M_H^\text{ref}=125.09$\,GeV.
+The numbers are provided for a fixed value of the Higgs boson mass, $\MH^\text{ref}=125.09$\,GeV.
 
-\paragraph{Different values of $M_H$}
+\paragraph{Different values of $\MH$}
 We extrapolate the top--bottom interference contribution to different values of the Higgs boson mass again using the reweighted HTL correction, 
 \begin{align}
-\delta \sigma^{\mathrm{NNLO}, (t \times b), \text{ext}}(M_H) = & R^H_4(M_H)\  \delta \sigma^{\mathrm{NNLO}, (t \times b)}(M_H^\text{ref})
+\delta \sigma^{\mathrm{NNLO}, (t \times b), \text{ext}}(\MH) = & R^H_4(\MH)\  \delta \sigma^{\mathrm{NNLO}, (t \times b)}(\MH^\text{ref})
 \end{align}
-The error associated with the extrapolation to new values of $M_H$ is estimated using,
+The error associated with the extrapolation to new values of $\MH$ is estimated using,
 \begin{align}
-\delta^\text{ext}(t \times b) = & \sigma^{\mathrm{NNLO}, (t \times b), \text{ext}}(M_H) - \sigma^{\mathrm{NNLO}, (t \times b)}(M_H^\mathrm{ref}). 
+\delta^\text{ext}(t \times b) = & \sigma^{\mathrm{NNLO}, (t \times b), \text{ext}}(\MH) - \sigma^{\mathrm{NNLO}, (t \times b)}(\MH^\mathrm{ref}). 
 \end{align}
 Our extrapolation procedure is validated at NLO by comparing the extrapolation to the true NLO result, we observe that our extrapolated numbers and the true NLO numbers differ by at most $0.06\%$ of the total cross section, while our conservative error estimate is typically larger by a factor of 3.
 Computing the extrapolation uncertainty at NNLO across all collider energies and Higgs boson masses in the recommendation, we observe that it never exceeds $0.01\%$.
@@ -381,7 +381,7 @@ which we take as a flat relative uncertainty across all collider energies and Hi
 
 \paragraph{Recommendation}
 We include the $\delta \sigma^{(t\times b)}$ corrections, known to NNLO, in the central recommendation, utilising the 5FS with the bottom-quark mass renormalised in the $\overline{\mathrm{MS}}$ scheme.
-The uncertainties related to extrapolating the known results to different values of $M_H$ are found to be negligible (for the range considered here).
+The uncertainties related to extrapolating the known results to different values of $\MH$ are found to be negligible (for the range considered here).
 The scheme uncertainty is assessed by comparing to results with the bottom-quark renormalised in 5FS and 4FS using the $\overline{\mathrm{MS}}$ renormalisation scheme at NNLO, the corresponding uncertainty, $\delta^\mathrm{scheme}(t \times b)$ is found to be small and is neglected.  
 The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(t \times b)$, is estimated via a scale variation, it is included in the total finite quark mass correction uncertainty $\delta(t,b,c)$.
 
@@ -462,7 +462,7 @@ Including this new information in the aN$^3$LO PDF fits reduces the NNPDF predic
 \multicolumn{1}{|r|}{100} & $+3.1\%$    & $+4.4\%$ & \multicolumn{1}{r|}{$+2.1\%$}              & $+2.8\%$     & $+3.1\%$ & \multicolumn{1}{r|}{$+2.8\%$} \\ \hline
 \end{tabular}
 }
-\caption{Impact of the aN$^3$LO PDF sets vs NNLO PDF sets on the total cross section when using the N$^3$LO HTL matrix element for (top) all predictions or (bottom) the N$^3$LO HTL matrix element for N$^3$LO predictions and the NNLO HTL matrix element for NNLO predictions . 
+\caption{Impact of the aN$^3$LO PDF sets vs NNLO PDF sets on the total cross section when using the N$^3$LO HTL matrix element for (top) all predictions or (bottom) the N$^3$LO HTL matrix element for N$^3$LO predictions and the NNLO HTL matrix element for NNLO predictions. 
 In the left columns the combination and individual aN$^3$LO PDF sets are compared to their corresponding NNLO variants.
 In the right columns the aN$^3$LO PDF sets are compared to the PDF4LHC21 NNLO baseline prediction.}
 \label{tab:ggf_an3lopdf_n3lo}
@@ -632,8 +632,8 @@ Global PDF fits indicate that incorporating QED evolution effects suppresses the
 }
 \caption{
 Heavy-top limit results at N$^3$LO and N$^4$LO$_\mathrm{sv}$.
-The mass of the Higgs boson is taken to be $M_H=125$\,GeV and the top-quark is renormalised in the on-shell scheme.
-The scale uncertainty is computed via a 7-point scale variation of $\mu_R =\mu_F$ about the central scale of $M_H/2$ with fixed $\alpha_s(M_Z)=0.118$.
+The mass of the Higgs boson is taken to be $\MH=125$\,GeV and the top-quark is renormalised in the on-shell scheme.
+The scale uncertainty is computed via a 7-point scale variation of $\mu_R =\mu_F$ about the central scale of $\MH/2$ with fixed $\alpha_s(M_Z)=0.118$.
 Results obtained using the calculation of Ref.~\cite{Das:2020adl}.
 }
 \label{tab:ggf_n4lo_sv}
@@ -641,7 +641,7 @@ Results obtained using the calculation of Ref.~\cite{Das:2020adl}.
 
 As described in Section~\ref{sec:ggf_htl}, results for Higgs production in gluon-fusion are available at order N$^3$LO in the heavy top-quark limit.
 Beyond this order, it is possible to produce an approximation of the N$^4$LO result using the soft-virtual approximation, which captures the leading term in the expansion near to the Higgs boson production threshold.
-In Ref.~\cite{Das:2020adl}, an approximation to this was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=M_H/2$ and to reduce the remaining scale uncertainty from about 5\% to less than 3\%.
+In Ref.~\cite{Das:2020adl}, an approximation to this was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=\MH/2$ and to reduce the remaining scale uncertainty from about 5\% to less than 3\%.
 In Table~\ref{tab:ggf_n4lo_sv}, we present results obtained using the calculation of Ref.~\cite{Das:2020adl} for $\sqrt{s}=13.6$\,TeV with the recommended parameters of the Higgs working group.
 The magnitude of the correction and reduction in the scale dependence is found to be largely independent of the PDF set choice and order of the PDF.
 
@@ -677,7 +677,7 @@ $\delta(\text{PDF-TH})$                  & $\pm 1.16\%$     & $\pm 2.31\%$      
 \caption{ Comparison of the recommendation and uncertainties of Yellow
   Report 4 (YR4)~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} and
   the current recommendation (R5) for collider energy $\sqrt{s} = 13$
-  TeV and Higgs boson mass $m_H = 125$ GeV with all other parameters
+  TeV and Higgs boson mass $\MH = 125$ GeV with all other parameters
   chosen as their default in the respective reports.  In the
   $\delta(\text{theory})$ uncertainty of each recommendation the
   $\delta(\text{PDF-TH})$ uncertainty is omitted and reported
@@ -687,12 +687,12 @@ $\delta(\text{PDF-TH})$                  & $\pm 1.16\%$     & $\pm 2.31\%$      
 
 In this Section the uncertainty estimate of the current gluon fusion total cross section recommendation and that of the original Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} are compared.
 In Table~\ref{tab:ggf_yr4_vs_yr5}, each of the uncertainties presented in the current and previous report are summarised and the main factors driving the change in the uncertainty estimates are recorded.
-The uncertainties presented are for collider energy $\sqrt{s} = 13$ TeV and Higgs boson mass $m_H = 125$ GeV, all other choices and settings are chosen as originally presented in their respective report.
+The uncertainties presented are for collider energy $\sqrt{s} = 13$ TeV and Higgs boson mass $\MH = 125$ GeV, all other choices and settings are chosen as originally presented in their respective report.
 
 The Yellow Report 4~\cite{LHCHiggsCrossSectionWorkingGroup:2016ypw} contains a discussion and analysis of how the various uncertainties can be interpreted, namely, either as a flat 100\% confidence interval (procedure F) or a Gaussian one-sigma symmetric 68\% confidence interval (procedure G).
 We do not repeat this analysis here, however, we do record the relevant differences between how uncertainties are calculated in the two reports:
 \begin{itemize}
-\item $\delta(\text{scale})$ - In Yellow Report 4 the F-uncertainty of $^{+0.2\%}_{-2.4\%}$ was estimated by performing a scale variation scan in the range $M_H/4 \le \mu_R = \mu_F \le M_H$, while the G-uncertainty of $^{+3.0\%}_{-3.0\%}$ was estimated via a symmetrised 7-point scale uncertainty. 
+\item $\delta(\text{scale})$ - In Yellow Report 4 the F-uncertainty of $^{+0.2\%}_{-2.4\%}$ was estimated by performing a scale variation scan in the range $\MH/4 \le \mu_R = \mu_F \le \MH$, while the G-uncertainty of $^{+3.0\%}_{-3.0\%}$ was estimated via a symmetrised 7-point scale uncertainty. 
 In the current recommendation the scale uncertainty is estimated via a 3-point scale uncertainty.
 As described in Section~\ref{sec:ggf_htl}, the previous recommendations used the $\overline{\mathrm{MS}}$ top-quark mass with scale $\mu_R$, which was varied in the re-weighting factor, $\text{R}_\text{LO}$, leading to a smaller scale uncertainty estimate.
 In the current recommendation a fixed on-shell top-quark mass is used.
