@@ -245,7 +245,7 @@ We consider this uncertainty to be negligible compared to the other remaining un
 \paragraph{Scheme Uncertainty of $m_t$} 
 Results for the top-only contribution with the top-quark mass renormalised in the $\overline{\mathrm{MS}}$ scheme and the OS scheme are presented at NNLO in Ref.~\cite{Czakon:2024ywb} for $\sqrt{s}=13$\,TeV.
 The difference between the two schemes is found to be very small at NNLO amounting to just $-0.01$ pb, approximately half of that observed at NLO.
-Expressing the NNLO scheme uncertainty as a percentage of the total cross section, we obtain,
+Expressing the NNLO scheme uncertainty as a percentage of the total cross section and symmetrising, we obtain,
 \begin{align}
 \delta^\mathrm{scheme}(t) = \pm 0.01\%.
 \end{align}
@@ -284,7 +284,6 @@ Expressing this uncertainty as a percentage of the total cross section and symme
 \begin{align}
 \delta^{\mathrm{MHOU}}(t) = \pm 0.17 \%. \label{eq:ggf_t_mhou}
 \end{align}
-%\SJ{TODO: $(0.13+0.03)/48.34*100/2$, update with final XS numbers}  
 Considering collider energies between $7$ and $14$\,TeV the missing higher order uncertainty varies between $\pm 0.14$ and $\pm 0.18\%$~\cite{Czakon:2023kqm}. 
 We take Eq.~\eqref{eq:ggf_t_mhou} as a flat relative uncertainty across all collider energies and Higgs boson masses.
 
@@ -359,8 +358,6 @@ Expressing the NNLO scheme uncertainty as a percentage of the total cross sectio
 \begin{align}
 \delta^\mathrm{scheme}(t\times b) = \pm 0.09\%.
 \end{align}
-%\SJ{TODO: MS5FS vs MS5FS: $(0.09)/48.34*100/2$, update with final XS numbers},
-%\SJ{TODO: MS5FS vs OS: $(0.25)/48.34*100/2$, update with final XS numbers},
 which we take as a flat relative uncertainty across all collider energies and Higgs boson masses.
 This uncertainty is small compared to other uncertainties related to missing higher orders in the HTL, top-only and top--bottom contributions and we neglect it in the recommendation.
 
@@ -376,7 +373,6 @@ Expressing this uncertainty as a percentage of the total cross section and symme
 \begin{align}
 \delta^{\mathrm{MHOU}}(t \times b) = \pm 0.17 \%
 \end{align}
-%\SJ{TODO: $(0.13+0.03)/48.34*100/2$, update with final XS numbers}, 
 which we take as a flat relative uncertainty across all collider energies and Higgs boson masses.
 
 \paragraph{Recommendation}
@@ -393,8 +389,8 @@ The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(t \time
 
 In Table~\ref{tab:ggf_tbc} we present the various interferences at LO and NLO.
 The bottom-only, charm-only and charm interference contributions are known to NLO~\cite{Graudenz:1992pv,Spira:1995rr}.
-We note that the contributions $\sigma^{(b)}, \sigma^{(c)}$ and $\sigma^{(b \times c)}$ are small, accounting for $+0.21\%$, $0.002\%$ and $0.04\%$ of the total cross section, respectively.
-The interference $\sigma^{(t \times c)}$ is slightly larger, accounting for $-0.45\%$ of the total cross section at NLO.
+We note that the contributions $\sigma^{(b)}, \sigma^{(c)}$ and $\sigma^{(b \times c)}$ are small, accounting for $+0.29\%$, $0.003\%$ and $0.05\%$ of the NLO cross section, respectively.
+The interference $\sigma^{(t \times c)}$ is slightly larger, accounting for $-0.62\%$ of the NLO cross section.
 We include all contributions to NLO using the $\overline{\mathrm{MS}}$ scheme for the light quarks.
 
 \paragraph{Missing Higher Orders}
@@ -435,7 +431,7 @@ Each fit includes the massive operator matrix elements (a.k.a transition matrix 
 The N$^3$LO hadronic coefficient functions are largely unknown and are approximated in the fits using either K-factors with nuisance parameters (for MSHT) or NNLO scale variations (for NNPDF).
 In Ref.~\cite{Cooper-Sarkar:2024crx}, a benchmarking exercise was undertaken to understand the impact of the different splitting function approximations used in the global fits.
 Recently, additional Mellin moments of the splitting functions have been computed and used to produce a new estimate of the four-loop splitting functions~\cite{Falcioni:2024qpd}.
-Furthermore, the computation of all operator matrix elements has been completed~\cite{Ablinger:2024xtt}.
+Furthermore, the computation of all operator matrix elements has been completed~\cite{Ablinger:2025nnq}.
 Including this new information in the aN$^3$LO PDF fits reduces the NNPDF prediction~\cite{NNPDF:2024nan} for the gluon-fusion Higgs total cross section by around 0.5\% and increases the MSHT prediction~\cite{McGowan:2022nag} by around 0.5\% relative to the fits used in the combination set MSHT20xNNPDF40~\cite{Cridge:2024icl} which enters this recommendation, bringing the two fits closer together by a shift that falls within their respective PDF uncertainties~\cite{Thorne:2024npj,Hekhorn:2025xke}.
 
 
@@ -473,6 +469,7 @@ We observe that the difference between predictions produced using the N$^3$LO HT
 Comparing the combined set MSHT20xNNPDF40\_aN3LO to MSHT20xNNPDF40\_NNLO it amounts to a $-4.2\%$ suppression at $\sqrt{s}=7$\,TeV, a $-3.8\%$ suppression at $\sqrt{s}=13.6$\,TeV and a $-0.7\%$ suppression at $\sqrt{s}=100$\,TeV.
 Comparing the combination aN$^3$LO PDF to our baseline PDF4LHC21 NNLO set we observe a $-5.2\%$ suppression at $\sqrt{s}=7$\,TeV, a $-4.2\%$ suppression at $\sqrt{s}=13.6$\,TeV and a $-1.0\%$ suppression at $\sqrt{s}=100$\,TeV.
 The PDF uncertainty for the MSHT20xNNPDF40\_aN3LO combination set is $\pm 2.17\%$ at $\sqrt{s}=7$ TeV, $\pm 2.07\%$ at $\sqrt{s}=13.6$ TeV and $\pm 2.21\%$ at $\sqrt{s}=100$ TeV.
+These values are obtained with the PDF sets that do not include QED evolution; the corresponding uncertainties for the QED-extended sets used in the recommendation are smaller, see Section~\ref{sec:ggf_qed_pdf}.
 In Table~\ref{tab:ggf_an3lopdf_n3lo}, we provide a comparison of the individual PDF sets entering the aN$^3$LO combination, we observe that the MSHT20 set predicts a significantly larger impact of the aN$^3$LO PDFs than the NNPDF40 set.
 
 Alternatively, we can compare results produced using the N$^3$LO HTL matrix element with aN$^3$LO PDFs to results produced using the NNLO HTL matrix element with NNLO PDFs.
@@ -521,12 +518,12 @@ Additionally, we provide tables which allow the central prediction to be convert
 \hline
 & \multicolumn{4}{|c|}{$\Delta^\text{NNLO}_\text{QED}$} &
 \multicolumn{3}{c|}{$\Delta^\text{aN3LO}_\text{QED}$} \\
-$\sqrt{s}$ [TeV] & PDF4LHC21 & CT18      & MSHT20   & NNPDF31  & MSHT20xNNPDF40 & MSHT20     & NNPDF40    \\ \hline
-7                & -0.66\%   & -0.06\%   & -0.69\%  & -1.20\%  & -1.55\%        & -1.09\%    & -1.74\%    \\
+$\sqrt{s}$ [TeV] & PDF4LHC21 & $\langle$CT18$\rangle$ & MSHT20   & NNPDF31  & MSHT20xNNPDF40 & MSHT20     & NNPDF40    \\ \hline
+7                & -0.65\%   & -0.07\%   & -0.69\%  & -1.20\%  & -1.55\%        & -1.09\%    & -1.74\%    \\
 %8                & -0.65\%   & -0.06\%   & -0.66\%  & -1.22\%  & -1.53\%        & -1.07\%    & -1.73\%    \\
 %13               & -0.63\%   & -0.05\%   & -0.58\%  & -1.24\%  & -1.46\%        & -1.00\%    & -1.66\%    \\
-13.6             & -0.63\%   & -0.05\%   & -0.58\%  & -1.23\%  & -1.45\%        & -1.00\%    & -1.65\%    \\
-%14               & -0.63\%   & -0.05\%   & -0.57\%  & -1.23\%  & -1.45\%        & -1.00\%    & -1.65\%    \\
+13.6             & -0.62\%   & -0.05\%   & -0.58\%  & -1.23\%  & -1.45\%        & -1.00\%    & -1.65\%    \\
+14               & -0.62\%   & -0.05\%   & -0.57\%  & -1.23\%  & -1.45\%        & -1.00\%    & -1.65\%    \\
 100              & -0.50\%   & -0.02\%   & -0.40\%  & -1.07\%  & -1.10\%          & -0.92\%  & -1.19\% \\ \hline
 \end{tabular}
 }
@@ -573,9 +570,10 @@ with,
     , \nonumber \\
     \Delta^\text{NNLO}_\text{QED}(\text{NNPDF3.1}) &=
     \sigma(\text{NNPDF31\_nnlo\_as\_0118\_luxqed}) - \sigma(\text{NNPDF31\_nnlo\_as\_0118}).
+\label{eq:ggf_qed_ct18}
 \end{align}
 This shift is calculated using the rescaled N$^3$LO HTL result, i.e.\ the first line of Eq.~\eqref{eq:ggf_master}, expressed as a percentage then applied to the total cross section prediction.
-Although the LuxQED method gives a constrained photon PDF, the impact of the inclusion of this photon PDF on the gluon distribution differs quite significantly for each of the global sets, see Table~\ref{tab:ggf_pdf_qed}.
+Although the LuxQED method gives a constrained photon PDF, the impact of the inclusion of this photon PDF on the gluon distribution differs quite significantly for each of the global sets, see Table~\ref{tab:ggf_pdf_qed}, in which $\langle$CT18$\rangle$ denotes the average over the three CT18 QED sets defined in the first line of Eq.~\eqref{eq:ggf_qed_ct18}.
 The impact of the inclusion of QED effects on the PDF uncertainty of the PDF4LHC21 set has not yet been studied, in the recommendation, we report the PDF uncertainty obtained neglecting the QED effects.
 For the MSHT20xNNPDF40 aN$^3$LO PDF set we define,
 \begin{align}
@@ -585,7 +583,7 @@ For the MSHT20xNNPDF40 aN$^3$LO PDF set we define,
 
 Using the N$^3$LO HTL matrix element with NNLO PDFs, including QED evolution decreases the total cross section when using any of the CT18, MSHT20, NNPDF31 or combination PDF sets.
 The CT18 global set prediction is almost unaffected by the inclusion of QED evolution, while the NNPDF31 prediction decreases by more than $1\%$. 
-For the PDF4LHC21 set, the QED effects reduce the cross section by $0.66\%$ at $\sqrt{s} = 7$\,TeV, $0.63\%$ at $\sqrt{s} = 13.6$\,TeV and $0.50\%$ at $\sqrt{s} = 100$\,TeV.
+For the PDF4LHC21 set, the QED effects reduce the cross section by $0.65\%$ at $\sqrt{s} = 7$\,TeV, $0.62\%$ at $\sqrt{s} = 13.6$\,TeV and $0.50\%$ at $\sqrt{s} = 100$\,TeV.
 
 %For the MSHT20xNNPDF40 NNLO combination set at $\sqrt{s} = 7$\,TeV the total cross section is reduced by $-1.3\%$, $-1.1\%$ at $\sqrt{s} = 13.6$\,TeV, while at $\sqrt{s} = 100$\,TeV it is reduced by $-0.3\%$, at larger collider energies the QED effects enhance the total cross section.
 %The PDF uncertainty for the MSHT20xNNPDF40\_NNLO\_qed set ranges from $\pm 1.27\%$ at $\sqrt{s}=7$\,TeV, $\pm 0.92\%$ at $\sqrt{s}=13.6$\,TeV to $\pm 1.82\%$ at $\sqrt{s}=100$\,TeV.
@@ -633,7 +631,7 @@ Global PDF fits indicate that incorporating QED evolution effects suppresses the
 \caption{
 Heavy-top limit results at N$^3$LO and N$^4$LO$_\mathrm{sv}$.
 The mass of the Higgs boson is taken to be $\MH=125$\,GeV and the top-quark is renormalised in the on-shell scheme.
-The scale uncertainty is computed via a 7-point scale variation of $\mu_R =\mu_F$ about the central scale of $\MH/2$ with fixed $\alpha_s(M_Z)=0.118$.
+The scale uncertainty is computed via a 7-point scale variation about the central scale $\mu_R = \mu_F = \MH/2$ with fixed $\alpha_s(M_Z)=0.118$.
 Results obtained using the calculation of Ref.~\cite{Das:2020adl}.
 }
 \label{tab:ggf_n4lo_sv}
@@ -641,8 +639,8 @@ Results obtained using the calculation of Ref.~\cite{Das:2020adl}.
 
 As described in Section~\ref{sec:ggf_htl}, results for Higgs production in gluon-fusion are available at order N$^3$LO in the heavy top-quark limit.
 Beyond this order, it is possible to produce an approximation of the N$^4$LO result using the soft-virtual approximation, which captures the leading term in the expansion near to the Higgs boson production threshold.
-In Ref.~\cite{Das:2020adl}, an approximation to this was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=\MH/2$ and to reduce the remaining scale uncertainty from about 5\% to less than 3\%.
-In Table~\ref{tab:ggf_n4lo_sv}, we present results obtained using the calculation of Ref.~\cite{Das:2020adl} for $\sqrt{s}=13.6$\,TeV with the recommended parameters of the Higgs working group.
+In Ref.~\cite{Das:2020adl}, an approximation to this was calculated and at $\sqrt{s}=14$\,TeV it was found to give a $-0.1\%$ correction for the scale $\mu_R=\mu_F=\MH/2$ and to reduce the remaining 7-point scale uncertainty from about 5\% to less than 3\%.
+In Table~\ref{tab:ggf_n4lo_sv}, we present results obtained using the calculation of Ref.~\cite{Das:2020adl} for $\sqrt{s}=13.6$\,TeV with the recommended parameters of the Higgs working group, noting that the 7-point scale variation used here is at variance with the 3-point prescription adopted for the recommendation (see Section~\ref{sec:ggf_htl}).
 The magnitude of the correction and reduction in the scale dependence is found to be largely independent of the PDF set choice and order of the PDF.
 
 \paragraph{Recommendation}
