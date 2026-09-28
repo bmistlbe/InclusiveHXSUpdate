@@ -1,3 +1,4 @@
+
 # Code that produces a plot showing the contribution of each source of uncertainty to the whole. The uncertainties are sequentially included in the total, starting from QCD scale and ending with PDF+aS, with the order of what comes in-between specified further down in the script. 
 # The result is two bar charts (one for VBF, ggF, WH and ZH, and one for the rest) showing how the uncertainty increases as components are included. 
 # Code started by Robin and extended by Claude.
@@ -41,8 +42,8 @@ data = {
         "QCDscale": (-0.7, 0.5),
     },
     "ZH": {
-        "PDFaS": (-1.5, 1.5),
-        "QCDscale": (-2.7, 3.0),
+        "PDFaS": (-1.6, 1.6),
+        "QCDscale": (-2.8, 3.0),
     },
     "ttH": {
         "PDFaS": (-2.7, 2.7),
