@@ -193,7 +193,7 @@ SOURCE_COLORS = {
     "TU":          "#eeb800",  # deep yellow
     "virt":        "#1b5e20",  # dark green
     "muB":         "#6fbf73",  # light green
-    "mB":          "#8c564b",  # brown
+    "mB":          "#404040",  # charcoal grey
     "PDFTH":       "#f4a6a6",  # light pink/red
 }
 
@@ -257,12 +257,7 @@ def legend_entries(mode_keys):
     return entries
 
 
-STEP_HEIGHT_BASE = 0.55
-STEP_HEIGHT_RATIO = 0.68
-
-
-def step_height(depth):
-    return STEP_HEIGHT_BASE * (STEP_HEIGHT_RATIO ** depth)
+BAR_HEIGHT = 0.55
 
 
 LABEL_FONTSIZE = 15  # matches xtick.labelsize
@@ -270,7 +265,7 @@ ROW_SPACING = 1.0
 
 
 def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, legend_order=None):
-    """Plot the nested uncertainty-breakdown bars for `mode_keys` and save to `filename`.
+    """Plot the stacked uncertainty-breakdown bars for `mode_keys` and save to `filename`.
 
     `qcd_label_override`, if given, replaces the legend text for "QCD scale" and merges
     it with "QCD scale+FS" into a single entry. `legend_order`, if given, is a list of
@@ -295,19 +290,21 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
     ax.tick_params(axis="both", which="major", width=2, length=6)
 
     for i, mode_key in enumerate(mode_keys):
-        for depth, (label, (dn, up)) in enumerate(breakdowns[mode_key]):
+        # Each step's total contains the next (smaller) one, so each source is drawn as
+        # just the segment it adds on either side, giving stacked bars of equal height.
+        steps = breakdowns[mode_key]
+        for depth, (label, (dn, up)) in enumerate(steps):
+            inner_dn, inner_up = steps[depth + 1][1] if depth + 1 < len(steps) else zero
             color = SOURCE_COLORS[label]
-            height = step_height(depth)
             ax.barh(
-                y_base[i],
-                width=up - dn,
-                left=dn,
-                height=height,
+                [y_base[i], y_base[i]],
+                width=[inner_dn - dn, up - inner_up],
+                left=[dn, inner_up],
+                height=BAR_HEIGHT,
                 color=color,
-                edgecolor=color,
-                linewidth=1.5,
-                alpha=1.0,
-                zorder=3 + depth,
+                edgecolor="black",
+                linewidth=0.5,
+                zorder=3,
             )
 
     ax.axvline(0, color="0.2", linewidth=1.5, zorder=10)
@@ -354,7 +351,7 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
         entries = sorted(entries, key=lambda kv: order_index.get(kv[0], len(order_index)))
 
     legend_handles = [
-        Patch(facecolor=SOURCE_COLORS[key], edgecolor=SOURCE_COLORS[key], label=text)
+        Patch(facecolor=SOURCE_COLORS[key], edgecolor="black", linewidth=0.5, label=text)
         for key, text in entries
     ]
     ax.legend(
