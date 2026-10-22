@@ -1,5 +1,5 @@
 
-# Code that produces a plot showing the contribution of each source of uncertainty to the whole. The uncertainties are sequentially included in the total, starting from QCD scale and ending with PDF+aS, with the order of what comes in-between specified further down in the script. 
+# Code that produces a plot showing the contribution of each source of uncertainty to the whole. The uncertainties are sequentially included in the total, starting from PDF+aS, with the order of what comes after specified further down in the script.
 # The result is two bar charts (one for VBF, ggF, WH and ZH, and one for the rest) showing how the uncertainty increases as components are included. 
 # Code started by Robin and extended by Claude.
 # Run with `python R5breakdown.py`. Output `uncertainty_breakdown_*.pdf` where * lists production modes
@@ -20,53 +20,71 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
+# Use the paper's text font (Bitstream Charter, via mathdesign) for all plot text.
+# The OTFs are generated from the TeX Live Type 1 fonts by fonts/make_charter_otf.py.
+import os
+from matplotlib import font_manager
+_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+for _f in font_manager.findSystemFonts(fontpaths=_FONT_DIR, fontext="otf"):
+    font_manager.fontManager.addfont(_f)
+plt.rcParams.update({
+    "font.family": "Charter",
+    "mathtext.fontset": "custom",
+    "mathtext.rm": "Charter",
+    "mathtext.it": "Charter:italic",
+    "mathtext.bf": "Charter:bold",
+    "mathtext.fallback": "stix",
+})
+
 # Uncertainties on the cross-sections (down, up) in percent. All on mH=125.09 GeV at 14 TeV.
 # The uncertainty names here are used later to feed into functions calculating the total uncertainty, and to specify the label and colour of the uncertainty, so make sure not to change them.
-# Entries are ordered largest-bar-first: the first key is always the full total (PDFaS),
-# and the last key is the smallest, innermost bar. See `uncertainty_steps`.
+# Entries are ordered largest-bar-first: the first key is the last source added (so its
+# bar is the full total), and the last key is PDFaS, the smallest, innermost bar. The
+# overall order sources are added in is PDFaS, mB, muB, virt, QCDscale, PDFTH, tbc, EWK, TU.
+# See `uncertainty_steps`.
 data = {
     "ggF": {
-        "PDFaS": (-2.5, 2.5),
-        "PDFTH": (-2.4, 2.4),
         "EWK": (-1.0, 1.0),
         "tbc": (-0.34, 0.34),
+        "PDFTH": (-2.4, 2.4),
         "QCDscale": (-3.3, 0.32),
+        "PDFaS": (-2.5, 2.5),
     },
     "VBF": {
-        "PDFaS": (-2.1, 2.1),
         "TU": (-1.1, 1.1),
         "QCDscale": (-0.097, 0.14),
+        "PDFaS": (-2.1, 2.1),
     },
     "WH": {
-        "PDFaS": (-1.8, 1.8),
         "QCDscale": (-0.7, 0.5),
+        "PDFaS": (-1.8, 1.8),
     },
     "ZH": {
-        "PDFaS": (-1.6, 1.6),
         "QCDscale": (-2.8, 3.0),
+        "PDFaS": (-1.6, 1.6),
     },
     "ttH": {
-        "PDFaS": (-2.7, 2.7),
-        "virt": (-0.9, 0.9),
         "QCDscale": (-2.1, 1.4),
+        "virt": (-0.9, 0.9),
+        "PDFaS": (-2.7, 2.7),
     },
     "tH (t-ch)": {
-        "PDFaS": (-1.9, 1.9),
         "QCDscaleFS": (-15, 6.4),
+        "PDFaS": (-1.9, 1.9),
     },
     "tH (s-ch)": {
-        "PDFaS": (-2.3, 2.3),
         "QCDscaleFS": (-1.8, 2.4),
+        "PDFaS": (-2.3, 2.3),
     },
     "tH (W-ass)": {
-        "PDFaS": (-3.6, 3.6),
         "QCDscaleFS": (-6.4, 4.8),
+        "PDFaS": (-3.6, 3.6),
     },
     "bbH": {
-        "PDFaS": (-2.9, 2.9),
-        "mB": (-1.83, 1.83),
-        "muB": (-5.4, 5.4),
         "QCDscale": (-6.2, 6.2),
+        "muB": (-5.4, 5.4),
+        "mB": (-1.83, 1.83),
+        "PDFaS": (-2.9, 2.9),
     },
 }
 
@@ -154,7 +172,8 @@ zero = (0.0, 0.0)
 
 def uncertainty_steps(mode_key):
     """Build up from all sources zero to all sources at their quoted values, adding one
-    source at a time in reverse dictionary order. Depth 0 is the full total (every source
+    source at a time in reverse dictionary order, so whatever mix of linear and quadrature
+    sums the mode's total function uses is respected. Depth 0 is the full total (every source
     added); depth d has the first d sources (in dict order) still zeroed. Each step is
     labelled by the source that was just switched on, i.e. `keys[depth]`."""
     keys = list(data[mode_key].keys())
@@ -173,16 +192,23 @@ production_mode_labels = {
     "VBF":        r"$\delta\sigma_{\mathrm{VBF}}$",
     "WH":         r"$\delta\sigma_{\mathrm{WH}}$",
     "ZH":         r"$\delta\sigma_{\mathrm{ZH}}$",
-    "ttH":        r"$\delta\sigma_{\mathrm{ttH}}$",
-    "tH (t-ch)":  r"$\delta\sigma_{\mathrm{tH\ (t\mathrm{-}ch)}}$",
-    "tH (s-ch)":  r"$\delta\sigma_{\mathrm{tH\ (s\mathrm{-}ch)}}$",
-    "tH (W-ass)": r"$\delta\sigma_{\mathrm{tH\ (W\mathrm{-}ass)}}$",
-    "bbH":        r"$\delta\sigma_{\mathrm{bbH}}$",
+    "ttH":        r"$\delta\sigma_{t\bar{t}H}$",
+    "tH (t-ch)":  r"$\delta\sigma_{tH\ (t\mathrm{-ch})}$",
+    "tH (s-ch)":  r"$\delta\sigma_{tH\ (s\mathrm{-ch})}$",
+    "tH (W-ass)": r"$\delta\sigma_{tH\ (W\mathrm{-ass})}$",
+    "bbH":        r"$\delta\sigma_{b\bar{b}H}$",
+}
+
+# Production-mode names as they appear in legend text (e.g. "(bbH)" after a source
+# unique to that mode), with the italic process names used on the y-axis.
+mode_legend_names = {
+    "ttH": r"$t\bar{t}H$",
+    "bbH": r"$b\bar{b}H$",
 }
 
 
 # Colored by uncertainty source rather than by depth/position, so the same source always
-# reads as the same color across modes: PDFaS (the total) is always red, QCD scale is
+# reads as the same color across modes: PDFaS (the base) is always red, QCD scale is
 # always light blue, and each mode's extra sources get their own shade.
 SOURCE_COLORS = {
     "PDFaS":       "#c1121f",  # red
@@ -193,7 +219,7 @@ SOURCE_COLORS = {
     "TU":          "#eeb800",  # deep yellow
     "virt":        "#1b5e20",  # dark green
     "muB":         "#6fbf73",  # light green
-    "mB":          "#8c564b",  # brown
+    "mB":          "#404040",  # charcoal grey
     "PDFTH":       "#f4a6a6",  # light pink/red
 }
 
@@ -202,27 +228,30 @@ SOURCE_COLORS = {
 DISPLAY_LABELS = {
     "PDFaS":      r"PDF+$\alpha_s$",
     "PDFTH":      "PDF-TH",
-    "EWK":        r"$\delta(EWK)$",
+    "EWK":        r"$\delta(\mathrm{EWK})$",
     "tbc":        r"$\delta(t,b,c)$",
-    "virt":       r"$\delta_{virt}$",
+    "virt":       r"$\delta_{\mathrm{virt}}$",
     "muB":        r"$\mu_b$",
     "mB":         r"$m_B$",
     "QCDscale":   "QCD scale",
     "QCDscaleFS": "QCD scale+FS",
 }
-# QCD scale (and its tH variant) is the base against which everything else is combined,
-# so it gets no prefix and is always listed first in the legend.
-NO_PREFIX_KEYS = {"QCDscale", "QCDscaleFS"}
-# Sources added in quadrature get a "+ in a circle" (i.e. "in quadrature") prefix;
-# everything else (besides QCD scale) is added linearly and gets a plain "+".
-QUADRATURE_KEYS = {"PDFaS", "virt", "muB", "mB"}
+# PDFaS is the base against which everything else is combined, so it gets no prefix and
+# is always listed first in the legend.
+NO_PREFIX_KEYS = {"PDFaS"}
+# QCD scale and its tH variant, merged into one legend entry by `qcd_label_override`.
+QCD_KEYS = {"QCDscale", "QCDscaleFS"}
+# The prefix describes how each step combines with what is already in the bar. Sources
+# that enter in quadrature get a "+ in a circle" (i.e. "in quadrature") prefix; PDF-TH,
+# tbc, EWK and TU are summed linearly onto QCD scale and get a plain "+".
+QUADRATURE_KEYS = {"QCDscale", "QCDscaleFS", "virt", "muB", "mB"}
 
 
 def legend_entries(mode_keys):
-    """Legend rows for these modes, ordered to match the bars themselves: QCD scale
-    (smallest, innermost) first, PDFaS (the total, largest) last, everything else in
-    between ordered smallest-to-largest. Returns (key, display_text) pairs, with the
-    production mode appended in brackets for any source unique to a single mode."""
+    """Legend rows for these modes, ordered to match the bars themselves: PDFaS
+    (smallest, innermost) first, everything else ordered smallest-to-largest after it.
+    Returns (key, display_text) pairs, with the production mode appended in brackets for
+    any source unique to a single mode."""
     modes_for_key = {}
     order_info = {}
     next_index = 0
@@ -238,31 +267,23 @@ def legend_entries(mode_keys):
     def sort_key(item):
         return order_info[item]
 
-    qcd_keys = sorted((k for k in order_info if k in NO_PREFIX_KEYS), key=sort_key)
-    total_keys = sorted((k for k in order_info if k == "PDFaS"), key=sort_key)
-    other_keys = sorted(
-        (k for k in order_info if k not in NO_PREFIX_KEYS and k != "PDFaS"),
-        key=sort_key,
-    )
+    base_keys = sorted((k for k in order_info if k in NO_PREFIX_KEYS), key=sort_key)
+    other_keys = sorted((k for k in order_info if k not in NO_PREFIX_KEYS), key=sort_key)
 
     entries = []
-    for key in qcd_keys + other_keys + total_keys:
+    for key in base_keys + other_keys:
         text = DISPLAY_LABELS.get(key, key)
         if key not in NO_PREFIX_KEYS:
             prefix = r"$\oplus$" if key in QUADRATURE_KEYS else "+"
             text = f"{prefix} {text}"
         if len(modes_for_key[key]) == 1:
-            text = f"{text} ({next(iter(modes_for_key[key]))})"
+            mode = next(iter(modes_for_key[key]))
+            text = f"{text} ({mode_legend_names.get(mode, mode)})"
         entries.append((key, text))
     return entries
 
 
-STEP_HEIGHT_BASE = 0.55
-STEP_HEIGHT_RATIO = 0.68
-
-
-def step_height(depth):
-    return STEP_HEIGHT_BASE * (STEP_HEIGHT_RATIO ** depth)
+BAR_HEIGHT = 0.55
 
 
 LABEL_FONTSIZE = 15  # matches xtick.labelsize
@@ -270,7 +291,7 @@ ROW_SPACING = 1.0
 
 
 def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, legend_order=None):
-    """Plot the nested uncertainty-breakdown bars for `mode_keys` and save to `filename`.
+    """Plot the stacked uncertainty-breakdown bars for `mode_keys` and save to `filename`.
 
     `qcd_label_override`, if given, replaces the legend text for "QCD scale" and merges
     it with "QCD scale+FS" into a single entry. `legend_order`, if given, is a list of
@@ -295,19 +316,21 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
     ax.tick_params(axis="both", which="major", width=2, length=6)
 
     for i, mode_key in enumerate(mode_keys):
-        for depth, (label, (dn, up)) in enumerate(breakdowns[mode_key]):
+        # Each step's total contains the next (smaller) one, so each source is drawn as
+        # just the segment it adds on either side, giving stacked bars of equal height.
+        steps = breakdowns[mode_key]
+        for depth, (label, (dn, up)) in enumerate(steps):
+            inner_dn, inner_up = steps[depth + 1][1] if depth + 1 < len(steps) else zero
             color = SOURCE_COLORS[label]
-            height = step_height(depth)
             ax.barh(
-                y_base[i],
-                width=up - dn,
-                left=dn,
-                height=height,
+                [y_base[i], y_base[i]],
+                width=[inner_dn - dn, up - inner_up],
+                left=[dn, inner_up],
+                height=BAR_HEIGHT,
                 color=color,
-                edgecolor=color,
-                linewidth=1.5,
-                alpha=1.0,
-                zorder=3 + depth,
+                edgecolor="black",
+                linewidth=0.5,
+                zorder=3,
             )
 
     ax.axvline(0, color="0.2", linewidth=1.5, zorder=10)
@@ -341,7 +364,7 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
         merged = False
         deduped = []
         for key, text in entries:
-            if key in NO_PREFIX_KEYS:
+            if key in QCD_KEYS:
                 if not merged:
                     deduped.append((key, qcd_label_override))
                     merged = True
@@ -354,7 +377,7 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
         entries = sorted(entries, key=lambda kv: order_index.get(kv[0], len(order_index)))
 
     legend_handles = [
-        Patch(facecolor=SOURCE_COLORS[key], edgecolor=SOURCE_COLORS[key], label=text)
+        Patch(facecolor=SOURCE_COLORS[key], edgecolor="black", linewidth=0.5, label=text)
         for key, text in entries
     ]
     ax.legend(
@@ -377,8 +400,8 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
 plot_uncertainty_breakdown(
     ["ggF", "VBF", "WH", "ZH", "ttH", "tH (t-ch)", "tH (s-ch)", "tH (W-ass)", "bbH"],
     "uncertainty_breakdown_all.pdf",
-    qcd_label_override="QCD scale (+FS for ttH/tH)",
-    legend_order=["QCDscale", "tbc", "EWK", "PDFTH", "TU", "virt", "muB", "mB", "PDFaS"],
+    qcd_label_override=r"$\oplus$ QCD scale (+FS for $t\bar{t}H$/$tH$)",
+    legend_order=["PDFaS", "mB", "muB", "virt", "QCDscale", "PDFTH", "tbc", "EWK", "TU"],
 )
 
 plt.show()

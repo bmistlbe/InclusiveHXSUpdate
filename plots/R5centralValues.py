@@ -18,6 +18,22 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
+# Use the paper's text font (Bitstream Charter, via mathdesign) for all plot text.
+# The OTFs are generated from the TeX Live Type 1 fonts by fonts/make_charter_otf.py.
+import os
+from matplotlib import font_manager
+_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+for _f in font_manager.findSystemFonts(fontpaths=_FONT_DIR, fontext="otf"):
+    font_manager.fontManager.addfont(_f)
+plt.rcParams.update({
+    "font.family": "Charter",
+    "mathtext.fontset": "custom",
+    "mathtext.rm": "Charter",
+    "mathtext.it": "Charter:italic",
+    "mathtext.bf": "Charter:bold",
+    "mathtext.fallback": "stix",
+})
+
 # Central values of the cross-sections in pb, from the R5 and YR4.
 # All for mH=125.09 GeV at 14 TeV.
 
@@ -100,6 +116,16 @@ UncertaintiesR5YR4 = {
 }
 
 mode_keys = list(UncertaintiesR5YR4.keys())
+
+# Tick-label text for each production mode: process names in math italic, channel
+# qualifiers (-ch, -ass) upright.
+mode_labels = {
+    "ttH":        r"$t\bar{t}H$",
+    "tH (t-ch)":  r"$tH$ ($t$-ch)",
+    "tH (s-ch)":  r"$tH$ ($s$-ch)",
+    "tH (W-ass)": r"$tH$ ($W$-ass)",
+    "bbH":        r"$b\bar{b}H$",
+}
 y_base = np.arange(len(mode_keys))
 
 # Relative difference of the R5 central value from the YR4 one, for every mode with both
@@ -147,7 +173,7 @@ for y_prev, y_next in zip(y_base[:-1], y_base[1:]):
     ax.axhline((y_prev + y_next) / 2, color="0.2", linestyle="--", linewidth=1.0, alpha=0.5, zorder=0)
 
 ax.set_yticks(y_base)
-ax.set_yticklabels(mode_keys, ha="right")
+ax.set_yticklabels([mode_labels.get(m, m) for m in mode_keys], ha="right")
 ax.tick_params(axis="y", pad=8)
 ax.yaxis.tick_left()
 ax.yaxis.set_label_position("left")
@@ -179,13 +205,13 @@ legend_handles = [
         linestyle="None",
         color="#c1121f",
         markersize=8,
-        label=r"$\frac{R5-YR4}{YR4}$",
+        label=r"$\frac{\mathrm{R5}-\mathrm{YR4}}{\mathrm{YR4}}$",
     ),
     Patch(
         facecolor="black",
         edgecolor="black",
         alpha=0.35,
-        label=r"$\delta_{total}$, YR4 (%)",
+        label=r"$\delta_{\mathrm{total}}$, YR4 (%)",
     ),
 ]
 ax.legend(

@@ -16,6 +16,22 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
+# Use the paper's text font (Bitstream Charter, via mathdesign) for all plot text.
+# The OTFs are generated from the TeX Live Type 1 fonts by fonts/make_charter_otf.py.
+import os
+from matplotlib import font_manager
+_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+for _f in font_manager.findSystemFonts(fontpaths=_FONT_DIR, fontext="otf"):
+    font_manager.fontManager.addfont(_f)
+plt.rcParams.update({
+    "font.family": "Charter",
+    "mathtext.fontset": "custom",
+    "mathtext.rm": "Charter",
+    "mathtext.it": "Charter:italic",
+    "mathtext.bf": "Charter:bold",
+    "mathtext.fallback": "stix",
+})
+
 ## NOTES :
 
 # Run 2 : xsec measurements from HIGP-2025-16 (Figure 3) and from CMS-HIG-21-018 (https://www.hepdata.net/record/ins3123082?version=1&table=Cross%20sections%3A%20STXS%20stage%200)
@@ -139,6 +155,16 @@ linestyles = {
 }
 
 production_modes = list(data.keys())
+
+# Tick-label text for each production mode: process names in math italic, channel
+# qualifiers (-ch, -ass) upright.
+mode_labels = {
+    "ttH":        r"$t\bar{t}H$",
+    "tH (t-ch)":  r"$tH$ ($t$-ch)",
+    "tH (s-ch)":  r"$tH$ ($s$-ch)",
+    "tH (W-ass)": r"$tH$ ($W$-ass)",
+    "bbH":        r"$b\bar{b}H$",
+}
 y_base = np.arange(len(production_modes))
 
 fig, ax = plt.subplots(figsize=(12, 7))
@@ -248,7 +274,7 @@ for i in range(len(production_modes) - 1):
     )
 
 ax.set_yticks(y_base)
-ax.set_yticklabels(production_modes)
+ax.set_yticklabels([mode_labels.get(m, m) for m in production_modes])
 
 ax.invert_yaxis()
 
