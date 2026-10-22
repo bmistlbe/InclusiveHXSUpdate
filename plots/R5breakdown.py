@@ -20,6 +20,22 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
+# Use the paper's text font (Bitstream Charter, via mathdesign) for all plot text.
+# The OTFs are generated from the TeX Live Type 1 fonts by fonts/make_charter_otf.py.
+import os
+from matplotlib import font_manager
+_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+for _f in font_manager.findSystemFonts(fontpaths=_FONT_DIR, fontext="otf"):
+    font_manager.fontManager.addfont(_f)
+plt.rcParams.update({
+    "font.family": "Charter",
+    "mathtext.fontset": "custom",
+    "mathtext.rm": "Charter",
+    "mathtext.it": "Charter:italic",
+    "mathtext.bf": "Charter:bold",
+    "mathtext.fallback": "stix",
+})
+
 # Uncertainties on the cross-sections (down, up) in percent. All on mH=125.09 GeV at 14 TeV.
 # The uncertainty names here are used later to feed into functions calculating the total uncertainty, and to specify the label and colour of the uncertainty, so make sure not to change them.
 # Entries are ordered largest-bar-first: the first key is the last source added (so its
@@ -176,11 +192,18 @@ production_mode_labels = {
     "VBF":        r"$\delta\sigma_{\mathrm{VBF}}$",
     "WH":         r"$\delta\sigma_{\mathrm{WH}}$",
     "ZH":         r"$\delta\sigma_{\mathrm{ZH}}$",
-    "ttH":        r"$\delta\sigma_{\mathrm{ttH}}$",
-    "tH (t-ch)":  r"$\delta\sigma_{\mathrm{tH\ (t\mathrm{-}ch)}}$",
-    "tH (s-ch)":  r"$\delta\sigma_{\mathrm{tH\ (s\mathrm{-}ch)}}$",
-    "tH (W-ass)": r"$\delta\sigma_{\mathrm{tH\ (W\mathrm{-}ass)}}$",
-    "bbH":        r"$\delta\sigma_{\mathrm{bbH}}$",
+    "ttH":        r"$\delta\sigma_{t\bar{t}H}$",
+    "tH (t-ch)":  r"$\delta\sigma_{tH\ (t\mathrm{-ch})}$",
+    "tH (s-ch)":  r"$\delta\sigma_{tH\ (s\mathrm{-ch})}$",
+    "tH (W-ass)": r"$\delta\sigma_{tH\ (W\mathrm{-ass})}$",
+    "bbH":        r"$\delta\sigma_{b\bar{b}H}$",
+}
+
+# Production-mode names as they appear in legend text (e.g. "(bbH)" after a source
+# unique to that mode), with the italic process names used on the y-axis.
+mode_legend_names = {
+    "ttH": r"$t\bar{t}H$",
+    "bbH": r"$b\bar{b}H$",
 }
 
 
@@ -205,9 +228,9 @@ SOURCE_COLORS = {
 DISPLAY_LABELS = {
     "PDFaS":      r"PDF+$\alpha_s$",
     "PDFTH":      "PDF-TH",
-    "EWK":        r"$\delta(EWK)$",
+    "EWK":        r"$\delta(\mathrm{EWK})$",
     "tbc":        r"$\delta(t,b,c)$",
-    "virt":       r"$\delta_{virt}$",
+    "virt":       r"$\delta_{\mathrm{virt}}$",
     "muB":        r"$\mu_b$",
     "mB":         r"$m_B$",
     "QCDscale":   "QCD scale",
@@ -254,7 +277,8 @@ def legend_entries(mode_keys):
             prefix = r"$\oplus$" if key in QUADRATURE_KEYS else "+"
             text = f"{prefix} {text}"
         if len(modes_for_key[key]) == 1:
-            text = f"{text} ({next(iter(modes_for_key[key]))})"
+            mode = next(iter(modes_for_key[key]))
+            text = f"{text} ({mode_legend_names.get(mode, mode)})"
         entries.append((key, text))
     return entries
 
@@ -376,7 +400,7 @@ def plot_uncertainty_breakdown(mode_keys, filename, qcd_label_override=None, leg
 plot_uncertainty_breakdown(
     ["ggF", "VBF", "WH", "ZH", "ttH", "tH (t-ch)", "tH (s-ch)", "tH (W-ass)", "bbH"],
     "uncertainty_breakdown_all.pdf",
-    qcd_label_override=r"$\oplus$ QCD scale (+FS for ttH/tH)",
+    qcd_label_override=r"$\oplus$ QCD scale (+FS for $t\bar{t}H$/$tH$)",
     legend_order=["PDFaS", "mB", "muB", "virt", "QCDscale", "PDFTH", "tbc", "EWK", "TU"],
 )
 

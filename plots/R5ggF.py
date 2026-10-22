@@ -14,26 +14,42 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
+# Use the paper's text font (Bitstream Charter, via mathdesign) for all plot text.
+# The OTFs are generated from the TeX Live Type 1 fonts by fonts/make_charter_otf.py.
+import os
+from matplotlib import font_manager
+_FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+for _f in font_manager.findSystemFonts(fontpaths=_FONT_DIR, fontext="otf"):
+    font_manager.fontManager.addfont(_f)
+plt.rcParams.update({
+    "font.family": "Charter",
+    "mathtext.fontset": "custom",
+    "mathtext.rm": "Charter",
+    "mathtext.it": "Charter:italic",
+    "mathtext.bf": "Charter:bold",
+    "mathtext.fallback": "stix",
+})
+
 data = {
-    r"$\delta(Total)$": {
+    r"$\delta(\mathrm{Total})$": {
         "YR4": (-7.4, 5.6),  
         "R5": (-7.4, 4.7),
         "HL-LHC": (-1.6, 1.6),
         "Run 2": (-5.5, 5.7),
     },
-    r"$\delta(PDF+\alpha_s)$": {
+    r"$\delta(\mathrm{PDF}+\alpha_s)$": {
         "YR4": (-3.2, 3.2),  
         "R5": (-2.5, 2.5),   
     },
-    r"$\delta(PDF-TH)$": {
+    r"$\delta(\mathrm{PDF}-\mathrm{TH})$": {
         "YR4": (-1.2, 1.2), 
         "R5": (-2.4, 2.4),   
     },
-    r"$\delta(scale)$": {
+    r"$\delta(\mathrm{scale})$": {
         "YR4": (-2.4, 0.2), 
         "R5": (-3.3, 0.3),  
     },
-    r"$\delta(EWK)$": {
+    r"$\delta(\mathrm{EWK})$": {
         "YR4": (-1.0, 1.0),
         "R5": (-1.0, 1.0), 
     },
@@ -45,7 +61,7 @@ data = {
         "YR4": (-1.0, 1.0), 
         "R5": (0.0, 0.0),
     },
-    r"$\delta(trunc.)$": {
+    r"$\delta(\mathrm{trunc.})$": {
         "YR4": (-0.4, 0.4), 
         "R5": (0.0, 0.0),
     },
@@ -83,7 +99,7 @@ offsets = {
 
 # Draw HL-LHC and Run 2
 
-neg, pos = data["$\delta(Total)$"]["HL-LHC"]
+neg, pos = data[r"$\delta(\mathrm{Total})$"]["HL-LHC"]
 
 if neg != 0.0 or pos != 0.0:
  ax.barh(
@@ -98,7 +114,7 @@ if neg != 0.0 or pos != 0.0:
     zorder=0,
  )
 
-neg, pos = data["$\delta(Total)$"]["Run 2"]
+neg, pos = data[r"$\delta(\mathrm{Total})$"]["Run 2"]
 
 if neg != 0.0 or pos != 0.0:
  ax.barh(
