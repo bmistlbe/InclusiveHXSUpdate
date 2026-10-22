@@ -47,6 +47,8 @@ data = {
         "R5": (-7.4, 4.7),
         "R5 without PDF": (-4.6, 1.7),
         "HL-LHC": (-1.60, 1.60),
+        "HL-LHC2": (-1.2, 1.2),   # TH   
+       # "HL-LHC2": (-1.06, 1.06),  
         "Run 2": (-5.5, 5.7),   
     },
       "ggF(gauss)": {
@@ -54,6 +56,8 @@ data = {
         "R5": (-4.7, 4.7),
         "R5 without PDF": (-2.7, 2.7), # 4.6/sqrt(3)
         "HL-LHC": (-1.60, 1.60),
+        "HL-LHC2": (-1.2, 1.2),   # TH   
+       # "HL-LHC2": (-1.06, 1.06),
         "Run 2": (-5.5, 5.7),  
     },
     "VBF": {
@@ -61,6 +65,8 @@ data = {
         "R5": (-2.4, 2.4),
         "R5 without PDF": (-1.1, 1.1),
         "HL-LHC": (-3.1, 3.1),
+        "HL-LHC2": (-2.1, 2.1),   # TH 
+       # "HL-LHC2": (-2.2, 2.2), 
         "Run 2": (-11, 11), 
     },
     "WH": {
@@ -68,6 +74,8 @@ data = {
         "R5": (-2.0, 1.9), 
         "R5 without PDF": (-0.7, 0.5),
         "HL-LHC": (-5.7, 5.7),
+        "HL-LHC2": (-4, 4),   # TH 
+       # "HL-LHC2": (-4.1, 4.1),   
         "Run 2": (-15, 16),
     },
     "ZH": {
@@ -75,6 +83,8 @@ data = {
         "R5": (-3.2, 3.4),
         "R5 without PDF": (-2.8, 3.0),
         "HL-LHC": (-4.2, 4.2),
+        "HL-LHC2": (-3.1, 3.1),   # TH
+       # "HL-LHC2": (-2.9, 2.9),   
         "Run 2": (-17, 18),
     },
     "ttH": {
@@ -82,6 +92,8 @@ data = {
         "R5": (-3.6, 3.2),
         "R5 without PDF": (-2.3, 1.7),
         "HL-LHC": (-4.3, 4.3),
+        "HL-LHC2": (-3.7, 3.7),   # TH
+       # "HL-LHC2": (-2.2, 2.2),    
         "Run 2": (-14, 14), 
     },
     "tH (t-ch)": {
@@ -89,6 +101,7 @@ data = {
         "R5": (-15.1, 6.6),
         "R5 without PDF": (-15, 6.3),
         "HL-LHC": (0.0, 0.0),
+        "HL-LHC2": (0.0, 0.0),  
         "Run 2": (0.0, 0.0),
     },
     "tH (s-ch)": {
@@ -96,6 +109,7 @@ data = {
         "R5": (-2.9, 3.3),
         "R5 without PDF": (-1.8, 2.4),
         "HL-LHC": (0.0, 0.0),
+        "HL-LHC2": (0.0, 0.0),   
         "Run 2": (0.0, 0.0),
     },
      "tH (W-ass)": {
@@ -103,6 +117,7 @@ data = {
         "R5": (-7.3, 6),
         "R5 without PDF": (-6.4, 4.8),
         "HL-LHC": (0.0, 0.0),
+        "HL-LHC2": (0.0, 0.0),  
         "Run 2": (0.0, 0.0),
     },
     "bbH": {
@@ -110,6 +125,7 @@ data = {
         "R5": (-8.9, 8.9),
         "R5 without PDF": (-8.2, 8.2),
         "HL-LHC": (0.0, 0.0),
+        "HL-LHC2": (0.0, 0.0),  
         "Run 2": (0.0, 0.0),
     },
 }
@@ -178,9 +194,24 @@ for i, mode in enumerate(production_modes): # Draw HL-LHC and Run 2 constraints
         y_base[i],
         -neg + pos, 
         left=neg,
-        height=0.62,
+        height=0.75,
         facecolor="#BFD7EA",
         edgecolor="blue",
+        #hatch="///",
+        alpha=0.45,
+        linewidth=1.0,
+        zorder=0,
+    )
+
+    neg, pos = data[mode]["HL-LHC2"]
+
+    ax.barh(
+        y_base[i],
+        -neg + pos, 
+        left=neg,
+        height=0.75,
+        facecolor="#D3D3D3",
+        edgecolor="#404040", # gray
         #hatch="///",
         alpha=0.45,
         linewidth=1.0,
@@ -193,7 +224,7 @@ for i, mode in enumerate(production_modes): # Draw HL-LHC and Run 2 constraints
       y_base[i],
       width=pos-neg,
       left=neg,
-      height=0.62,
+      height=0.75,
       facecolor="none",
       edgecolor="tab:blue",
       linewidth=1.0,
@@ -293,19 +324,32 @@ legend_handles = [
         label="LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
     ),
     Patch(
+        facecolor="none",
+        edgecolor="none",
+        label="HL-LHC projection\nATLAS + CMS",
+    ),
+    Patch(
         facecolor="#BFD7EA",
         edgecolor="blue",
         #hatch="///",
         alpha=0.45,
         linewidth=1.0,
-        label="HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
+        label="[Stat+Exp+Th]",
+    ),
+    Patch(
+        facecolor="#D3D3D3",
+        edgecolor="#404040", # gray
+        #hatch="///",
+        alpha=0.45,
+        linewidth=1.0,
+        label="[Th only]",
     ),
 ]
 
 ax.legend(
     handles=legend_handles,
     loc="upper right",
-    bbox_to_anchor=(1.08, 1.1),   # slightly outside right
+    bbox_to_anchor=(1.2, 1.15),   # slightly outside right
     labelspacing=0.75,    
     frameon=True,
     framealpha=1,

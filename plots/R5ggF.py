@@ -35,6 +35,8 @@ data = {
         "YR4": (-7.4, 5.6),  
         "R5": (-7.4, 4.7),
         "HL-LHC": (-1.6, 1.6),
+        "HL-LHC2": (-1.2, 1.2),   # TH
+       # "HL-LHC2": (-1.06, 1.06),
         "Run 2": (-5.5, 5.7),
     },
     r"$\delta(\mathrm{PDF}+\alpha_s)$": {
@@ -106,13 +108,28 @@ if neg != 0.0 or pos != 0.0:
     y_base[0],
     -neg + pos,
     left=neg,
-    height=0.62,
+    height=0.75,
     facecolor="#BFD7EA",
     edgecolor="tab:blue",
     alpha=0.45,
     linewidth=1.0,
     zorder=0,
  )
+
+neg, pos = data[r"$\delta(\mathrm{Total})$"]["HL-LHC2"]
+
+if neg != 0.0 or pos != 0.0:
+ ax.barh(
+    y_base[0],
+    -neg + pos,
+    left=neg,
+    height=0.75,
+    facecolor="#D3D3D3",
+    edgecolor="#404040", # gray 
+    alpha=0.45,
+    linewidth=1.0,
+    zorder=0,
+ ) 
 
 neg, pos = data[r"$\delta(\mathrm{Total})$"]["Run 2"]
 
@@ -121,7 +138,7 @@ if neg != 0.0 or pos != 0.0:
     y_base[0],
     width=pos-neg,
     left=neg,
-    height=0.62,
+    height=0.75,
     facecolor="none",
     edgecolor="tab:blue",
     linewidth=1.0,
@@ -229,12 +246,25 @@ legend_handles = [
         label="LHC Run 2\nATLAS/CMS (best) \n[Stat+Exp+Th]",
     ),
     Patch(
+        facecolor="none",
+        edgecolor="none",
+        label="HL-LHC projection\nATLAS + CMS",
+    ),
+    Patch(
         facecolor="#BFD7EA",
         edgecolor="blue",
         #hatch="///",
         alpha=0.45,
         linewidth=1.0,
-        label=" HL-LHC projection\nATLAS + CMS\n[Stat+Exp+Th]",
+        label="[Stat+Exp+Th]",
+    ),
+    Patch(
+        facecolor="#D3D3D3",
+        edgecolor="#404040", # gray
+        #hatch="///",
+        alpha=0.45,
+        linewidth=1.0,
+        label="[Th only]",
     ),
 ]
 
