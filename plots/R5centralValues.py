@@ -39,7 +39,7 @@ plt.rcParams.update({
 
 CentralValues = {
     "ggF": {
-        "R5": 54.09,
+        "R5": 54.03,
         "YR4": 54.60
     },
     "VBF": {
