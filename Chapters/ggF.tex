@@ -21,7 +21,7 @@ NNLO PDFs & \cite{PDF4LHCWorkingGroup:2022cjn,Hou:2019efy,Bailey:2020ooq,Alekhin
 \hline
 \textbf{Codes} & \textbf{References} \\ 
 \hline
-N$^3$LO QCD & \cite{Dulat:2018rbf}
+N$^3$LO HTL QCD & \cite{Dulat:2018rbf}
 %, %\texttt{n3loxs}~\cite{Baglio:2022wzu}, %\texttt{ggHiggs}~\cite{Ball:2013bra,Bonvini:2014jma,Bonvini:2016frm,Ahmed:2016otz,Bonvini:2018ixe,Bonvini:2018iwt}
 \end{tabular}
 \caption{Summary of theory references for Higgs boson production in gluon fusion at the LHC upon which this recommendation is based.
@@ -99,6 +99,13 @@ where each of the scheme and higher order uncertainties are assessed in Section~
 The PDF and $\alpha_s$ uncertainty, $\delta(\mathrm{PDF}+\alpha_s)$, collects the usual PDF uncertainty, as estimated from the replicas of the PDF4LHC21\_40 PDF set and the uncertainty due to $\alpha_s$.
 Finally, the $\delta(\mathrm{PDF\text{--}TH})$ uncertainty collects the uncertainty related to the mismatch between the N$^3$LO matrix element and the NNLO PDFs.
 Alternatively, this mismatch can be avoided using the approximate N$^3$LO PDFs, we discuss results obtained with the aN$^3$LO PDFs in Section~\ref{sec:ggf_an3lo_pdf}.
+
+In the recommendation reference tables presented in Appendix~\ref{app:tables} we also report the following combined uncertainties,
+\begin{align}
+\delta(\mathrm{Total}) &= \sqrt{ (\delta(\mathrm{theory}) + \delta(\mathrm{PDF-TH}))^2 + \delta(\mathrm{PDF}+\alpha_s)^2 }, \\
+\delta(\mathrm{Gauss}) &= (\max(+\delta(\mathrm{theory}),-\delta(\mathrm{theory})) + \delta{\mathrm{PDF-TH}})/\sqrt{3}, \\
+\delta(\mathrm{Gauss\ Total}) &= \sqrt{ \delta(\mathrm{Gauss})^2 + \delta(\mathrm{PDF}+\alpha_s)^2}.
+\end{align}
 
 \subsection{N$^3$LO Heavy-Top Limit Results}
 \label{sec:ggf_htl}
@@ -574,7 +581,7 @@ with,
 \label{eq:ggf_qed_ct18}
 \end{align}
 This shift is calculated using the rescaled N$^3$LO HTL result, i.e.\ the first line of Eq.~\eqref{eq:ggf_master}, expressed as a percentage then applied to the total cross section prediction.
-Although the LuxQED method gives a constrained photon PDF, the impact of the inclusion of this photon PDF on the gluon distribution differs quite significantly for each of the global sets, see Table~\ref{tab:ggf_pdf_qed}, in which $\langle$CT18$\rangle$ denotes the average over the three CT18 QED sets defined in the first line of Eq.~\eqref{eq:ggf_qed_ct18}.
+Although the LuxQED method gives a constrained photon PDF, the impact of the inclusion of this photon PDF on the gluon distribution differs for each of the global sets, see Table~\ref{tab:ggf_pdf_qed}, in which $\langle$CT18$\rangle$ denotes the average over the three CT18 QED sets defined in the first line of Eq.~\eqref{eq:ggf_qed_ct18}.
 The impact of the inclusion of QED effects on the PDF uncertainty of the PDF4LHC21 set has not yet been studied, in the recommendation, we report the PDF uncertainty obtained neglecting the QED effects.
 For the MSHT20xNNPDF40 aN$^3$LO PDF set we define,
 \begin{align}
@@ -583,8 +590,8 @@ For the MSHT20xNNPDF40 aN$^3$LO PDF set we define,
 %Again, the shift is calculated using the rescaled N$^3$LO HTL result and expressed as a percentage then applied to the total cross section prediction.
 
 Using the N$^3$LO HTL matrix element with NNLO PDFs, including QED evolution decreases the total cross section when using any of the CT18, MSHT20, NNPDF31 or combination PDF sets.
-The CT18 global set prediction is almost unaffected by the inclusion of QED evolution, while the NNPDF31 prediction decreases by more than $1\%$. 
-For the PDF4LHC21 set, the QED effects reduce the cross section by $0.65\%$ at $\sqrt{s} = 7$\,TeV, $0.62\%$ at $\sqrt{s} = 13.6$\,TeV and $0.50\%$ at $\sqrt{s} = 100$\,TeV.
+The predictions made with the CT18 and MSHT20 global sets decrease by around $-0.5\%$ due to the inclusion of QED evolution, while the NNPDF31 prediction decreases by more than $-1\%$. 
+For the PDF4LHC21 set, the QED effects reduce the cross section by $-0.77\%$ at $\sqrt{s} = 7$\,TeV, $-0.74\%$ at $\sqrt{s} = 13.6$\,TeV and $-0.60\%$ at $\sqrt{s} = 100$\,TeV.
 
 %For the MSHT20xNNPDF40 NNLO combination set at $\sqrt{s} = 7$\,TeV the total cross section is reduced by $-1.3\%$, $-1.1\%$ at $\sqrt{s} = 13.6$\,TeV, while at $\sqrt{s} = 100$\,TeV it is reduced by $-0.3\%$, at larger collider energies the QED effects enhance the total cross section.
 %The PDF uncertainty for the MSHT20xNNPDF40\_NNLO\_qed set ranges from $\pm 1.27\%$ at $\sqrt{s}=7$\,TeV, $\pm 0.92\%$ at $\sqrt{s}=13.6$\,TeV to $\pm 1.82\%$ at $\sqrt{s}=100$\,TeV.
@@ -594,11 +601,11 @@ For the PDF4LHC21 set, the QED effects reduce the cross section by $0.65\%$ at $
 
 Alternatively, using the N$^3$LO HTL matrix element with  aN$^3$LO PDFs, the QED evolution has a larger impact.
 For the MSHT20xNNPDF40 aN$^3$LO combination set we observe a $-1.55\%$ suppression at $\sqrt{s} = 7$\,TeV,  $-1.45\%$ at $\sqrt{s} = 13.6$\,TeV and a $-1.10\%$ suppression at $\sqrt{s} = 100$\,TeV.
-Examining the individual PDF sets, we see that the MSHT20 aN$^3$LO set predicts a suppression of about $1\%$ for all collider energies, while the NNPDF40 aN$^3$LO set predicts a larger $-1.7\%$ suppression for collider energies relevant for the LHC.
+Examining the individual PDF sets, we see that the MSHT20 aN$^3$LO set predicts a suppression of about $-1\%$ for all collider energies, while the NNPDF40 aN$^3$LO set predicts a larger $-1.7\%$ suppression for collider energies relevant for the LHC.
 %The PDF uncertainty for the MSHT20xNNPDF40\_aN3LO\_qed combination set is $\pm 1.81\%$ at $\sqrt{s}=7$ TeV, $\pm 1.74\%$ at $\sqrt{s}=13.6$ TeV and $\pm 1.97\%$ at $\sqrt{s}=100$ TeV.
 
-In summary, for the PDF4LHC21 and MSHT20xNNPDF40 combination sets, the impact of including QED evolution on the total cross section is between that of the individual CT18, MSHT20, NNPDF31 and NNPDF40 sets, which give a suppression ranging from $-0.05\%$ to $-1.65\%$ at $\sqrt{s}= 13.6$\,TeV.
-Although all global fits utilise the LuxQED method to incorporate a photon PDF, the impact of QED evolution on the total Higgs cross section varies for the different PDF sets as well as the PDF order, it has the potential to either increase or decrease the cross section depending on the collider energy and PDF set used.
+In summary, for the PDF4LHC21 and MSHT20xNNPDF40 combination sets, the impact of including QED evolution on the total cross section is between that of the individual CT18, MSHT20, NNPDF31 and NNPDF40 sets, which give a suppression ranging from $-0.40\%$ to $-1.65\%$ at $\sqrt{s}= 13.6$\,TeV.
+Although all global fits utilise the LuxQED method to incorporate a photon PDF, the impact of QED evolution on the total Higgs cross section varies for the different PDF sets as well as the PDF order, it consistently decreases the cross section for both LHC and $100$\,TeV collider energies.
 For the total cross section, including the QED evolution gives effects similar in size to the current PDF uncertainties, as the experimental and theoretical precision improves it will become increasingly important to account for QED evolution effects.
 %A discussion of the impact of QED effects on Higgs boson production was recently presented in Ref.~\cite{Cooper-Sarkar:2025sqw}.
 
@@ -606,7 +613,7 @@ For the total cross section, including the QED evolution gives effects similar i
 The central recommendation is produced using the PDF4LHC21 PDF set in line with the common setup outlined in Section~\ref{sec:setup}.
 The QED evolution effects are included according to Eq.~\eqref{eq:ggf_qed} following Ref.~\cite{Cooper-Sarkar:2025sqw}.
 The QED evolution effects are included in the prediction using aN$^3$LO PDFs through the use of the MSHT20xNNPDF40\_aN3LO\_qed PDF set.
-Global PDF fits indicate that incorporating QED evolution effects suppresses the total cross section for collider energies relevant for the LHC at the level of $-0.05\%$ to $-1.7\%$.
+Global PDF fits indicate that incorporating QED evolution effects suppresses the total cross section for collider energies relevant for the LHC at the level of $-0.4\%$ to $-1.7\%$.
 
 %\paragraph{Contributors}
 %\SJ{LuxQED, MSHT, NNPDF, CT (Please add your collaboration name or individual author names as you prefer)}
