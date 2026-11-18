@@ -190,8 +190,8 @@ breakdowns = {mode_key: uncertainty_steps(mode_key) for mode_key in total_funcs}
 production_mode_labels = {
     "ggF":        r"$\delta\sigma_{\mathrm{ggF}}$",
     "VBF":        r"$\delta\sigma_{\mathrm{VBF}}$",
-    "WH":         r"$\delta\sigma_{\mathrm{WH}}$",
-    "ZH":         r"$\delta\sigma_{\mathrm{ZH}}$",
+    "WH":         r"$\delta\sigma_{WH}$",
+    "ZH":         r"$\delta\sigma_{ZH}$",
     "ttH":        r"$\delta\sigma_{t\bar{t}H}$",
     "tH (t-ch)":  r"$\delta\sigma_{tH\ (t\mathrm{-ch})}$",
     "tH (s-ch)":  r"$\delta\sigma_{tH\ (s\mathrm{-ch})}$",

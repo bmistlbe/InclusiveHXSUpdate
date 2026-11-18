@@ -120,6 +120,8 @@ mode_keys = list(UncertaintiesR5YR4.keys())
 # Tick-label text for each production mode: process names in math italic, channel
 # qualifiers (-ch, -ass) upright.
 mode_labels = {
+    "WH":         r"$WH$",
+    "ZH":         r"$ZH$",
     "ttH":        r"$t\bar{t}H$",
     "tH (t-ch)":  r"$tH$ ($t$-ch)",
     "tH (s-ch)":  r"$tH$ ($s$-ch)",
