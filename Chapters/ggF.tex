@@ -42,10 +42,13 @@ The partonic cross section may be decomposed up to order N$^3$LO as~\cite{Dulat:
 +\sigma_{ij}^{\mathrm{N}^3\mathrm{LO}, \mathrm{HTL}} \right) \nonumber \\ 
 &+ \delta \sigma_{ij}^{\mathrm{LO}, (t,b,c)}
 + \delta \sigma_{ij}^{\mathrm{NLO}, (t,b,c)}
-+ \delta \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)}. 
++ \delta \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)}\,, 
 \label{eq:ggf_master}
 \end{align}
-We discuss the definition, calculation and recommendations for each of these contributions in the following subsections.
+where \begin{align}
+  \label{eq:RLO}
+  \mathrm{R}_\mathrm{LO} = \sigma_{ij}^{\mathrm{LO},(t)}/\sigma_{ij}^{\mathrm{LO}, \mathrm{HTL}}\,,\end{align}
+and $\sigma_{ij}^{\mathrm{LO},(t)}$~\cite{Georgi:1977gs,Wilczek:1977zn} is the full theory result including the contribution from top-quark loops only. We discuss the definition, calculation and recommendations for each of these contributions in the following subsections.
 In Section~\ref{sec:ggf_htl}, we summarise the results known in  the Heavy Top Limit (HTL), $\sigma_{ij}^{\mathrm{N}^n\mathrm{LO},\mathrm{HTL}}$.
 In Section~\ref{sec:ggf_ew}, we discuss the electroweak and mixed QCD--EW corrections, which enter via the combined Wilson coefficient, $C$.
 In Section~\ref{sec:ggf_mq}, we discuss corrections related to the finite quark masses $\delta \sigma_{ij}^{\mathrm{N}^n\mathrm{LO},(t,b,c)}$.
@@ -85,7 +88,7 @@ with,
 &\delta(\mathrm{PDF}+\alpha_s) = \sqrt{\delta(\mathrm{PDF})^2 + \delta(\alpha_s)^2}.&
 \end{align}
 The theory uncertainty, $\delta(\mathrm{theory})$, collects uncertainties related to missing or approximated fixed-order contributions.
-The $\delta(t,b,c)$ uncertainty collects uncertainties related to finite quark mass effects, it is given by,%
+The $\delta(t,b,c)$ uncertainty collects uncertainties related to finite quark mass effects and missing higher order uncertainties (MHOU), it is given by,%
 \footnote{
 At NLO the scale variation of the top-only, $\sigma^{(t)}$, and top-bottom interference, $\sigma^{(t\times b)}$, contributions are found to be \emph{anti-correlated}, we anticipate that taking a linear combination of the uncertainties yields a conservative estimate.
 }
@@ -102,9 +105,7 @@ Alternatively, this mismatch can be avoided using the approximate N$^3$LO PDFs, 
 
 The terms $\sigma_{ij}^{\mathrm{N}^n\mathrm{LO},\mathrm{HTL}}$ with $n=0,\,1,\,2,\,3$ of Eq.~\eqref{eq:ggf_master} are computed using an effective theory in which the heavy top-quark is integrated out, see Refs.~\cite{Kramer:1996iq,Chetyrkin:1997un,Schroder:2005hy,Chetyrkin:2005ia}.
 These corrections are known exactly at NLO~\cite{Dawson:1990zj,Djouadi:1991tka}, NNLO~\cite{Anastasiou:2002yz,Harlander:2002wh,Ravindran:2003um} and at N$^3$LO~\cite{Anastasiou:2016cez,Anastasiou:2015vya,Mistlberger:2018etf}.
-The $\mathrm{R}_\mathrm{LO}$ ratio accounts for top-quark mass effects at LO, it is defined by,
-$\mathrm{R}_\mathrm{LO} = \sigma_{ij}^{\mathrm{LO},(t)}/\sigma_{ij}^{\mathrm{LO}, \mathrm{HTL}},$
-where $\sigma_{ij}^{\mathrm{LO},(t)}$~\cite{Georgi:1977gs,Wilczek:1977zn} is the full theory result including the contribution from top-quark loops only.
+The $\mathrm{R}_\mathrm{LO}$ ratio accounts for top-quark mass effects at LO, cf.\ eq.~\eqref{eq:RLO}.
 
 The HTL results presented in this work were produced using the \texttt{iHixs2} code~\cite{Dulat:2018rbf}.
 These corrections are also available in the \texttt{n3loxs}~\cite{Baglio:2022wzu} and  \texttt{ggHiggs}~\cite{Ball:2013bra,Bonvini:2014jma,Bonvini:2016frm,Ahmed:2016otz,Bonvini:2018ixe,Bonvini:2018iwt} tools.
@@ -155,11 +156,11 @@ However, the calculation of the corrections to the gluon-fusion channel with fin
 Using the notation $\left[\ldots \right]_{\alpha_s^i}$ to indicate only terms proportional to $\alpha_s^i$, we can define the contributions
 \begin{align}
 \delta \sigma_{ij}^{\mathrm{LO}, (t,b,c)} = 
-& \sigma_{ij}^{\mathrm{LO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 R_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^2}, \\
+& \sigma_{ij}^{\mathrm{LO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^2}, \\
 \delta \sigma_{ij}^{\mathrm{NLO}, (t,b,c)} = &
-\sigma_{ij}^{\mathrm{NLO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 R_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^3}, \\
+\sigma_{ij}^{\mathrm{NLO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^3}, \\
 \delta \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)} = 
-& \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 R_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^4}, \label{eq:ggf_delta_tbc} &
+& \sigma_{ij}^{\mathrm{NNLO}, (t,b,c)} - \left[C_\mathrm{QCD}^2 \mathrm{R}_\mathrm{LO} \sigma_{ij}^\mathrm{HTL} \right]_{\alpha_s^4}, \label{eq:ggf_delta_tbc} &
 \end{align}
 which account for the dependence on the finite top, bottom and charm quark masses at LO, NLO and NNLO, respectively.
 The exact QCD corrections with full dependence on the quark masses are known at LO~\cite{Wilczek:1977zn} and NLO~\cite{Graudenz:1992pv,Spira:1995rr}.
@@ -409,7 +410,7 @@ The uncertainty related to missing higher orders $\delta^{\mathrm{MHOU}}(b,c,t\t
 \subsection{PDF Theory Uncertainty and Impact of aN$^3$LO PDFs}
 \label{sec:ggf_an3lo_pdf}
 
-At present, the PDF4LHC Working Group provide a combination NNLO set, PDF4LHC21~\cite{PDF4LHCWorkingGroup:2022cjn}, designed for Run III of the LHC.
+At present, the PDF4LHC Working Group provide a combination NNLO set, PDF4LHC21~\cite{PDF4LHCWorkingGroup:2022cjn}, designed for Run 3 of the LHC.
 The PDF4LHC21 set is based on a Monte Carlo combination of three global PDF sets  CT18~\cite{Hou:2019efy}, MSHT20~\cite{Bailey:2020ooq}, and NNPDF3.1~\cite{NNPDF:2017mvq}, all of which are available at NNLO accuracy.
 For precision comparisons between data and theory or for systematic exploration of differences between PDF fits, the PDF4LHC working group recommends the use of as many modern individual PDF sets as possible, for example those presented in Refs.~\cite{Hou:2019efy,Alekhin:2024bhs,Bailey:2020ooq,NNPDF:2021njg}.
 

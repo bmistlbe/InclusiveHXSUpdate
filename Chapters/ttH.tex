@@ -16,15 +16,15 @@ and factorisation scales is $\mu_R=\mu_F=m_t+\MH/2$.
 The values for the total cross sections at 13, 13.6, and 14 TeV can be found in Tables~\ref{tab:tth-tot13},~\ref{tab:tth-tot136}, and~\ref{tab:tth-tot14}, respectively. Cross sections
 for the mass values
 \begin{equation}
-    \MH \in [ 124.6, 125., 125.09, 125.38, 125.6, 126.] \rm GeV\,,
+    \MH \in [ 124.6, 125.0, 125.09, 125.38, 125.6, 126.0] \,\rm GeV\,,
 \end{equation}
 have been computed. All other values, inside and outside this range, have been obtained
 from the linear formula
 \begin{equation}
-    \sigma(\MH)=\sigma(124.6) +\frac{\sigma(126)-\sigma(124.6)}{1.4}(\MH-124.6)\,,
+    \sigma(\MH)=\sigma(124.6) +\frac{\sigma(126.0)-\sigma(124.6)}{1.4}(\MH/\rm GeV-124.6)\,,
     \label{eq:inttth}
 \end{equation}
-which interpolates for $124.6 < \MH < 126$~GeV and extrapolates outside that interval.
+which interpolates for $124.6 \,\rm GeV< \MH < 126\,\rm GeV$ and extrapolates outside that interval.
 The cross sections at the directly computed mass points carry a residual Monte Carlo
 uncertainty at the level of a few per mille, which Eq.~\eqref{eq:inttth} does not smooth;
 it is visible as a mild non-monotonicity in $\MH$ of some of the tabulated predictions,
@@ -61,8 +61,8 @@ All single-top and Higgs cross-sections presented below are computed with {\sc M
 
 The central value $\mu$ of the renormalisation and factorisation scales is set in a process-dependent manner:
 \begin{itemize}
-    \item $tH$ ($t$ channel): $\mu= \frac{\MH+m_t}{4}\,$, both for the computation in the 4FS and in the 5FS;
-    \item $tH$ ($s$ channel): $\mu= \frac{\MH+m_t}{2}\,$;
+    \item $tH$ ($t$-channel): $\mu= \frac{\MH+m_t}{4}\,$, both for the computation in the 4FS and in the 5FS;
+    \item $tH$ ($s$-channel): $\mu= \frac{\MH+m_t}{2}\,$;
     \item $tWH$: $\mu= \frac{\MH+m_t+m_W}{2}\,$;
 \end{itemize}
 All numbers are computed in the five-flavour scheme. For the $t$-channel production mechanism, the uncertainty $\Delta_{\rm scale+\textrm{FS}}$
@@ -73,7 +73,7 @@ scheme (known as DR2), as implemented in {\sc MadGraph5\_aMC@NLO}, see Refs.~\ci
 
 Tables~\ref{tab:th-t-tot13},~\ref{tab:th-t-tot136},~\ref{tab:th-t-tot14};~\ref{tab:th-t-top13},~\ref{tab:th-t-top136},~\ref{tab:th-t-top14}; and~\ref{tab:th-t-atop13},~\ref{tab:th-t-atop136},~\ref{tab:th-t-atop14}
 show predictions for $t$-channel production of $tH\,+\,\bar tH$ at $\sqrt{s}=$13, 13.6 and 14 TeV respectively, $tH$ production alone, and $\bar tH$ production alone at the same energies. Predictions for 
-$s$ channel production are organised similary in 
+$s$-channel production are organised similary in 
 Tables~\ref{tab:th-s-tot13},~\ref{tab:th-s-tot136},~\ref{tab:th-s-tot14};~\ref{tab:th-s-top13},~\ref{tab:th-s-top136},~\ref{tab:th-s-top14}; and~\ref{tab:th-s-atop13},~\ref{tab:th-s-atop136},~\ref{tab:th-s-atop14}. 
 Finally, Tables~\ref{tab:thw-tot13},~\ref{tab:thw-tot136}, and~\ref{tab:thw-tot14}
 show predictions for $tW^-H \,+ \,\bar t W^+H$ associated production (the cross section of the two separate processes are equal to each other in this case) at the three energies.
